@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hazik Fayaz · NLP Life Coach & Aviation Expert</title>
+  <meta name="description" content="Certified NLP Practitioner and DGCA-authorised aviation evaluator helping professionals master their mindset, communication, and behaviour." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #B85C38;
+      --accent-dark: #8C4227;
+      --accent-light: #F5EAE4;
+      --bg: #FAFAF8;
+      --surface: #FFFFFF;
+      --surface-muted: #F4F2EE;
+      --border: rgba(0,0,0,0.09);
+      --border-strong: rgba(0,0,0,0.18);
+      --text-primary: #1A1714;
+      --text-secondary: #5C554E;
+      --text-tertiary: #9C948C;
+      --dark-bg: #1F1A17;
+      --dark-surface: #2C2420;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --max-w: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text-primary);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── UTILITIES ── */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 40px; }
+    .accent { color: var(--accent); }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 40px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--text-primary);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 9px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--accent-dark); }
+    .nav-hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-primary);
+      margin: 5px 0;
+      transition: all 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 40px 72px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 52px;
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-sub {
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 13px 26px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: var(--sans);
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 13px 26px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: var(--sans);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-secondary:hover { background: var(--surface-muted); }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      padding-top: 32px;
+      border-top: 0.5px solid var(--border);
+    }
+    .stat-num {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+    }
+    .hero-visual {
+      position: relative;
+    }
+    .hero-photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-lg);
+      background: var(--surface-muted);
+      border: 0.5px solid var(--border);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: var(--text-tertiary);
+      font-size: 13px;
+      position: relative;
+    }
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(184,92,56,0.04) 0%, transparent 60%);
+    }
+    .hero-photo-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-photo-icon svg { width: 32px; height: 32px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .hero-badge {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .badge-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--accent-light);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .badge-icon svg { width: 18px; height: 18px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .badge-text { font-size: 12px; }
+    .badge-text strong { display: block; font-weight: 600; font-size: 13px; }
+    .badge-text span { color: var(--text-tertiary); }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--dark-bg);
+      padding: 20px 40px;
+    }
+    .trust-bar-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      white-space: nowrap;
+    }
+    .trust-divider { width: 0.5px; height: 20px; background: rgba(255,255,255,0.12); }
+    .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
+    .trust-item { font-size: 13px; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 8px; }
+    .trust-item svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 80px 40px; }
+    .section-inner { max-width: var(--max-w); margin: 0 auto; }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 38px;
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 48px;
+    }
+    .section-divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── ABOUT ── */
+    #about { background: var(--surface); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .about-text p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text blockquote {
+      border-left: 2px solid var(--accent);
+      padding-left: 20px;
+      margin: 28px 0;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-style: italic;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+    .cred-list { display: flex; flex-direction: column; gap: 12px; }
+    .cred-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .cred-card:hover { border-color: var(--accent); }
+    .cred-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .cred-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+    .cred-sub { font-size: 12px; color: var(--text-tertiary); }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .service-card:hover { border-color: rgba(184,92,56,0.3); transform: translateY(-2px); }
+    .service-card.featured { border: 1.5px solid var(--accent); }
+    .featured-pill {
+      position: absolute;
+      top: -11px;
+      left: 24px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .service-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--accent-light);
+      line-height: 1;
+      margin-bottom: 16px;
+      -webkit-text-stroke: 1px var(--accent);
+      color: transparent;
+    }
+    .service-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+    .service-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+    .service-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 0.5px solid var(--border); }
+    .service-price { font-size: 14px; font-weight: 600; color: var(--accent); }
+    .service-link {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+    .service-link:hover { color: var(--accent); }
+    .service-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── COURSE ── */
+    #course { background: var(--surface); }
+    .course-wrap {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .course-top {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 0;
+    }
+    .course-main { padding: 40px 48px; border-right: 0.5px solid var(--border); }
+    .course-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .course-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .course-title {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+    .course-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 28px; }
+    .modules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .module-item {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+    .module-check {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .module-check svg { width: 9px; height: 9px; stroke: var(--accent); fill: none; stroke-width: 2.5; }
+    .course-sidebar { padding: 40px 32px; }
+    .price-display { margin-bottom: 24px; }
+    .price-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 6px; }
+    .price-amount { font-family: var(--serif); font-size: 40px; color: var(--text-primary); line-height: 1; }
+    .price-regular { font-size: 13px; color: var(--text-tertiary); margin-top: 4px; text-decoration: line-through; }
+    .enroll-btn {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--sans);
+      margin-bottom: 12px;
+      transition: background 0.2s;
+    }
+    .enroll-btn:hover { background: var(--accent-dark); }
+    .discovery-btn {
+      width: 100%;
+      background: transparent;
+      color: var(--text-secondary);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: border-color 0.2s;
+    }
+    .discovery-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .course-meta-list { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; }
+    .meta-row { display: flex; gap: 10px; align-items: center; font-size: 13px; color: var(--text-secondary); }
+    .meta-row svg { width: 15px; height: 15px; stroke: var(--text-tertiary); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+    .course-bottom {
+      border-top: 0.5px solid var(--border);
+      padding: 20px 48px;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .guarantee-text { font-size: 12px; color: var(--text-tertiary); line-height: 1.5; }
+    .guarantee-text strong { color: var(--text-secondary); }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--bg); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testi-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+    .testi-stars { color: #D4961A; font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-quote {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 0.5px solid var(--border); }
+    .testi-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .testi-name { font-size: 13px; font-weight: 600; }
+    .testi-role { font-size: 12px; color: var(--text-tertiary); }
+
+    /* ── CONTENT / BLOG ── */
+    #content { background: var(--surface); }
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .content-card {
+      background: var(--bg);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+      display: block;
+    }
+    .content-card:hover { border-color: rgba(184,92,56,0.3); }
+    .content-thumb {
+      height: 120px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .content-thumb svg { width: 32px; height: 32px; stroke: var(--accent); fill: none; stroke-width: 1; opacity: 0.6; }
+    .content-body { padding: 20px; }
+    .content-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .content-title { font-size: 15px; font-weight: 500; line-height: 1.4; margin-bottom: 8px; }
+    .content-excerpt { font-size: 13px; color: var(--text-tertiary); line-height: 1.6; }
+
+    /* ── CTA BANNER ── */
+    .cta-section { padding: 0 40px 80px; }
+    .cta-banner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      background: var(--dark-bg);
+      border-radius: var(--radius-lg);
+      padding: 56px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(184,92,56,0.08);
+    }
+    .cta-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
+    .cta-heading {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: #fff;
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .cta-sub { font-size: 15px; color: rgba(255,255,255,0.55); }
+    .cta-actions { display: flex; gap: 12px; flex-direction: column; flex-shrink: 0; }
+    .cta-btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 14px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--sans);
+      white-space: nowrap;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .cta-btn-primary:hover { background: var(--accent-dark); }
+    .cta-btn-secondary {
+      background: transparent;
+      color: rgba(255,255,255,0.65);
+      border: 0.5px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius-sm);
+      padding: 14px 28px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: var(--sans);
+      white-space: nowrap;
+      text-decoration: none;
+      text-align: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .cta-btn-secondary:hover { border-color: rgba(255,255,255,0.4); color: #fff; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info-block { margin-bottom: 28px; }
+    .contact-info-block h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .contact-info-block p { font-size: 14px; color: var(--text-secondary); }
+    .contact-info-block a { color: var(--accent); text-decoration: none; }
+    .social-links { display: flex; gap: 12px; margin-top: 24px; }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .social-link:hover { border-color: var(--accent); background: var(--accent-light); }
+    .social-link svg { width: 16px; height: 16px; stroke: var(--text-secondary); fill: none; stroke-width: 1.5; }
+    .social-link:hover svg { stroke: var(--accent); }
+    .contact-form { background: var(--surface); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 36px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 500; color: var(--text-secondary); margin-bottom: 6px; letter-spacing: 0.03em; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 0.5px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      font-size: 14px;
+      font-family: var(--sans);
+      color: var(--text-primary);
+      transition: border-color 0.2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--accent); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark-bg);
+      color: rgba(255,255,255,0.55);
+      padding: 48px 40px 32px;
+    }
+    .footer-inner { max-width: var(--max-w); margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 0.5px solid rgba(255,255,255,0.1);
+      margin-bottom: 32px;
+    }
+    .footer-brand-name {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .footer-brand-name span { color: var(--accent); }
+    .footer-tagline { font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
+    .footer-col h4 {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 16px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col ul a:hover { color: #fff; }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ── MOBILE NAV ── */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--surface);
+      border-top: 0.5px solid var(--border);
+      padding: 16px 40px;
+    }
+    .mobile-menu a {
+      font-size: 15px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 12px 0;
+      border-bottom: 0.5px solid var(--border);
+      display: block;
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu.open { display: flex; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 24px 56px; }
+      .hero h1 { font-size: 38px; }
+      .hero-visual { order: -1; }
+      .hero-photo-frame { aspect-ratio: 4/3; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .course-top { grid-template-columns: 1fr; }
+      .course-main { border-right: none; border-bottom: 0.5px solid var(--border); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .content-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .cta-banner { flex-direction: column; text-align: center; padding: 40px 32px; }
+      .form-row { grid-template-columns: 1fr; }
+      section { padding: 56px 24px; }
+      .cta-section { padding: 0 24px 56px; }
+      .trust-bar { padding: 16px 24px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+      .mobile-menu { padding: 16px 24px; }
+    }
+
+    @media (max-width: 500px) {
+      .hero h1 { font-size: 30px; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats { gap: 20px; }
+      .nav-inner { padding: 0 24px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Hazik <span>Fayaz</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Coaching</a></li>
+      <li><a href="#course">Course</a></li>
+      <li><a href="#content">Writing</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book a session</a>
+    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#services" onclick="toggleMenu()">Coaching</a>
+    <a href="#course" onclick="toggleMenu()">Course</a>
+    <a href="#content" onclick="toggleMenu()">Writing</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div>
+    <div class="hero-eyebrow">NLP Practitioner · DGCA Evaluator · Life Coach</div>
+    <h1>Where the <em>cockpit mindset</em> meets human transformation.</h1>
+    <p class="hero-sub">10+ years shaping aviation safety culture. Certified NLP Practitioner. I help professionals navigate pressure, rewire limiting patterns, and perform at altitude — in life, not just in the air.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Work with me</a>
+      <a href="#course" class="btn-secondary">Explore the course</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">10+</div>
+        <div class="stat-label">Years in aviation</div>
+      </div>
+      <div>
+        <div class="stat-num">DGCA</div>
+        <div class="stat-label">Authorised evaluator</div>
+      </div>
+      <div>
+        <div class="stat-num">NLP</div>
+        <div class="stat-label">Certified practitioner</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-photo-frame">
+      <!-- Replace this div with an <img> tag once you have your photo -->
+      <div class="hero-photo-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+      </div>
+      <span style="font-size:12px;color:var(--text-tertiary);">Add your photo here</span>
+    </div>
+    <div class="hero-badge">
+      <div class="badge-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+      </div>
+      <div class="badge-text">
+        <strong>DGCA Authorised</strong>
+        <span>Line Check Cabin Crew</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span class="trust-label">Credentials</span>
+    <div class="trust-divider"></div>
+    <div class="trust-items">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+        SpiceJet · Senior Cabin Crew
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+        Certified NLP Practitioner
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+        Taj Hotels Alumni
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+        @nlplifecoachhazik
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider" />
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-eyebrow">About</div>
+    <h2 class="section-heading">A decade at 35,000 feet.<br/>Now grounded in what matters.</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I am Hazik Fayaz — a Line Check Cabin Crew Evaluator at SpiceJet, a certified NLP Practitioner, and a life coach based in Bengaluru. My decade in aviation has taught me one thing above all else: how people behave under pressure is not a personality trait. It's a learnable, changeable skill.</p>
+        <blockquote>"What aviation taught me about people, NLP gave me the tools to change."</blockquote>
+        <p>After years of evaluating crew performance, conducting proficiency checks, and coaching cabin crew through high-stakes scenarios, I began to see the same patterns repeating — not just in the air, but in every domain of life. Limiting beliefs that looked like confidence problems. Communication failures that were really rapport failures. Decisions made from fear dressed up as logic.</p>
+        <p>Through NLP, coaching, and the storytelling voice I've been building across LinkedIn, YouTube, and Twitter, I now help professionals untangle those patterns — and fly higher.</p>
+      </div>
+      <div class="cred-list">
+        <div class="cred-card">
+          <div class="cred-dot"></div>
+          <div>
+            <div class="cred-title">Line Check Cabin Crew (Evaluator)</div>
+            <div class="cred-sub">SpiceJet · DGCA Authorised · 10+ years</div>
+          </div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-dot"></div>
+          <div>
+            <div class="cred-title">Certified NLP Practitioner</div>
+            <div class="cred-sub">Accredited · Active coach & content creator</div>
+          </div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-dot"></div>
+          <div>
+            <div class="cred-title">Aviation Training Faculty</div>
+            <div class="cred-sub">Viinzs Airhostess Training Academy, Bengaluru</div>
+          </div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-dot"></div>
+          <div>
+            <div class="cred-title">Hospitality Background</div>
+            <div class="cred-sub">Taj Hotels · DLF Magnolias</div>
+          </div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-dot"></div>
+          <div>
+            <div class="cred-title">Content Creator</div>
+            <div class="cred-sub">LinkedIn · YouTube · Twitter · @nlplifecoachhazik</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-inner">
+    <div class="section-eyebrow">Services</div>
+    <h2 class="section-heading">How I can help you</h2>
+    <div class="services-grid">
+      <div class="service-card featured">
+        <div class="featured-pill">Most popular</div>
+        <div class="service-num">01</div>
+        <div class="service-title">1-on-1 NLP Coaching</div>
+        <div class="service-desc">Deep-dive sessions using the tools of NLP to reframe limiting beliefs, shift emotional states, and build new behaviour patterns that actually hold under pressure. Each session is rooted in your specific context — not a generic script.</div>
+        <div class="service-footer">
+          <span class="service-price">₹3,500 / session</span>
+          <a href="#contact" class="service-link">Book now <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-title">Corporate Workshops</div>
+        <div class="service-desc">Custom team sessions combining aviation Crew Resource Management principles with NLP communication tools. Designed for high-performance teams who need to operate with clarity and cohesion — even when the cabin pressure drops.</div>
+        <div class="service-footer">
+          <span class="service-price">On request</span>
+          <a href="#contact" class="service-link">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-title">Speaking & Training</div>
+        <div class="service-desc">Keynotes and facilitated workshops on the psychology of performance, safety culture, and the mindset tools that make the difference between surviving and thriving — drawn from a decade of real aviation experience.</div>
+        <div class="service-footer">
+          <span class="service-price">On request</span>
+          <a href="#contact" class="service-link">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ── COURSE ── -->
+<section id="course">
+  <div class="section-inner">
+    <div class="section-eyebrow">Signature Course</div>
+    <h2 class="section-heading">The Altitude Mindset</h2>
+    <div class="course-wrap">
+      <div class="course-top">
+        <div class="course-main">
+          <div class="course-tag">Upcoming batch · Aug 2026</div>
+          <div class="course-title">NLP Foundations for Professionals Who Want to Fly Higher</div>
+          <p class="course-desc">A structured 4-weekend online programme that draws on aviation psychology to help you master communication, emotional resilience, and behaviour change. Built for professionals who already know something's holding them back — and are ready to name it, understand it, and change it.</p>
+          <div class="modules-grid">
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              Reframing & belief change
+            </div>
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              Rapport & influence skills
+            </div>
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              State management under pressure
+            </div>
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              Anchoring & pattern interrupts
+            </div>
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              VAKOG & representational systems
+            </div>
+            <div class="module-item">
+              <div class="module-check"><svg viewBox="0 0 10 10"><path d="M2 5l2.5 2.5L8 3"/></svg></div>
+              Aviation mindset applied to life
+            </div>
+          </div>
+        </div>
+        <div class="course-sidebar">
+          <div class="price-display">
+            <div class="price-label">Early bird price</div>
+            <div class="price-amount">₹12,000</div>
+            <div class="price-regular">Regular: ₹15,000</div>
+          </div>
+          <button class="enroll-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Reserve my seat</button>
+          <button class="discovery-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a free discovery call</button>
+          <div class="course-meta-list">
+            <div class="meta-row">
+              <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v3M15 3v3"/></svg>
+              4 weekends · Live online via Zoom
+            </div>
+            <div class="meta-row">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              3 hours per session
+            </div>
+            <div class="meta-row">
+              <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              Limited to 20 participants
+            </div>
+            <div class="meta-row">
+              <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              Completion certificate included
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="course-bottom">
+        <svg viewBox="0 0 24 24" style="width:20px;height:20px;stroke:var(--text-tertiary);fill:none;stroke-width:1.5;flex-shrink:0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <p class="guarantee-text"><strong>Satisfaction promise:</strong> If you complete the first weekend and feel the course isn't right for you, reach out for a full refund — no questions asked.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-eyebrow">Testimonials</div>
+    <h2 class="section-heading">What people say</h2>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Hazik has a rare ability to make NLP feel practical and grounded. His aviation analogies made abstract concepts click instantly. I walked out of the session with real tools, not just ideas."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RK</div>
+          <div>
+            <div class="testi-name">Renu K.</div>
+            <div class="testi-role">HR Manager, Bengaluru</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The way he connects crew resource management to everyday behaviour is genuinely eye-opening. A session with Hazik changes how you see yourself — not just how you communicate."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AM</div>
+          <div>
+            <div class="testi-name">Arjun M.</div>
+            <div class="testi-role">Cabin Crew, IndiGo</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"His storytelling style makes coaching feel personal, never clinical. I came in stuck and left with a clear, actionable path. The aviation metaphors stayed with me for weeks after."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SP</div>
+          <div>
+            <div class="testi-name">Shruti P.</div>
+            <div class="testi-role">Entrepreneur, Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
+<!-- ── CONTENT ── -->
+<section id="content">
+  <div class="section-inner">
+    <div class="section-eyebrow">Writing & Content</div>
+    <h2 class="section-heading">From the cockpit to the page</h2>
+    <div class="content-grid">
+      <a href="https://linkedin.com/in/hazikfayaz" class="content-card" target="_blank" rel="noopener">
+        <div class="content-thumb">
+          <svg viewBox="0 0 24 24" stroke-width="1"><path d="M2 12c0 5.5 4.5 10 10 10s10-4.5 10-10S17.5 2 12 2 2 6.5 2 12z"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="content-body">
+          <div class="content-tag">LinkedIn · Aviation</div>
+          <div class="content-title">What a delayed flight taught me about emotional regulation</div>
+          <div class="content-excerpt">The cabin crew don't panic. They pre-brief for failure. Here's what that looks like as a life skill.</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/hazikfayaz" class="content-card" target="_blank" rel="noopener">
+        <div class="content-thumb">
+          <svg viewBox="0 0 24 24" stroke-width="1"><path d="M12 2c-2 0-4 2-4 5s2 5 4 5 4-2 4-5-2-5-4-5z"/><path d="M4 22v-2c0-3 3.6-6 8-6s8 3 8 6v2"/></svg>
+        </div>
+        <div class="content-body">
+          <div class="content-tag">NLP · Mindset</div>
+          <div class="content-title">The reframe that changed how I give feedback forever</div>
+          <div class="content-excerpt">Most feedback fails because it targets the person, not the pattern. NLP taught me to see the difference.</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/hazikfayaz" class="content-card" target="_blank" rel="noopener">
+        <div class="content-thumb">
+          <svg viewBox="0 0 24 24" stroke-width="1"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+        </div>
+        <div class="content-body">
+          <div class="content-tag">Storytelling · Identity</div>
+          <div class="content-title">On being a teacher in a uniform no one recognises</div>
+          <div class="content-excerpt">The gap between what you do and who you are — and how to close it without quitting the job you love.</div>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:32px;">
+      <a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener" class="btn-secondary">Read more on LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<div class="cta-section">
+  <div class="cta-banner">
+    <div>
+      <div class="cta-eyebrow">Ready when you are</div>
+      <h3 class="cta-heading">Find your altitude.</h3>
+      <p class="cta-sub">Book a free 20-minute discovery call. No pitch — just clarity about whether we're the right fit.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#contact" class="cta-btn-primary">Book a free call</a>
+      <a href="#course" class="cta-btn-secondary">Explore the course</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-eyebrow">Contact</div>
+    <h2 class="section-heading">Get in touch</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-block">
+          <h3>Email</h3>
+          <p><a href="mailto:hazikdijoo@gmail.com">hazikdijoo@gmail.com</a></p>
+        </div>
+        <div class="contact-info-block">
+          <h3>LinkedIn</h3>
+          <p><a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener">linkedin.com/in/hazikfayaz</a></p>
+        </div>
+        <div class="contact-info-block">
+          <h3>Location</h3>
+          <p style="color:var(--text-secondary);">Bengaluru, Karnataka · Available online nationwide</p>
+        </div>
+        <div class="contact-info-block">
+          <h3>Follow along</h3>
+          <p style="color:var(--text-secondary);margin-bottom:12px;">Aviation insights. NLP tools. Real stories.</p>
+          <div class="social-links">
+            <a href="https://linkedin.com/in/hazikfayaz" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 1.96C1 8.14 1 12 1 12s0 3.86.46 5.58a2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96C23 15.86 23 12 23 12s0-3.86-.46-5.58z"/><polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="var(--bg)" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24"><path d="M4 4l16 16M4 20L20 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" placeholder="First name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" id="email" placeholder="you@email.com" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="interest">I'm interested in</label>
+            <select id="interest">
+              <option value="">Select an option</option>
+              <option>1-on-1 NLP Coaching</option>
+              <option>The Altitude Mindset Course</option>
+              <option>Corporate Workshop</option>
+              <option>Speaking / Training</option>
+              <option>Free discovery call</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Tell me a bit about what you're looking for</label>
+            <textarea id="message" placeholder="What's going on, and how can I help?"></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Send message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand-name">Hazik <span>Fayaz</span></div>
+        <p class="footer-tagline">NLP Practitioner. Aviation Evaluator. Helping professionals fly higher — on the ground.</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.3);">Bengaluru, Karnataka · India</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">1-on-1 Coaching</a></li>
+          <li><a href="#course">Altitude Mindset Course</a></li>
+          <li><a href="#services">Corporate Workshops</a></li>
+          <li><a href="#services">Speaking & Training</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Hazik</a></li>
+          <li><a href="#content">Writing & Content</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Twitter / X</a></li>
+          <li><a href="mailto:hazikdijoo@gmail.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Hazik Fayaz. All rights reserved.</span>
+      <span><a href="#">Privacy</a> · <a href="#">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    var m = document.getElementById('mobileMenu');
+    m.classList.toggle('open');
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = 64;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        var m = document.getElementById('mobileMenu');
+        if (m.classList.contains('open')) m.classList.remove('open');
+      }
+    });
+  });
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    setTimeout(function() {
+      btn.textContent = 'Message sent ✓';
+      btn.style.background = '#3B6D11';
+      e.target.reset();
+    }, 1200);
+  }
+</script>
+
+</body>
+</html>
