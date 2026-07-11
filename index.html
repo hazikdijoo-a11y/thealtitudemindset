@@ -357,7 +357,7 @@
     #services { background: var(--bg); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
     .service-card {
@@ -915,10 +915,8 @@
     </div>
   </div>
   <div class="hero-visual">
-<div class="hero-photo-frame">
-  <img src="mirror_post_autopilot.png" alt="Hazik Fayaz" style="width:100%;height:100%;object-fit:cover;" />
-</div>
-      <span style="font-size:12px;color:var(--text-tertiary);">Add your photo here</span>
+    <div class="hero-photo-frame">
+      <img src="mirror_post_autopilot.png" alt="Hazik Fayaz" style="width:100%;height:100%;object-fit:cover;" />
     </div>
     <div class="hero-badge">
       <div class="badge-icon">
@@ -1047,6 +1045,15 @@
         <div class="service-footer">
           <span class="service-price">On request</span>
           <a href="#contact" class="service-link">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-title">Aspiring Cabin Crew Training</div>
+        <div class="service-desc">Personalised coaching for candidates preparing for airline interviews and cabin crew selection — grooming, communication, group discussion technique, and the mindset training that separates a good candidate from a selected one.</div>
+        <div class="service-footer">
+          <span class="service-price">₹2,500 / session</span>
+          <a href="#contact" class="service-link">Book now <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
         </div>
       </div>
     </div>
@@ -1290,6 +1297,7 @@
             <select id="interest" name="interested_in">
               <option value="">Select an option</option>
               <option>1-on-1 NLP Coaching</option>
+              <option>Aspiring Cabin Crew Training</option>
               <option>The Altitude Mindset Course</option>
               <option>Corporate Workshop</option>
               <option>Speaking / Training</option>
