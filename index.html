@@ -86,12 +86,11 @@
       justify-content: space-between;
     }
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 20px;
-      color: var(--text-primary);
+      display: flex;
+      align-items: center;
       text-decoration: none;
     }
-    .nav-logo span { color: var(--accent); }
+    .nav-logo img { height: 34px; width: auto; display: block; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 13px;
@@ -932,7 +931,7 @@
 <!-- ── NAVIGATION ── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Hazik <span>Fayaz</span></a>
+    <a href="#" class="nav-logo"><img src="logo-altitude-mindset.svg" alt="The Altitude Mindset — Hazik Fayaz" /></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Coaching</a></li>
