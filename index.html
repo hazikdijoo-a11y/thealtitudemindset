@@ -80,7 +80,7 @@
       max-width: var(--max-w);
       margin: 0 auto;
       padding: 0 40px;
-      height: 64px;
+      height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -90,7 +90,7 @@
       align-items: center;
       text-decoration: none;
     }
-    .nav-logo img { height: 34px; width: auto; display: block; }
+    .nav-logo img { height: 68px; width: auto; display: block; }
     .nav-links { display: flex; gap: 28px; list-style: none; }
     .nav-links a {
       font-size: 13px;
@@ -273,6 +273,42 @@
     .badge-text strong { display: block; font-weight: 600; font-size: 13px; }
     .badge-text span { color: var(--text-tertiary); }
 
+    /* ── WHO THIS IS FOR ── */
+    .audience-section { background: var(--surface); padding: 64px 40px; }
+    .audience-inner { max-width: var(--max-w); margin: 0 auto; }
+    .audience-heading { text-align: center; margin-bottom: 32px; }
+    .audience-heading h2 { font-family: var(--serif); font-size: 26px; font-weight: 400; margin-bottom: 6px; }
+    .audience-heading p { font-size: 14px; color: var(--text-secondary); }
+    .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .audience-card {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .audience-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .audience-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .audience-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .audience-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+    .audience-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 18px; }
+    .audience-link { font-size: 13px; font-weight: 600; color: var(--accent); display: flex; align-items: center; gap: 6px; }
+    .audience-link svg { width: 13px; height: 13px; stroke: currentColor; fill: none; stroke-width: 2; }
+    @media (max-width: 900px) {
+      .audience-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── TRUST BAR ── */
     .trust-bar {
       background: var(--dark-bg);
@@ -411,6 +447,8 @@
     }
     .service-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
     .service-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 20px; }
+    .focus-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .focus-tag { font-size: 11px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 5px 10px; border-radius: 20px; }
     .service-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 0.5px solid var(--border); }
     .service-price { font-size: 14px; font-weight: 600; color: var(--accent); }
     .service-link {
@@ -424,6 +462,26 @@
     }
     .service-link:hover { color: var(--accent); }
     .service-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── SCOPE OF PRACTICE ── */
+    #scope { background: var(--bg); padding: 56px 40px; }
+    .scope-box {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: var(--radius-md);
+      padding: 28px 32px;
+    }
+    .scope-box h3 { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+    .scope-box > p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+    .scope-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+    .scope-item { font-size: 13px; color: var(--text-secondary); display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+    .scope-item svg { width: 14px; height: 14px; stroke: var(--text-tertiary); fill: none; stroke-width: 2; flex-shrink: 0; margin-top: 3px; }
+    @media (max-width: 700px) {
+      .scope-list { grid-template-columns: 1fr; }
+    }
 
     /* ── COURSE ── */
     #course { background: var(--surface); }
@@ -958,7 +1016,7 @@
   <div>
     <div class="hero-eyebrow">NLP Practitioner · Aviation Evaluator · Life Coach</div>
     <h1>Where the <em>cockpit mindset</em> meets human transformation.</h1>
-    <p class="hero-sub">10+ years shaping aviation safety culture. Certified NLP Practitioner. I help professionals navigate pressure, rewire limiting patterns, and perform at altitude — in life, not just in the air.</p>
+    <p class="hero-sub">I help ambitious professionals and individuals overcome limiting beliefs, build unshakable confidence, manage emotions, and create healthier relationships using practical NLP coaching.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Work with me</a>
       <a href="#course" class="btn-secondary">Explore the course</a>
@@ -990,6 +1048,34 @@
         <strong>Line Check</strong>
         <span>Cabin Crew Evaluator</span>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── WHO THIS IS FOR ── -->
+<div class="audience-section">
+  <div class="audience-inner">
+    <div class="audience-heading">
+      <h2>Which path is yours?</h2>
+      <p>Two different journeys, both grounded in the same aviation-tested mindset tools.</p>
+    </div>
+    <div class="audience-grid">
+      <a href="#coaching-service" class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3>NLP Coaching</h3>
+        <p>Feeling stuck, reactive, or burnt out at work? 1-on-1 NLP coaching to help you navigate pressure, rebuild confidence, and lead with clarity.</p>
+        <span class="audience-link">Explore coaching <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+      </a>
+      <a href="#cabin-crew-service" class="audience-card">
+        <div class="audience-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"/></svg>
+        </div>
+        <h3>Aspiring cabin crew</h3>
+        <p>Preparing for airline interviews? Practical training in grooming, communication, group discussion, and the mindset that gets you selected.</p>
+        <span class="audience-link">Explore cabin crew training <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></span>
+      </a>
     </div>
   </div>
 </div>
@@ -1079,11 +1165,17 @@
     <div class="section-eyebrow">Services</div>
     <h2 class="section-heading">How I can help you</h2>
     <div class="services-grid">
-      <div class="service-card featured">
+      <div class="service-card featured" id="coaching-service">
         <div class="featured-pill">Most popular</div>
         <div class="service-num">01</div>
         <div class="service-title">1-on-1 NLP Coaching</div>
         <div class="service-desc">Deep-dive sessions using the tools of NLP to reframe limiting beliefs, shift emotional states, and build new behaviour patterns that actually hold under pressure. Each session is rooted in your specific context — not a generic script.</div>
+        <div class="focus-tags">
+          <span class="focus-tag">Limiting Beliefs & Mindset</span>
+          <span class="focus-tag">Confidence & Emotional Mastery</span>
+          <span class="focus-tag">Healthy Relationships & Communication</span>
+          <span class="focus-tag">Personal Growth & Goal Achievement</span>
+        </div>
         <div class="service-footer">
           <span class="service-price">₹3,500 / session</span>
           <a href="#contact" class="service-link">Book now <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
@@ -1107,7 +1199,7 @@
           <a href="#contact" class="service-link">Enquire <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
         </div>
       </div>
-      <div class="service-card">
+      <div class="service-card" id="cabin-crew-service">
         <div class="service-num">04</div>
         <div class="service-title">Aspiring Cabin Crew Training</div>
         <div class="service-desc">Personalised coaching for candidates preparing for airline interviews and cabin crew selection — grooming, communication, group discussion technique, and the mindset training that separates a good candidate from a selected one.</div>
@@ -1115,6 +1207,40 @@
           <span class="service-price">₹2,500 / session</span>
           <a href="#contact" class="service-link">Book now <svg viewBox="0 0 12 12"><path d="M2 6h8M6 2l4 4-4 4"/></svg></a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SCOPE OF PRACTICE ── -->
+<section id="scope">
+  <div class="scope-box">
+    <h3>Who I Do Not Coach</h3>
+    <p>NLP coaching is generally appropriate for personal development and performance goals — but it isn't a substitute for licensed mental health care. If any of the following apply to you, please seek support from a qualified mental health professional instead of, or alongside, coaching:</p>
+    <div class="scope-list">
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Severe depression or suicidal thoughts
+      </div>
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Psychosis or delusions
+      </div>
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Active addiction requiring clinical treatment
+      </div>
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        PTSD or trauma requiring trauma-specialized therapy
+      </div>
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Domestic violence or abuse situations
+      </div>
+      <div class="scope-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Any condition needing medical or licensed psychological care
       </div>
     </div>
   </div>
@@ -1369,7 +1495,7 @@
       var target = document.querySelector(this.getAttribute('href'));
       if (target) {
         e.preventDefault();
-        var offset = 64;
+        var offset = 84;
         var top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
         var m = document.getElementById('mobileMenu');
