@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hazik Fayaz · NLP Life Coach & Aviation Expert</title>
-  <meta name="description" content="Certified NLP Practitioner and aviation safety evaluator helping professionals master their mindset, communication, and behaviour." />
+  <title>Hazik Fayaz | NLP Life Coach & Cabin Crew Training in Bengaluru</title>
+  <meta name="description" content="NLP Practitioner and aviation safety evaluator in Bengaluru offering 1-on-1 NLP coaching, cabin crew interview training, corporate workshops, and The Altitude Mindset course." />
+  <link rel="canonical" href="https://thealtitudemindset.com/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1B33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23E8C468' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hazik Fayaz | NLP Life Coach & Cabin Crew Training in Bengaluru" />
+  <meta property="og:description" content="Certified NLP Practitioner and aviation safety evaluator. 1-on-1 coaching, cabin crew training, corporate workshops, and The Altitude Mindset course." />
+  <meta property="og:url" content="https://thealtitudemindset.com/" />
+  <meta property="og:image" content="https://thealtitudemindset.com/HAZIK.png" />
+  <meta property="og:site_name" content="The Altitude Mindset" />
+  <meta property="og:locale" content="en_IN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hazik Fayaz | NLP Life Coach & Cabin Crew Training in Bengaluru" />
+  <meta name="twitter:description" content="Certified NLP Practitioner and aviation safety evaluator. 1-on-1 coaching, cabin crew training, corporate workshops, and The Altitude Mindset course." />
+  <meta name="twitter:image" content="https://thealtitudemindset.com/HAZIK.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -12,19 +28,21 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --accent: #B85C38;
-      --accent-dark: #8C4227;
-      --accent-light: #F5EAE4;
-      --bg: #FAFAF8;
+      --accent: #0B1B33;
+      --accent-dark: #071122;
+      --accent-light: #F7EEDA;
+      --gold: #E8C468;
+      --gold-dark: #D4AD4E;
+      --bg: #F8F6F0;
       --surface: #FFFFFF;
-      --surface-muted: #F4F2EE;
-      --border: rgba(0,0,0,0.09);
-      --border-strong: rgba(0,0,0,0.18);
-      --text-primary: #1A1714;
-      --text-secondary: #5C554E;
-      --text-tertiary: #9C948C;
-      --dark-bg: #1F1A17;
-      --dark-surface: #2C2420;
+      --surface-muted: #F1EEE6;
+      --border: rgba(11,27,51,0.09);
+      --border-strong: rgba(11,27,51,0.2);
+      --text-primary: #0A0A0A;
+      --text-secondary: #55524C;
+      --text-tertiary: #9B968C;
+      --dark-bg: #0B1B33;
+      --dark-surface: #14284A;
       --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'Inter', system-ui, sans-serif;
       --radius-sm: 6px;
@@ -216,7 +234,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(184,92,56,0.04) 0%, transparent 60%);
+      background: linear-gradient(135deg, rgba(11,27,51,0.05) 0%, transparent 60%);
     }
     .hero-photo-icon {
       width: 64px;
@@ -279,7 +297,7 @@
     .trust-divider { width: 0.5px; height: 20px; background: rgba(255,255,255,0.12); }
     .trust-items { display: flex; gap: 32px; flex-wrap: wrap; }
     .trust-item { font-size: 13px; color: rgba(255,255,255,0.65); display: flex; align-items: center; gap: 8px; }
-    .trust-item svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; flex-shrink: 0; }
+    .trust-item svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 1.5; flex-shrink: 0; }
 
     /* ── SECTION COMMONS ── */
     section { padding: 80px 40px; }
@@ -368,7 +386,7 @@
       position: relative;
       transition: border-color 0.2s, transform 0.2s;
     }
-    .service-card:hover { border-color: rgba(184,92,56,0.3); transform: translateY(-2px); }
+    .service-card:hover { border-color: rgba(11,27,51,0.35); transform: translateY(-2px); }
     .service-card.featured { border: 1.5px solid var(--accent); }
     .featured-pill {
       position: absolute;
@@ -538,7 +556,7 @@
       display: flex;
       flex-direction: column;
     }
-    .testi-stars { color: #D4961A; font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
+    .testi-stars { color: var(--gold-dark); font-size: 13px; margin-bottom: 14px; letter-spacing: 2px; }
     .testi-quote {
       font-size: 14px;
       color: var(--text-secondary);
@@ -580,7 +598,7 @@
       transition: border-color 0.2s;
       display: block;
     }
-    .content-card:hover { border-color: rgba(184,92,56,0.3); }
+    .content-card:hover { border-color: rgba(11,27,51,0.35); }
     .content-thumb {
       height: 120px;
       background: var(--accent-light);
@@ -625,7 +643,7 @@
       width: 280px;
       height: 280px;
       border-radius: 50%;
-      background: rgba(184,92,56,0.08);
+      background: rgba(232,196,104,0.10);
     }
     .cta-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 10px; }
     .cta-heading {
@@ -639,8 +657,8 @@
     .cta-sub { font-size: 15px; color: rgba(255,255,255,0.55); }
     .cta-actions { display: flex; gap: 12px; flex-direction: column; flex-shrink: 0; }
     .cta-btn-primary {
-      background: var(--accent);
-      color: #fff;
+      background: var(--gold);
+      color: var(--dark-bg);
       border: none;
       border-radius: var(--radius-sm);
       padding: 14px 28px;
@@ -653,7 +671,7 @@
       text-align: center;
       transition: background 0.2s;
     }
-    .cta-btn-primary:hover { background: var(--accent-dark); }
+    .cta-btn-primary:hover { background: var(--gold-dark); }
     .cta-btn-secondary {
       background: transparent;
       color: rgba(255,255,255,0.65);
@@ -755,7 +773,7 @@
       color: #fff;
       margin-bottom: 10px;
     }
-    .footer-brand-name span { color: var(--accent); }
+    .footer-brand-name span { color: var(--gold); }
     .footer-tagline { font-size: 13px; line-height: 1.6; margin-bottom: 20px; }
     .footer-col h4 {
       font-size: 11px;
@@ -861,6 +879,53 @@
       .whatsapp-float svg { width: 25px; height: 25px; }
     }
   </style>
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "The Altitude Mindset — Hazik Fayaz",
+    "image": "https://thealtitudemindset.com/HAZIK.png",
+    "url": "https://thealtitudemindset.com/",
+    "telephone": "+919995803434",
+    "email": "hazikdijoo@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Hazik Fayaz",
+      "jobTitle": "NLP Practitioner & Aviation Safety Evaluator",
+      "sameAs": [
+        "https://linkedin.com/in/hazikfayaz",
+        "https://instagram.com/nlplifecoachhazik"
+      ]
+    },
+    "priceRange": "₹₹",
+    "areaServed": "IN",
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "1-on-1 NLP Coaching" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Aspiring Cabin Crew Training" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Service", "name": "Corporate Workshops" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Course", "name": "The Altitude Mindset — NLP Foundations" }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
