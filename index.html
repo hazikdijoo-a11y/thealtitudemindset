@@ -405,8 +405,9 @@
     }
     .cred-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
     .cred-sub { font-size: 12px; color: var(--text-tertiary); }
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    @media (max-width: 700px) { .cert-grid { grid-template-columns: 1fr; } }
     .cert-showcase {
-      margin-top: 20px;
       border: 0.5px solid var(--border);
       border-radius: var(--radius-md);
       overflow: hidden;
@@ -1241,13 +1242,24 @@
           </div>
         </div>
       </div>
-      <div class="cert-showcase">
-        <a href="certificate-hazik.jpg" target="_blank" rel="noopener">
-          <img src="certificate-hazik.jpg" alt="Hazik Fayaz — Certified NLP Practitioner & Life Coach, Auspicium (UK) & Transformation Academy (USA)" />
-        </a>
-        <div class="cert-showcase-caption">
-          <span>Certified NLP Practitioner & Life Coach — Auspicium (UK) & Transformation Academy (USA)</span>
-          <a href="certificate-hazik.jpg" target="_blank" rel="noopener">View full size ↗</a>
+      <div class="cert-grid">
+        <div class="cert-showcase">
+          <a href="certificate-hazik.jpg" target="_blank" rel="noopener">
+            <img src="certificate-hazik.jpg" alt="Hazik Fayaz — Certified NLP Practitioner & Life Coach, Auspicium (UK) & Transformation Academy (USA)" />
+          </a>
+          <div class="cert-showcase-caption">
+            <span>Certified NLP Practitioner & Life Coach — Auspicium (UK) & Transformation Academy (USA)</span>
+            <a href="certificate-hazik.jpg" target="_blank" rel="noopener">View full size ↗</a>
+          </div>
+        </div>
+        <div class="cert-showcase">
+          <a href="award-spicejet-10years.jpg" target="_blank" rel="noopener">
+            <img src="award-spicejet-10years.jpg" alt="Glittering Gold Club — 10 Years of Service at SpiceJet" />
+          </a>
+          <div class="cert-showcase-caption">
+            <span>Glittering Gold Club — 10 Years of Service, SpiceJet</span>
+            <a href="award-spicejet-10years.jpg" target="_blank" rel="noopener">View full size ↗</a>
+          </div>
         </div>
       </div>
     </div>
