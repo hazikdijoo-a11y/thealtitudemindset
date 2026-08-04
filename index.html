@@ -405,6 +405,24 @@
     }
     .cred-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
     .cred-sub { font-size: 12px; color: var(--text-tertiary); }
+    .cert-showcase {
+      margin-top: 20px;
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .cert-showcase img { width: 100%; display: block; }
+    .cert-showcase-caption {
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cert-showcase-caption span { font-size: 12px; color: var(--text-tertiary); }
+    .cert-showcase-caption a { font-size: 12px; font-weight: 600; color: var(--accent); text-decoration: none; }
 
     /* ── SERVICES ── */
     #services { background: var(--bg); }
@@ -462,6 +480,53 @@
     }
     .service-link:hover { color: var(--accent); }
     .service-link svg { width: 12px; height: 12px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+    /* ── FAQ ── */
+    #faq { background: var(--surface); }
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+    .faq-item {
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: var(--bg);
+      border: none;
+      text-align: left;
+      padding: 18px 22px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      font-family: var(--sans);
+    }
+    .faq-question svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--accent);
+      fill: none;
+      stroke-width: 2;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-question svg { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 22px 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
 
     /* ── SCOPE OF PRACTICE ── */
     #scope { background: var(--bg); padding: 56px 40px; }
@@ -994,6 +1059,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#services">Coaching</a></li>
       <li><a href="#course">Course</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#content">Writing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -1006,6 +1072,7 @@
     <a href="#about" onclick="toggleMenu()">About</a>
     <a href="#services" onclick="toggleMenu()">Coaching</a>
     <a href="#course" onclick="toggleMenu()">Course</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
     <a href="#content" onclick="toggleMenu()">Writing</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>
   </div>
@@ -1127,8 +1194,8 @@
         <div class="cred-card">
           <div class="cred-dot"></div>
           <div>
-            <div class="cred-title">Certified NLP Practitioner</div>
-            <div class="cred-sub">Accredited · Active coach & content creator</div>
+            <div class="cred-title">Certified NLP Practitioner & Life Coach</div>
+            <div class="cred-sub">Auspicium (UK) & Transformation Academy (USA)</div>
           </div>
         </div>
         <div class="cred-card">
@@ -1151,6 +1218,15 @@
             <div class="cred-title">Content Creator</div>
             <div class="cred-sub">LinkedIn · Instagram · YouTube · Twitter · @nlplifecoachhazik</div>
           </div>
+        </div>
+      </div>
+      <div class="cert-showcase">
+        <a href="certificate-hazik.jpg" target="_blank" rel="noopener">
+          <img src="certificate-hazik.jpg" alt="Hazik Fayaz — Certified NLP Practitioner & Life Coach, Auspicium (UK) & Transformation Academy (USA)" />
+        </a>
+        <div class="cert-showcase-caption">
+          <span>Certified NLP Practitioner & Life Coach — Auspicium (UK) & Transformation Academy (USA)</span>
+          <a href="certificate-hazik.jpg" target="_blank" rel="noopener">View full size ↗</a>
         </div>
       </div>
     </div>
@@ -1345,6 +1421,93 @@
   </div>
 </section>
 
+<hr class="section-divider" />
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-eyebrow">FAQ</div>
+    <h2 class="section-heading">Common questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What's the difference between coaching and therapy?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">NLP coaching focuses on personal development — building confidence, breaking unhelpful patterns, and working toward specific goals. It's forward-looking and practical. Therapy, delivered by licensed mental health professionals, is what's needed for diagnosing and treating clinical conditions like depression, trauma, or anxiety disorders. If you're dealing with any of those, I'll always point you toward the right kind of support.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How many sessions do people typically need?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">This depends on how deep the limiting beliefs run and how big the goals are — but typically, meaningful shifts start showing within about 4 sessions.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Are sessions online, in-person, or both?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">Sessions are available online for everyone. If you're based in Bengaluru, we can also meet in person.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What happens in the first session?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">The first session is always about you — discovering your limiting beliefs and understanding how I can help.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is the cabin crew training guaranteed to get me selected?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">No training can guarantee selection — airlines weigh many factors. What I focus on is making sure you walk in prepared and confident: grooming, communication, and group discussion technique, presented as your best self.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What age group is the cabin crew training for?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">The training is designed for candidates aged 18 to 26.5 years, matching typical airline eligibility criteria.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What's your cancellation or rescheduling policy?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">You can reschedule your session to any time that's convenient for you and fits my availability.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you offer refunds?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">If you don't find value in the session, I offer a full refund.</div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Who certified you as an NLP Practitioner?
+          <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner">I'm certified through Transformation Academy.</div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider" />
+
 <!-- ── CTA BANNER ── -->
 <div class="cta-section">
   <div class="cta-banner">
@@ -1488,6 +1651,11 @@
   function toggleMenu() {
     var m = document.getElementById('mobileMenu');
     m.classList.toggle('open');
+  }
+
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    item.classList.toggle('open');
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
