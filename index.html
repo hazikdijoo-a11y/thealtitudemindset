@@ -721,7 +721,7 @@
     #blog { background: var(--surface); }
     .content-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 20px;
     }
     .content-card {
@@ -1454,6 +1454,16 @@
           <div class="content-tag">Full Article</div>
           <div class="content-title">The Cockpit of Your Life: How Communication Navigates Your Path</div>
           <div class="content-excerpt">"You are not just a passenger in your own life. You are the pilot. The cockpit is in your control."</div>
+        </div>
+      </a>
+      <a href="blog-friend-i-failed.html" class="content-card">
+        <div class="content-thumb">
+          <svg viewBox="0 0 24 24" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="content-body">
+          <div class="content-tag">Personal Reflection</div>
+          <div class="content-title">The Friend I Failed: A Letter I'll Never Send</div>
+          <div class="content-excerpt">"Friendship isn't just what you feel. It's what you do. And I didn't do enough."</div>
         </div>
       </a>
     </div>
