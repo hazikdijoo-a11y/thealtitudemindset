@@ -405,7 +405,13 @@
     }
     .cred-title { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
     .cred-sub { font-size: 12px; color: var(--text-tertiary); }
-    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+    .cert-grid {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
     @media (max-width: 700px) { .cert-grid { grid-template-columns: 1fr; } }
     .cert-showcase {
       border: 0.5px solid var(--border);
@@ -491,7 +497,6 @@
     .service-num {
       font-family: var(--serif);
       font-size: 32px;
-      color: var(--accent-light);
       line-height: 1;
       margin-bottom: 16px;
       -webkit-text-stroke: 1px var(--accent);
@@ -574,7 +579,7 @@
       color: var(--text-secondary);
       line-height: 1.75;
     }
-    .faq-item.open .faq-answer { max-height: 500px; }
+    .faq-item.open .faq-answer { max-height: 720px; }
 
     /* ── SCOPE OF PRACTICE ── */
     #scope { background: var(--bg); padding: 56px 40px; }
@@ -928,6 +933,9 @@
       transition: background 0.2s;
     }
     .form-submit:hover { background: var(--accent-dark); }
+    .form-status { font-size: 13px; margin-top: 12px; min-height: 18px; }
+    .form-status.error { color: #B4442E; }
+    .form-status.success { color: #3B6D11; }
 
     /* ── FOOTER ── */
     footer {
@@ -997,6 +1005,9 @@
     }
     .mobile-menu a:last-child { border-bottom: none; }
     .mobile-menu.open { display: flex; }
+    @media (min-width: 901px) {
+      .mobile-menu, .mobile-menu.open { display: none; }
+    }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
@@ -1030,6 +1041,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       * { transition: none !important; animation: none !important; }
     }
 
@@ -1194,7 +1206,7 @@
       "name": "Who certified you as an NLP Practitioner?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "I'm certified through Transformation Academy."
+        "text": "I'm certified as an NLP Practitioner and Life Coach through Auspicium (UK) and Transformation Academy (USA)."
       }
     }
   ]
@@ -1207,7 +1219,7 @@
 <!-- ── NAVIGATION ── -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo"><img src="logo-altitude-mindset.svg" alt="The Altitude Mindset — Hazik Fayaz" /></a>
+    <a href="#" class="nav-logo" aria-label="The Altitude Mindset — back to top"><img src="logo-altitude-mindset.svg" alt="The Altitude Mindset — Hazik Fayaz" /></a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Coaching</a></li>
@@ -1217,17 +1229,17 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" class="nav-cta">Rewire Now</a>
-    <button class="nav-hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <button class="nav-hamburger" onclick="toggleMenu(this)" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </div>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#about" onclick="toggleMenu()">About</a>
-    <a href="#services" onclick="toggleMenu()">Coaching</a>
-    <a href="#course" onclick="toggleMenu()">Course</a>
-    <a href="#faq" onclick="toggleMenu()">FAQ</a>
-    <a href="#blog" onclick="toggleMenu()">Blog</a>
-    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="#about">About</a>
+    <a href="#services">Coaching</a>
+    <a href="#course">Course</a>
+    <a href="#faq">FAQ</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
@@ -1677,7 +1689,7 @@
     <div class="faq-list">
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           What is NLP, actually?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1685,7 +1697,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           What's the difference between coaching and therapy?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1693,7 +1705,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           How many sessions do people typically need?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1701,7 +1713,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           Are sessions online, in-person, or both?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1709,7 +1721,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           What happens in the first session?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1717,7 +1729,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           Is the cabin crew training guaranteed to get me selected?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1725,7 +1737,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           What age group is the cabin crew training for?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1733,7 +1745,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           What's your cancellation or rescheduling policy?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1741,7 +1753,7 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           Do you offer refunds?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
@@ -1749,11 +1761,11 @@
       </div>
 
       <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+        <button class="faq-question" onclick="toggleFaq(this)" aria-expanded="false">
           Who certified you as an NLP Practitioner?
           <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
-        <div class="faq-answer"><div class="faq-answer-inner">I'm certified through Transformation Academy.</div></div>
+        <div class="faq-answer"><div class="faq-answer-inner">I'm certified as an NLP Practitioner and Life Coach through Auspicium (UK) and Transformation Academy (USA).</div></div>
       </div>
 
     </div>
@@ -1778,12 +1790,12 @@
     </div>
   </div>
 </section>
-<script async src="//www.instagram.com/embed.js"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 <script>
   setTimeout(function() {
     var embed = document.getElementById('reelEmbed');
     var fallback = document.getElementById('reelFallback');
-    if (embed && !embed.querySelector('iframe')) {
+    if (embed && fallback && !embed.querySelector('iframe')) {
       embed.style.display = 'none';
       fallback.style.display = 'block';
     }
@@ -1881,8 +1893,9 @@
             <textarea id="message" name="message" placeholder="What's going on, and how can I help?"></textarea>
           </div>
           <input type="hidden" name="_subject" value="New enquiry from website" />
-          <input type="text" name="_gotcha" style="display:none" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button type="submit" class="form-submit" id="submitBtn">Send message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>
@@ -1936,26 +1949,42 @@
 </footer>
 
 <script>
+  function setMenu(open) {
+    var m = document.getElementById('mobileMenu');
+    var btn = document.querySelector('.nav-hamburger');
+    m.classList.toggle('open', open);
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
   function toggleMenu() {
     var m = document.getElementById('mobileMenu');
-    m.classList.toggle('open');
+    setMenu(!m.classList.contains('open'));
   }
 
   function toggleFaq(btn) {
     var item = btn.closest('.faq-item');
-    item.classList.toggle('open');
+    var isOpen = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var href = this.getAttribute('href');
+      var offset = 84;
+
+      if (href === '#') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        setMenu(false);
+        return;
+      }
+
+      var target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        var offset = 84;
         var top = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
-        var m = document.getElementById('mobileMenu');
-        if (m.classList.contains('open')) m.classList.remove('open');
+        setMenu(false);
       }
     });
   });
@@ -1965,9 +1994,12 @@
     contactForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var btn = document.getElementById('submitBtn');
+      var status = document.getElementById('formStatus');
       var originalText = btn.textContent;
       btn.textContent = 'Sending…';
       btn.disabled = true;
+      status.textContent = '';
+      status.className = 'form-status';
       var formData = new FormData(contactForm);
       fetch(contactForm.action, {
         method: 'POST',
@@ -1977,14 +2009,20 @@
         if (response.ok) {
           btn.textContent = 'Message sent ✓';
           btn.style.background = '#3B6D11';
+          status.textContent = "Thanks — I'll get back to you shortly.";
+          status.className = 'form-status success';
           contactForm.reset();
         } else {
-          btn.textContent = 'Something went wrong — try again';
+          btn.textContent = originalText;
           btn.disabled = false;
+          status.textContent = "That didn't go through. Please try again, or email hazikdijoo@gmail.com.";
+          status.className = 'form-status error';
         }
       }).catch(function() {
-        btn.textContent = 'Something went wrong — try again';
+        btn.textContent = originalText;
         btn.disabled = false;
+        status.textContent = "That didn't go through. Please try again, or email hazikdijoo@gmail.com.";
+        status.className = 'form-status error';
       });
     });
   }
