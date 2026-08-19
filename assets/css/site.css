@@ -595,6 +595,9 @@ a:hover { color: var(--navy-600); }
 .form__status { font-size: var(--fs-sm); min-height: 1.4em; }
 .form__status.is-ok    { color: #2F5E12; }
 .form__status.is-error { color: #A33A22; }
+.form__deliver { display: inline-block; margin-top: 0.5rem; font-weight: 600;
+  color: var(--gold); text-underline-offset: 3px; }
+.magnet .form__status.is-ok { color: var(--gold); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 
 /* --- 22. Lead magnet ----------------------------------------------------- */

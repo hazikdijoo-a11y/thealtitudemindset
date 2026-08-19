@@ -126,7 +126,20 @@
       }).then(function (res) {
         if (!res.ok) throw new Error('bad status ' + res.status);
         if (btn) { btn.textContent = 'Sent ✓'; }
-        if (status) { status.textContent = successMsg; status.className = 'form__status is-ok'; }
+        if (status) {
+          status.textContent = successMsg;
+          status.className = 'form__status is-ok';
+          // Deliver the file immediately rather than promising an email
+          // that would have to be sent by hand.
+          var file = form.getAttribute('data-deliver');
+          if (file) {
+            var a = document.createElement('a');
+            a.href = file; a.className = 'form__deliver'; a.setAttribute('download', '');
+            a.textContent = 'Download the guide (PDF)';
+            status.appendChild(document.createElement('br'));
+            status.appendChild(a);
+          }
+        }
         form.reset();
         track(form.getAttribute('data-track-submit') || 'form_submit', { form_id: form.id || '' });
       }).catch(function () {
