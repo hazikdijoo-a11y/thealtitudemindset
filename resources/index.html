@@ -105,12 +105,12 @@
           </ul>
         </div>
         <div>
-          <!-- No email platform is connected yet. This posts to the same Formspree
-               inbox as the contact form, tagged so you can spot guide requests.
-               Until you connect an email tool you are sending the guide manually —
-               the copy below promises exactly that and nothing more. -->
+          <!-- Posts to the same Formspree inbox as the contact form, tagged so
+               you can spot guide requests. The PDF is delivered instantly by JS
+               on success (data-deliver) — no manual sending required. -->
           <form class="form" id="magnet-form" action="https://formspree.io/f/meeyjedo" method="POST"
-                data-success="Got it — I’ll email you the guide shortly."
+                data-success="Here’s your guide — the download link is just below."
+                data-deliver="/assets/7-patterns-that-keep-high-performers-stuck.pdf"
                 data-track-submit="lead_magnet_submit">
             <div class="field">
               <label for="magnet-name">First name</label>
@@ -119,7 +119,7 @@
             <div class="field">
               <label for="magnet-email">Email address</label>
               <input type="email" id="magnet-email" name="email" autocomplete="email" placeholder="you@email.com" required />
-              <p class="hint">I’ll send the guide and the occasional note on mindset and patterns. Unsubscribe any time.</p>
+              <p class="hint">You’ll get the guide instantly. I’ll also send the occasional note on mindset and patterns — unsubscribe any time.</p>
             </div>
             <input type="hidden" name="_subject" value="Lead magnet request — 7 Patterns guide" />
             <input type="hidden" name="request_type" value="lead_magnet_7_patterns" />

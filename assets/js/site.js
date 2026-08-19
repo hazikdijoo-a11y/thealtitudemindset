@@ -126,7 +126,20 @@
       }).then(function (res) {
         if (!res.ok) throw new Error('bad status ' + res.status);
         if (btn) { btn.textContent = 'Sent ✓'; }
-        if (status) { status.textContent = successMsg; status.className = 'form__status is-ok'; }
+        if (status) {
+          status.textContent = successMsg;
+          status.className = 'form__status is-ok';
+          // Deliver the file immediately rather than promising an email
+          // that would have to be sent by hand.
+          var file = form.getAttribute('data-deliver');
+          if (file) {
+            var a = document.createElement('a');
+            a.href = file; a.className = 'form__deliver'; a.setAttribute('download', '');
+            a.textContent = 'Download the guide (PDF)';
+            status.appendChild(document.createElement('br'));
+            status.appendChild(a);
+          }
+        }
         form.reset();
         track(form.getAttribute('data-track-submit') || 'form_submit', { form_id: form.id || '' });
       }).catch(function () {
@@ -151,15 +164,27 @@
     if (reduced || !('IntersectionObserver' in window)) {
       items.forEach(function (el) { el.classList.add('is-in'); });
     } else {
+      var revealed = 0;
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-in');
+            revealed++;
             io.unobserve(entry.target);
           }
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
       items.forEach(function (el) { io.observe(el); });
+
+      // Failsafe: content must never stay invisible. If nothing at all has
+      // revealed shortly after load, the observer is not doing its job in
+      // this environment — drop the effect and show everything.
+      setTimeout(function () {
+        if (revealed === 0) {
+          io.disconnect();
+          items.forEach(function (el) { el.classList.add('is-in'); });
+        }
+      }, 2500);
     }
   }
 
