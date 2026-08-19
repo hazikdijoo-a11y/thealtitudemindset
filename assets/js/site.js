@@ -164,15 +164,27 @@
     if (reduced || !('IntersectionObserver' in window)) {
       items.forEach(function (el) { el.classList.add('is-in'); });
     } else {
+      var revealed = 0;
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add('is-in');
+            revealed++;
             io.unobserve(entry.target);
           }
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
       items.forEach(function (el) { io.observe(el); });
+
+      // Failsafe: content must never stay invisible. If nothing at all has
+      // revealed shortly after load, the observer is not doing its job in
+      // this environment — drop the effect and show everything.
+      setTimeout(function () {
+        if (revealed === 0) {
+          io.disconnect();
+          items.forEach(function (el) { el.classList.add('is-in'); });
+        }
+      }, 2500);
     }
   }
 
