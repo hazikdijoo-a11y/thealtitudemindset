@@ -1,0 +1,6 @@
+# GitHub Pages / Jekyll configuration
+# The worker is backend source, not part of the website.
+exclude:
+  - worker
+  - assets/guide-source.html
+  - DEPLOY.md

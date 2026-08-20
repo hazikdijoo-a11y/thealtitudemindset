@@ -1,0 +1,19 @@
+name = "altitude-payments"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+# Secrets are NOT set here. Set them from the terminal so they never
+# touch the repo:
+#   npx wrangler secret put RAZORPAY_KEY_ID
+#   npx wrangler secret put RAZORPAY_KEY_SECRET
+#   npx wrangler secret put RAZORPAY_WEBHOOK_SECRET   (optional)
+
+# Serve the API from your own domain instead of *.workers.dev.
+# Requires the domain to be on Cloudflare DNS. If it is not, delete this
+# block and use the workers.dev URL that `wrangler deploy` prints.
+# [[routes]]
+# pattern = "thealtitudemindset.com/api/*"
+# zone_name = "thealtitudemindset.com"
+
+[observability]
+enabled = true
