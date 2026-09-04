@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfolio | Hazik Fayaz — Websites &amp; Apps</title>
+<meta name="description" content="Websites, PWAs, and backend systems built by Hazik Fayaz — a spiral habit tracker, a sleep-health site, a payments backend, and more. Available for freelance work." />
+<link rel="canonical" href="https://thealtitudemindset.com/portfolio/" />
+<meta name="theme-color" content="#0B1B33" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Portfolio | Hazik Fayaz — Websites &amp; Apps" />
+<meta property="og:description" content="Websites, PWAs, and backend systems built by Hazik Fayaz — a spiral habit tracker, a sleep-health site, a payments backend, and more." />
+<meta property="og:url" content="https://thealtitudemindset.com/portfolio/" />
+<meta property="og:image" content="https://thealtitudemindset.com/assets/img/hazik-og.jpg" />
+<meta property="og:image:alt" content="Hazik Fayaz" />
+<meta property="og:site_name" content="The Altitude Mindset" />
+<meta property="og:locale" content="en_IN" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Portfolio | Hazik Fayaz — Websites &amp; Apps" />
+<meta name="twitter:description" content="Websites, PWAs, and backend systems built by Hazik Fayaz — available for freelance work." />
+<meta name="twitter:image" content="https://thealtitudemindset.com/assets/img/hazik-og.jpg" />
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1B33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23E8C468' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/css/site.css" />
+<script>document.documentElement.classList.add("js");</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thealtitudemindset.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://thealtitudemindset.com/portfolio/" }
+  ]
+}
+</script>
+<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b0ded156e7e4a4b98bebcb9575b4f77"}'></script><!-- End Cloudflare Web Analytics -->
+<script src="/assets/js/site.js" defer></script>
+
+<style>
+  /* Page-only additions — everything else reuses assets/css/site.css as-is. */
+  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  @media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
+
+  .work-visual {
+    height: 108px; border-radius: var(--r-md);
+    background: var(--muted); border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.1rem;
+  }
+
+  .work-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.35rem; }
+
+  .work-status { display: inline-flex; align-items: center; gap: 0.45rem; flex: none; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; padding-top: 0.3rem; }
+  .work-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex: none; }
+  .work-status.is-live::before { background: #2F5E12; } .work-status.is-live { color: #2F5E12; }
+  .work-status.is-dev::before  { background: var(--ink-3); } .work-status.is-dev { color: var(--ink-3); }
+  .work-status.is-active::before { background: var(--gold-600); } .work-status.is-active { color: var(--gold-ink); }
+
+  .work-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .work-tags span { font-size: var(--fs-xs); color: var(--ink-3); border: 1px solid var(--line); border-radius: 6px; padding: 0.2rem 0.55rem; }
+
+  .work-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--navy-800); margin-top: 1rem; }
+  .work-link.is-quiet { color: var(--ink-3); font-weight: 500; }
+  .card--link:hover .work-link { color: var(--navy-600); }
+
+  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+  @media (max-width: 760px) { .approach-grid { grid-template-columns: 1fr; } }
+  .approach-step { border-top: 2px solid var(--gold-600); padding-top: 1.1rem; }
+  .approach-step b { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--gold-ink); display: block; margin-bottom: 0.5rem; }
+  .approach-step h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+  .approach-step p { font-size: 0.92rem; color: var(--ink-2); }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="/" aria-label="The Altitude Mindset — home">
+        <img src="/assets/img/logo-altitude-mindset.svg" alt="The Altitude Mindset" width="560" height="120" />
+      </a>
+      <ul class="nav__menu">
+        <li><a href="/about/">About</a></li>
+        <li><a href="/coaching/">Coaching</a></li>
+        <li><a href="/framework/">Framework</a></li>
+        <li><a href="/cabin-crew-training/">Cabin Crew</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/portfolio/" aria-current="page">Portfolio</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a class="btn btn--primary" href="mailto:hazikdijoo@gmail.com">Start a Project</a>
+      </div>
+      <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer"><span></span></button>
+    </nav>
+  </div>
+  <div class="nav__drawer" id="nav-drawer">
+    <div class="wrap">
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/coaching/">Coaching</a></li>
+        <li><a href="/framework/">The Framework</a></li>
+        <li><a href="/cabin-crew-training/">Cabin Crew Training</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/portfolio/" aria-current="page">Portfolio</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--primary btn--block" href="mailto:hazikdijoo@gmail.com">Start a Project</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section band-paper">
+    <div class="wrap wrap-mid">
+      <p class="eyebrow">Portfolio</p>
+      <h1>Websites and apps, built end to end.</h1>
+      <p class="lead mt-2">Alongside coaching, I design and build the digital products that make a business — or a habit — actually work: installable web apps, marketing and content sites, and the backend systems that keep them honest. Here's a look at what I've shipped recently, and what's in progress.</p>
+      <div class="btn-row mt-3">
+        <a class="btn btn--primary" href="mailto:hazikdijoo@gmail.com">Start a project</a>
+        <a class="btn btn--ghost" href="#work">See the work</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2>Six builds, six different problems</h2>
+      </div>
+
+      <div class="work-grid">
+
+        <a class="card card--link reveal" href="https://hazikdijoo-a11y.github.io/Course-Tracker-bythealtitudemindset/" target="_blank" rel="noopener">
+          <div class="work-visual">
+            <svg width="108" height="90" viewBox="0 0 118 100" aria-hidden="true">
+              <g stroke="var(--line-strong)" fill="none" stroke-width="1">
+                <circle cx="59" cy="50" r="14"/><circle cx="59" cy="50" r="24"/>
+                <circle cx="59" cy="50" r="34"/><circle cx="59" cy="50" r="44"/>
+              </g>
+              <circle cx="59" cy="6" r="3.6" fill="var(--gold)"/>
+              <circle cx="93" cy="30" r="3.6" fill="#2F5E12"/>
+              <circle cx="93" cy="70" r="3.6" fill="#2F5E12"/>
+              <circle cx="59" cy="94" r="3.6" fill="#A33A22"/>
+              <circle cx="25" cy="70" r="3.6" fill="var(--line-strong)"/>
+              <circle cx="25" cy="30" r="3.6" fill="var(--gold)"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>Course Tracker</h3>
+            <span class="work-status is-live">Live</span>
+          </div>
+          <p>A habit tracker shaped like a flight path: one spiral turn per week, one aircraft per day. Gold marks a flight day, green marks 80%+ complete. Installable PWA with offline-first storage.</p>
+          <div class="work-tags"><span>HTML/CSS/JS</span><span>PWA</span><span>Offline storage</span></div>
+          <span class="work-link">View live ↗</span>
+        </a>
+
+        <a class="card card--link reveal" href="https://shiftreset.in" target="_blank" rel="noopener">
+          <div class="work-visual">
+            <svg width="130" height="82" viewBox="0 0 140 90" aria-hidden="true">
+              <line x1="8" y1="66" x2="132" y2="66" stroke="var(--line-strong)" stroke-width="1"/>
+              <path d="M8 40 C 30 20, 40 70, 62 66 S 96 22, 118 34 S 128 50, 132 46" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="132" cy="46" r="3.4" fill="var(--gold)"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>ShiftReset</h3>
+            <span class="work-status is-live">Live</span>
+          </div>
+          <p>A sleep-health toolkit for people who work while everyone else sleeps: nurses, truckers, pilots, first responders. Free sleep-debt calculator plus fifteen evidence-based guides, with clean-URL SEO built in.</p>
+          <div class="work-tags"><span>Static site</span><span>SEO</span><span>Netlify</span></div>
+          <span class="work-link">Visit shiftreset.in ↗</span>
+        </a>
+
+        <div class="card reveal">
+          <div class="work-visual">
+            <svg width="118" height="86" viewBox="0 0 130 92" aria-hidden="true">
+              <rect x="18" y="12" width="94" height="68" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="30" y1="30" x2="82" y2="30" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="30" y1="44" x2="70" y2="44" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="30" y1="58" x2="76" y2="58" stroke="var(--line-strong)" stroke-width="1"/>
+              <circle cx="97" cy="58" r="12" fill="none" stroke="var(--gold-600)" stroke-width="2"/>
+              <path d="M92 58l3.4 3.6L102.5 53.5" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>Altitude Mindset — Backend</h3>
+            <span class="work-status is-dev">In development</span>
+          </div>
+          <p>The engine behind this site: a Node + SQLite backend with an admin dashboard, server-side pricing, and HMAC-verified Razorpay signatures — so no payment amount is ever trusted from the browser. 33 tests passing.</p>
+          <div class="work-tags"><span>Node.js</span><span>SQLite</span><span>Razorpay</span></div>
+          <span class="work-link is-quiet">Private build — case study on request</span>
+        </div>
+
+        <div class="card reveal">
+          <div class="work-visual">
+            <svg width="108" height="84" viewBox="0 0 120 92" aria-hidden="true">
+              <rect x="18" y="18" width="70" height="48" rx="5" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1"/>
+              <rect x="30" y="26" width="70" height="48" rx="5" fill="var(--navy-800)"/>
+              <line x1="40" y1="40" x2="76" y2="40" stroke="var(--gold)" stroke-width="1.6"/>
+              <line x1="40" y1="50" x2="66" y2="50" stroke="#8FA0BE" stroke-width="1.4"/>
+              <line x1="40" y1="60" x2="70" y2="60" stroke="#8FA0BE" stroke-width="1.4"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>The Altitude Mindset — Brand System</h3>
+            <span class="work-status is-active">Active</span>
+          </div>
+          <p>The navy-and-gold design language (Brand Kit v1.0) carried across this site, product UI, and social content — so this page, a habit tracker, and an Instagram carousel all read as the same voice.</p>
+          <div class="work-tags"><span>Brand identity</span><span>Design systems</span><span>Content</span></div>
+          <span class="work-link is-quiet">Ongoing engagement</span>
+        </div>
+
+        <div class="card reveal">
+          <div class="work-visual">
+            <svg width="120" height="84" viewBox="0 0 128 92" aria-hidden="true">
+              <rect x="16" y="14" width="96" height="66" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="16" y1="32" x2="112" y2="32" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="28" y1="44" x2="70" y2="44" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="28" y1="56" x2="70" y2="56" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="28" y1="68" x2="60" y2="68" stroke="var(--line-strong)" stroke-width="1"/>
+              <path d="M92 60c0 8.3-6.7 15-15 15s-15-6.7-15-15c0-10 15-24 15-24s15 14 15 24z" fill="none" stroke="#2F5E12" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>Farm Ledger</h3>
+            <span class="work-status is-dev">In development</span>
+          </div>
+          <p>A full farm management app in one place: income and expenses, inventory, and day-to-day operations, so a farm owner can see the health of the business without juggling spreadsheets.</p>
+          <div class="work-tags"><span>Web app</span><span>Finance &amp; ops</span><span>Inventory</span></div>
+          <span class="work-link is-quiet">In development</span>
+        </div>
+
+        <div class="card reveal">
+          <div class="work-visual">
+            <svg width="120" height="84" viewBox="0 0 128 92" aria-hidden="true">
+              <rect x="18" y="16" width="92" height="60" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <line x1="18" y1="32" x2="110" y2="32" stroke="var(--line-strong)" stroke-width="1"/>
+              <rect x="28" y="42" width="14" height="14" rx="2" fill="var(--gold)" opacity="0.85"/>
+              <rect x="48" y="42" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <rect x="68" y="42" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <rect x="28" y="60" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
+              <path d="M92 62c-4.5 0-8 3.3-8 7.5S87.5 77 92 77s8-3.3 8-7.5S96.5 62 92 62z" fill="none" stroke="var(--gold-600)" stroke-width="1.6"/>
+              <path d="M92 55c2.5 3 4 5.2 4 7.2" fill="none" stroke="var(--gold-600)" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="work-top">
+            <h3>Hazik Carwash</h3>
+            <span class="work-status is-dev">In development</span>
+          </div>
+          <p>A booking app for a carwash business: customers pick a slot and pay online, while the owner runs the day from a dashboard that tracks bookings and revenue.</p>
+          <div class="work-tags"><span>Booking</span><span>Payments</span><span>Owner dashboard</span></div>
+          <span class="work-link is-quiet">In development</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight band-dark">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Capabilities</p>
+        <h2>What's actually under the hood</h2>
+      </div>
+      <div class="grid grid--4 reveal">
+        <div>
+          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Frontend &amp; PWA</h3>
+          <ul class="creds">
+            <li><div><b>Installable, offline-first apps</b><span>Works without a connection</span></div></li>
+            <li><div><b>Hand-built HTML/CSS/JS</b><span>No framework tax</span></div></li>
+            <li><div><b>Custom interactive UI</b><span>Data views built to spec</span></div></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Backend &amp; Payments</h3>
+          <ul class="creds">
+            <li><div><b>Node.js + SQLite services</b><span>Simple, dependable stack</span></div></li>
+            <li><div><b>Server-verified pricing</b><span>Never trust the browser</span></div></li>
+            <li><div><b>Admin dashboards &amp; auth</b><span>With test coverage</span></div></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Sites &amp; SEO</h3>
+          <ul class="creds">
+            <li><div><b>Fast static sites</b><span>Clean URLs, no cruft</span></div></li>
+            <li><div><b>Canonical &amp; sitemap hygiene</b><span>Indexed the right way</span></div></li>
+            <li><div><b>Netlify / GitHub Pages</b><span>Deploys that stick</span></div></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Brand &amp; Content</h3>
+          <ul class="creds">
+            <li><div><b>Design systems &amp; brand kits</b><span>Consistent across touchpoints</span></div></li>
+            <li><div><b>Social &amp; carousel content</b><span>On-brand, on schedule</span></div></li>
+            <li><div><b>One voice everywhere</b><span>Site, product, and social</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band-paper">
+    <div class="wrap wrap-mid">
+      <div class="section-head reveal">
+        <p class="eyebrow">Approach</p>
+        <h2>How a project actually moves</h2>
+      </div>
+      <div class="approach-grid reveal">
+        <div class="approach-step">
+          <b>01</b>
+          <h3>Scope it in plain terms</h3>
+          <p>What the site or app needs to do, for whom, and what "done" looks like — written down before anything gets built.</p>
+        </div>
+        <div class="approach-step">
+          <b>02</b>
+          <h3>Build in working slices</h3>
+          <p>A real, clickable version early, then layered up — so you're reviewing a product, not a mockup, from the first week.</p>
+        </div>
+        <div class="approach-step">
+          <b>03</b>
+          <h3>Ship, then keep it honest</h3>
+          <p>Deployed, tested, and monitored — with backend guarantees like payments and data integrity treated as non-negotiable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight band-paper">
+    <div class="wrap">
+      <div class="finalcta reveal">
+        <div>
+          <p class="eyebrow">Ready when you are</p>
+          <h2>Have a site or app that needs building?</h2>
+          <p>Tell me what you're trying to ship — I'll tell you honestly what it takes.</p>
+        </div>
+        <div class="finalcta__actions">
+          <a class="btn btn--gold" href="mailto:hazikdijoo@gmail.com">Email hazikdijoo@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <b>Hazik <span>Fayaz</span></b>
+        <p>NLP &amp; Mindset Coach. Also designs and builds websites and apps.</p>
+        <p style="font-size:var(--fs-xs);margin-top:.6rem">Bengaluru, Karnataka · India</p>
+        <img src="/assets/img/nlp-badge-160.png" width="160" height="160" loading="lazy" alt="Certified NLP Practitioner and Coach badge — Auspicium and Transformation Academy" />
+      </div>
+      <div class="footer__col">
+        <h3>Coaching</h3>
+        <ul>
+          <li><a href="/coaching/">1-on-1 coaching</a></li>
+          <li><a href="/framework/">The Framework</a></li>
+          <li><a href="/coaching/#corporate">Corporate workshops</a></li>
+          <li><a href="/coaching/#speaking">Speaking &amp; training</a></li>
+          <li><a href="/cabin-crew-training/">Cabin crew training</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="/about/">About Hazik</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/resources/">Free resources</a></li>
+          <li><a href="/tracker.html">Progress Tracker</a></li>
+          <li><a href="/portfolio/">Portfolio</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h3>Follow</h3>
+        <ul>
+          <li><a href="https://instagram.com/nlplifecoachhazik" target="_blank" rel="noopener" data-track="instagram_click">Instagram</a></li>
+          <li><a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener" data-track="linkedin_click">LinkedIn</a></li>
+          <li><a href="https://www.youtube.com/@nlplifecoachhazik" target="_blank" rel="noopener" data-track="youtube_click">YouTube</a></li>
+          <li><a href="https://x.com/hazikdijoo" target="_blank" rel="noopener" data-track="twitter_click">X (Twitter)</a></li>
+          <li><a href="mailto:hazikdijoo@gmail.com" data-track="email_click">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 Hazik Fayaz. All rights reserved.</span>
+      <span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
