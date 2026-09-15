@@ -16,7 +16,11 @@
     // Meta Pixel ID, e.g. '123456789012345'. Empty = disabled.
     metaPixelId: '',
     // Formspree endpoint currently in use for both forms.
-    formEndpoint: 'https://formspree.io/f/meeyjedo'
+    formEndpoint: 'https://formspree.io/f/meeyjedo',
+    // The backend (Netlify site altitude-api) keeps a copy of every lead for
+    // the admin dashboard. Formspree stays primary: it emails the enquiry, and
+    // what the visitor sees depends only on Formspree. Empty = off.
+    leadsEndpoint: 'https://altitude-api.netlify.app/api/leads'
   };
 
   /* -----------------------------------------------------------
@@ -107,6 +111,40 @@
   /* -----------------------------------------------------------
      Forms — contact + lead magnet, both posting to Formspree
      ----------------------------------------------------------- */
+  /* -----------------------------------------------------------
+     Copy each lead to the backend, fire-and-forget.
+     It never blocks or changes what the visitor sees. Sent as
+     text/plain, so it is a "simple" cross-origin request with no
+     preflight, and keepalive lets it finish if the page unloads.
+     It runs even when Formspree fails (for example, over its monthly
+     quota), so the lead is still in the dashboard.
+     ----------------------------------------------------------- */
+  function recordLead(form, fd) {
+    if (!CONFIG.leadsEndpoint || !window.fetch) return;
+    var get = function (key) { var v = fd.get(key); return v == null ? '' : String(v).trim(); };
+    var isGuide = form.id === 'magnet-form';
+    var payload = {
+      kind: isGuide ? 'guide' : 'contact',
+      name: get('name'),
+      email: get('email'),
+      source: location.pathname,
+      website: get('_gotcha')      // honeypot: the backend silently drops bot submissions
+    };
+    if (!isGuide) {
+      payload.interest = get('interested_in');
+      payload.message = get('message');
+    }
+    try {
+      fetch(CONFIG.leadsEndpoint, {
+        method: 'POST',
+        mode: 'cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify(payload)
+      }).catch(function () {});
+    } catch (err) { /* never let this affect the form */ }
+  }
+
   function wireForm(form) {
     if (!form) return;
     var btn = form.querySelector('[type="submit"]');
@@ -119,9 +157,12 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       if (status) { status.textContent = ''; status.className = 'form__status'; }
 
+      var fd = new FormData(form);
+      recordLead(form, fd);
+
       fetch(form.action || CONFIG.formEndpoint, {
         method: 'POST',
-        body: new FormData(form),
+        body: fd,
         headers: { Accept: 'application/json' }
       }).then(function (res) {
         if (!res.ok) throw new Error('bad status ' + res.status);
