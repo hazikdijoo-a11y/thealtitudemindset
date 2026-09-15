@@ -10,6 +10,9 @@ img, svg, video { display: block; max-width: 100%; }
 /* Without height:auto the width/height attributes win over CSS
    aspect-ratio, and images render at their intrinsic height. */
 img { height: auto; }
+/* Components set display (e.g. .btn is inline-flex), which would otherwise
+   override the browser's own [hidden] rule and show hidden elements. */
+[hidden] { display: none !important; }
 button, input, select, textarea { font: inherit; color: inherit; }
 
 /* --- 2. Tokens ----------------------------------------------------------- */

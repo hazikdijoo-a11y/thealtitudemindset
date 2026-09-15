@@ -20,7 +20,12 @@
     // The backend (Netlify site altitude-api) keeps a copy of every lead for
     // the admin dashboard. Formspree stays primary: it emails the enquiry, and
     // what the visitor sees depends only on Formspree. Empty = off.
-    leadsEndpoint: 'https://altitude-api.netlify.app/api/leads'
+    leadsEndpoint: 'https://altitude-api.netlify.app/api/leads',
+    // Where "Pay for a session" links go, and where the page asks whether
+    // payments are live. Switch both to https://api.thealtitudemindset.com
+    // once that address resolves: Razorpay expects checkout on your own domain.
+    checkoutUrl: 'https://altitude-api.netlify.app/checkout',
+    paymentsStatusUrl: 'https://altitude-api.netlify.app/health'
   };
 
   /* -----------------------------------------------------------
@@ -195,6 +200,31 @@
 
   wireForm(document.getElementById('contact-form'));
   wireForm(document.getElementById('magnet-form'));
+
+  /* -----------------------------------------------------------
+     "Pay for a session" links ship hidden. They appear only when the
+     backend reports that live payments are switched on, so nobody
+     lands on a checkout that says payments aren't open yet. If the
+     backend can't be reached, they stay hidden and the free
+     discovery call remains the way in.
+     ----------------------------------------------------------- */
+  var payLinks = document.querySelectorAll('[data-pay-link]');
+  if (payLinks.length && CONFIG.paymentsStatusUrl && window.fetch) {
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl ? setTimeout(function () { ctrl.abort(); }, 5000) : null;
+    fetch(CONFIG.paymentsStatusUrl, { cache: 'no-store', signal: ctrl ? ctrl.signal : undefined })
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (status) {
+        if (!status || status.payments !== 'configured') return;
+        payLinks.forEach(function (el) {
+          var item = el.getAttribute('data-pay-link');
+          el.href = CONFIG.checkoutUrl + (item ? '?item=' + encodeURIComponent(item) : '');
+          el.hidden = false;
+        });
+      })
+      .catch(function () { /* stay hidden */ })
+      .then(function () { if (timer) clearTimeout(timer); });
+  }
 
   /* -----------------------------------------------------------
      Scroll reveal — skipped entirely for reduced-motion users
