@@ -166,7 +166,7 @@ a:hover { color: var(--navy-600); }
 .lead { font-size: var(--fs-lead); line-height: 1.7; color: var(--ink-2); }
 .band-dark .lead { color: var(--on-dark); }
 
-.section-head { max-width: 34ch; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
+.section-head { max-width: 44ch; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
 .section-head p { margin-top: 1rem; max-width: 56ch; }
 
 .text-muted { color: var(--ink-3); }
@@ -297,7 +297,7 @@ a:hover { color: var(--navy-600); }
   display: flex; flex-wrap: wrap; gap: 0 2.25rem;
   padding-top: 1.75rem; border-top: 1px solid var(--line); list-style: none;
 }
-.hero__proof li { padding-block: 0.5rem; }
+.hero__proof li { padding-block: 0.5rem; display: flex; flex-direction: column; }
 .hero__proof .n {
   font-family: var(--serif); font-size: 1.6rem; color: var(--navy-800); line-height: 1.1;
 }
@@ -638,12 +638,17 @@ a:hover { color: var(--navy-600); }
 }
 /* Subtle horizon line — the only literal aviation motif */
 .finalcta::before {
-  content: ''; position: absolute; left: 0; right: 0; top: 38%;
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0;
   height: 1px; background: linear-gradient(90deg, transparent, rgba(232,196,104,0.35), transparent);
 }
 .finalcta h2 { color: #fff; }
 .finalcta p { color: var(--on-dark-muted); margin-top: 0.6rem; max-width: 46ch; }
-.finalcta__actions { display: grid; gap: 0.75rem; flex: none; position: relative; }
+.finalcta__actions { display: grid; gap: 0.75rem; flex: none; position: relative; max-width: 100%; }
+@media (max-width: 480px) {
+  .finalcta { padding: 2rem 1.25rem; }
+  .finalcta__actions { flex: 1 1 100%; }
+  .finalcta__actions .btn { line-height: 1.25; }
+}
 
 /* --- 24. Footer ---------------------------------------------------------- */
 .site-footer { background: var(--navy-900); color: var(--on-dark-muted); padding-block: clamp(2.75rem, 5vw, 3.75rem) 2rem; }
