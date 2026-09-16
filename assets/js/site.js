@@ -22,8 +22,8 @@
     // what the visitor sees depends only on Formspree. Empty = off.
     leadsEndpoint: 'https://altitude-api.netlify.app/api/leads',
     // Where "Pay for a session" links go, and where the page asks whether
-    // payments are live. Switch both to https://api.thealtitudemindset.com
-    // once that address resolves: Razorpay expects checkout on your own domain.
+    // payments are live. Both must be on your own domain: Razorpay refuses
+    // payments from websites not registered on the account.
     checkoutUrl: 'https://api.thealtitudemindset.com/checkout',
     paymentsStatusUrl: 'https://api.thealtitudemindset.com/health'
   };
