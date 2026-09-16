@@ -20,8 +20,8 @@
   .nav-strip { background: #0B1B33; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
   .nav-strip a.back { color: #E8C468; text-decoration: none; font-size: 13px; font-weight: 600; }
   .wrap { max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
-  .breadcrumb { font-size: 12px; color: #9B968C; margin-bottom: 20px; }
-  .breadcrumb a { color: #9B968C; text-decoration: none; }
+  .breadcrumb { font-size: 12px; color: #6E6A62; margin-bottom: 20px; }
+  .breadcrumb a { color: #6E6A62; text-decoration: none; }
   .breadcrumb a:hover { color: #0B1B33; }
   .breadcrumb span { color: #33312D; }
   h1 { font-family: 'DM Serif Display', serif; font-size: 30px; font-weight: 400; line-height: 1.25; margin-bottom: 12px; }
@@ -39,30 +39,32 @@
     border: none;
     display: block;
   }
-  .fallback-note { font-size: 13px; color: #9B968C; margin-top: 16px; text-align: center; }
+  .fallback-note { font-size: 13px; color: #6E6A62; margin-top: 16px; text-align: center; }
   .fallback-note a { color: #0B1B33; font-weight: 600; }
+  a:focus-visible { outline: 3px solid #1E3A66; outline-offset: 3px; border-radius: 4px; }
+  .nav-strip a:focus-visible, .cta-box a:focus-visible { outline-color: #E8C468; }
 </style>
 </head>
 <body>
 
 <div class="nav-strip">
-  <a href="index.html" class="back">← The Altitude Mindset</a>
+  <a href="/" class="back">← The Altitude Mindset</a>
 </div>
 
 <div class="wrap">
-  <div class="breadcrumb"><a href="index.html">Home</a> / <span>Progress Tracker</span></div>
+  <div class="breadcrumb"><a href="/">Home</a> / <span>Progress Tracker</span></div>
   <h1>Track your progress.</h1>
   <p class="intro">A simple way to check in on your own coaching or learning journey — set what you're working on, and see how far you've come.</p>
 
   <div class="tracker-frame-wrap">
     <iframe
-      src="https://hazikdijoo-a11y.github.io/Course-Tracker-bythealtitudemindset/"
+      src="https://tracker.thealtitudemindset.com/"
       title="The Altitude Mindset — Progress Tracker"
       loading="lazy">
     </iframe>
   </div>
 
-  <p class="fallback-note">Tracker not loading? <a href="https://hazikdijoo-a11y.github.io/Course-Tracker-bythealtitudemindset/" target="_blank" rel="noopener">Open it directly →</a></p>
+  <p class="fallback-note">Tracker not loading? <a href="https://tracker.thealtitudemindset.com/" target="_blank" rel="noopener">Open it directly →</a></p>
 </div>
 
 </body>
