@@ -3,77 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portfolio | Hazik Fayaz — Websites &amp; Apps</title>
-<meta name="description" content="Websites, PWAs, and native apps built by Hazik Fayaz — a spiral habit tracker, an offline-first AI memory assistant, a B2B ordering platform, and more. Available for freelance work." />
+<title>Software Developer &amp; Product Builder | Altitude Mindset</title>
+<meta name="description" content="Explore software products, mobile apps, web applications and business systems designed and built end to end by Hazik Fayaz at The Altitude Mindset." />
 <link rel="canonical" href="https://thealtitudemindset.com/portfolio/" />
-<meta name="theme-color" content="#0B1B33" />
+<meta name="theme-color" content="#06101F" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Portfolio | Hazik Fayaz — Websites &amp; Apps" />
-<meta property="og:description" content="Websites, PWAs, and native apps built by Hazik Fayaz — a spiral habit tracker, an offline-first AI memory assistant, a B2B ordering platform, and more." />
+<meta property="og:title" content="Software Developer &amp; Product Builder | Altitude Mindset" />
+<meta property="og:description" content="Web apps, mobile apps and business systems designed, built and launched end to end: UI/UX, backend, payments, testing and deployment." />
 <meta property="og:url" content="https://thealtitudemindset.com/portfolio/" />
-<meta property="og:image" content="https://thealtitudemindset.com/assets/img/hazik-og.jpg" />
-<meta property="og:image:alt" content="Hazik Fayaz" />
+<meta property="og:image" content="https://thealtitudemindset.com/assets/img/work/og-portfolio.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="I design, build and launch real software products — The Altitude Mindset portfolio" />
 <meta property="og:site_name" content="The Altitude Mindset" />
 <meta property="og:locale" content="en_IN" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Portfolio | Hazik Fayaz — Websites &amp; Apps" />
-<meta name="twitter:description" content="Websites, PWAs, and backend systems built by Hazik Fayaz — available for freelance work." />
-<meta name="twitter:image" content="https://thealtitudemindset.com/assets/img/hazik-og.jpg" />
+<meta name="twitter:title" content="Software Developer &amp; Product Builder | Altitude Mindset" />
+<meta name="twitter:description" content="Web apps, mobile apps and business systems designed, built and launched end to end." />
+<meta name="twitter:image" content="https://thealtitudemindset.com/assets/img/work/og-portfolio.jpg" />
 
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1B33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23E8C468' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/site.css" />
+<link rel="stylesheet" href="/portfolio/portfolio.css" />
+<link rel="preload" as="image" href="/assets/img/work/course-tracker-mobile.webp" type="image/webp" />
 <script>document.documentElement.classList.add("js");</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thealtitudemindset.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://thealtitudemindset.com/portfolio/" }
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://thealtitudemindset.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://thealtitudemindset.com/portfolio/" }
+      ]
+    },
+    {
+      "@type": "ProfilePage",
+      "name": "Software Developer & Product Builder | Altitude Mindset",
+      "url": "https://thealtitudemindset.com/portfolio/",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Hazik Fayaz",
+        "url": "https://thealtitudemindset.com/about/",
+        "jobTitle": "Software developer and product builder",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" },
+        "sameAs": ["https://linkedin.com/in/hazikfayaz", "https://x.com/hazikdijoo"]
+      }
+    }
   ]
 }
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b0ded156e7e4a4b98bebcb9575b4f77"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/js/site.js" defer></script>
-
-<style>
-  /* Page-only additions — everything else reuses assets/css/site.css as-is. */
-  .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-  @media (max-width: 700px) { .work-grid { grid-template-columns: 1fr; } }
-
-  .work-visual {
-    height: 108px; border-radius: var(--r-md);
-    background: var(--muted); border: 1px solid var(--line);
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 1.1rem;
-  }
-
-  .work-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.35rem; }
-
-  .work-status { display: inline-flex; align-items: center; gap: 0.45rem; flex: none; font-size: var(--fs-xs); font-weight: 600; letter-spacing: 0.04em; white-space: nowrap; padding-top: 0.3rem; }
-  .work-status::before { content: ''; width: 7px; height: 7px; border-radius: 50%; flex: none; }
-  .work-status.is-live::before { background: #2F5E12; } .work-status.is-live { color: #2F5E12; }
-  .work-status.is-dev::before  { background: var(--ink-3); } .work-status.is-dev { color: var(--ink-3); }
-  .work-status.is-active::before { background: var(--gold-600); } .work-status.is-active { color: var(--gold-ink); }
-
-  .work-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
-  .work-tags span { font-size: var(--fs-xs); color: var(--ink-3); border: 1px solid var(--line); border-radius: 6px; padding: 0.2rem 0.55rem; }
-
-  .work-link { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--navy-800); margin-top: 1rem; }
-  .work-link.is-quiet { color: var(--ink-3); font-weight: 500; }
-  .card--link:hover .work-link { color: var(--navy-600); }
-
-  .approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
-  @media (max-width: 760px) { .approach-grid { grid-template-columns: 1fr; } }
-  .approach-step { border-top: 2px solid var(--gold-600); padding-top: 1.1rem; }
-  .approach-step b { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--gold-ink); display: block; margin-bottom: 0.5rem; }
-  .approach-step h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
-  .approach-step p { font-size: 0.92rem; color: var(--ink-2); }
-</style>
+<script src="/portfolio/projects.js" defer></script>
+<script src="/portfolio/portfolio.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -95,7 +83,7 @@
         <li><a href="/#contact">Contact</a></li>
       </ul>
       <div class="nav__cta">
-        <a class="btn btn--primary" href="mailto:hazikdijoo@gmail.com">Start a Project</a>
+        <a class="btn btn--primary" href="#start" data-track="nav_start_project">Start a Project</a>
       </div>
       <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer"><span></span></button>
     </nav>
@@ -112,365 +100,447 @@
         <li><a href="/portfolio/" aria-current="page">Portfolio</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--primary btn--block" href="mailto:hazikdijoo@gmail.com">Start a Project</a>
+      <a class="btn btn--primary btn--block" href="#start" data-track="nav_start_project">Start a Project</a>
     </div>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="section band-paper">
-    <div class="wrap wrap-mid">
-      <p class="eyebrow">Portfolio</p>
-      <h1>Websites and apps, built end to end.</h1>
-      <p class="lead mt-2">Alongside coaching, I design and build the software small businesses actually run on — billing that syncs across every till, ordering systems that remember what a customer buys, payment backends that never trust a number sent from the browser. Below is what I've shipped recently for a real boutique, a real coaching business, and a few products of my own — and what's in progress.</p>
-      <div class="btn-row mt-3">
-        <a class="btn btn--primary" href="mailto:hazikdijoo@gmail.com">Start a project</a>
-        <a class="btn btn--ghost" href="#work">See the work</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="work">
+  <!-- 1. Hero -->
+  <section class="pf-hero band-ink" aria-labelledby="hero-title">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Selected work</p>
-        <h2>Ten builds, ten different problems</h2>
-      </div>
-
-      <div class="work-grid">
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="112" height="84" viewBox="0 0 120 92" aria-hidden="true">
-              <rect x="20" y="16" width="80" height="60" rx="8" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="20" y1="30" x2="100" y2="30" stroke="var(--line-strong)" stroke-width="1"/>
-              <text x="60" y="24" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="var(--gold-ink)">HANI</text>
-              <line x1="30" y1="42" x2="70" y2="42" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="30" y1="52" x2="90" y2="52" stroke="var(--line-strong)" stroke-width="1"/>
-              <circle cx="60" cy="65" r="3" fill="var(--gold)"/>
-            </svg>
+      <div class="pf-hero__grid">
+        <div>
+          <p class="eyebrow">Products · Apps · Websites · Systems</p>
+          <h1 id="hero-title">I design, build &amp; launch <em>real software products.</em></h1>
+          <p class="pf-hero__sub">From idea to production, I turn business problems into thoughtfully designed, fully working digital products: UI/UX, frontend, backend, payments, testing and deployment.</p>
+          <ul class="pf-hero__kinds" aria-label="What I build">
+            <li>Web apps</li> <li>Mobile apps</li> <li>Business systems</li> <li>Dashboards</li> <li>AI tools</li> <li>PWAs</li> <li>Offline-first apps</li>
+          </ul>
+          <div class="btn-row">
+            <a class="btn btn--gold" href="#start" data-track="hero_start_project">Start a Project <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#work" data-track="hero_explore_work">Explore My Work <span class="arr arr--down" aria-hidden="true">↓</span></a>
           </div>
-          <div class="work-top">
-            <h3>U Wear HANI</h3>
-            <span class="work-status is-live">Live</span>
-          </div>
-          <p>Billing, inventory, and vendor tracking for a real boutique's shop floor: a PIN-protected PWA kept in sync across every till on-site, plus a native iOS shell for the owner's phone. Prints on-brand garment swing tags, 80mm receipts, and A4 invoices straight from the app.</p>
-          <div class="work-tags"><span>PWA</span><span>Node.js</span><span>iOS shell</span></div>
-          <span class="work-link is-quiet">Private build — in daily use</span>
         </div>
 
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="112" height="84" viewBox="0 0 120 92" aria-hidden="true">
-              <circle cx="60" cy="46" r="28" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <path d="M60 46 L60 24" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M60 46 L78 56" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="60" cy="46" r="3" fill="var(--navy-800)"/>
-              <circle cx="60" cy="24" r="2.4" fill="var(--gold)"/>
-              <circle cx="78" cy="56" r="2.4" fill="var(--gold-600)"/>
-            </svg>
+        <!-- Fragments of real, shipped work (SHIFTRESET, this site's backend, Course Tracker) -->
+        <div class="pf-stage" aria-hidden="true">
+          <div class="pf-window">
+            <div class="pf-window__bar"><i></i><i></i><i></i><span>shiftreset.in — production</span></div>
+            <div class="pf-window__body">
+              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Assessment</b> <small>· 24 questions, 6 areas</small></span></span></div>
+              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Programs</b> <small>· 92 daily actions</small></span></span></div>
+              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Payments</b> <small>· Razorpay</small></span></span><span class="pf-pill">Live</span></div>
+              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Refund webhook</b> <small>· access removed</small></span></span><span class="pf-pill">Verified</span></div>
+            </div>
           </div>
-          <div class="work-top">
-            <h3>Barb-e-Crew</h3>
-            <span class="work-status is-dev">Built &amp; tested</span>
+          <pre class="pf-code"><span class="c">GET /health  # live API</span>
+{
+  <span class="k">"ok"</span>: <span class="s">true</span>,
+  <span class="k">"database"</span>: <span class="s">"ok"</span>,
+  <span class="k">"payments"</span>: <span class="s">"configured"</span>
+}</pre>
+          <div class="pf-phone"><img src="/assets/img/work/course-tracker-mobile.webp" alt="" width="360" height="720" fetchpriority="high" /></div>
+          <div class="pf-tests">
+            <span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span><b>50 tests passed</b><small>payments backend</small></span>
           </div>
-          <p>A B2B ordering and delivery platform for barbers and salons: a repeat-order engine ranked by real purchase history, per-fulfillment-center inventory with live ETAs, loyalty points, referrals, and a working admin console plus delivery-agent view. Verified end to end — placed an order as a customer, moved it through fulfillment as an operator, watched it complete as a delivery agent.</p>
-          <div class="work-tags"><span>Next.js</span><span>Prisma</span><span>Full-stack</span></div>
-          <span class="work-link is-quiet">Demo available on request</span>
         </div>
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="118" height="86" viewBox="0 0 130 92" aria-hidden="true">
-              <rect x="18" y="12" width="94" height="68" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="30" y1="30" x2="82" y2="30" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="30" y1="44" x2="70" y2="44" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="30" y1="58" x2="76" y2="58" stroke="var(--line-strong)" stroke-width="1"/>
-              <circle cx="97" cy="58" r="12" fill="none" stroke="var(--gold-600)" stroke-width="2"/>
-              <path d="M92 58l3.4 3.6L102.5 53.5" fill="none" stroke="var(--gold-600)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Altitude Mindset — Backend</h3>
-            <span class="work-status is-live">Live</span>
-          </div>
-          <p>The engine behind this site's payments and leads: a Node + Postgres backend, now taking live Razorpay payments, with an admin dashboard, server-side pricing, and HMAC-verified signatures and webhooks — so no payment amount is ever trusted from the browser. Every enquiry from this site lands here automatically. 50 tests passing.</p>
-          <div class="work-tags"><span>Node.js</span><span>Postgres</span><span>Razorpay</span></div>
-          <span class="work-link is-quiet">Private build — case study on request</span>
-        </div>
-
-        <a class="card card--link reveal" href="https://shiftreset.in" target="_blank" rel="noopener">
-          <div class="work-visual">
-            <svg width="110" height="86" viewBox="0 0 120 92" aria-hidden="true">
-              <g fill="none" stroke="var(--line-strong)" stroke-width="1">
-                <circle cx="60" cy="46" r="30"/>
-              </g>
-              <path d="M60 16a30 30 0 0 1 26 45" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="60" cy="16" r="3.2" fill="var(--gold)"/>
-              <circle cx="86" cy="61" r="3.2" fill="var(--gold)"/>
-              <circle cx="34" cy="61" r="2.6" fill="var(--line-strong)"/>
-              <circle cx="30" cy="35" r="2.6" fill="var(--line-strong)"/>
-              <circle cx="50" cy="18" r="2.6" fill="var(--line-strong)"/>
-              <circle cx="60" cy="46" r="4" fill="var(--navy-800)"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>SHIFTRESET</h3>
-            <span class="work-status is-live">Live</span>
-          </div>
-          <p>A personal-transformation platform live at shiftreset.in: an assessment across six reset areas (mindset, career, relationships, confidence, productivity, life) drives a daily-action program with real accounts and progress tracking. Paid programs run on live Razorpay checkout, tested end to end with a real payment and refund.</p>
-          <div class="work-tags"><span>Next.js</span><span>Postgres</span><span>Razorpay</span></div>
-          <span class="work-link">View live ↗</span>
-        </a>
-
-        <a class="card card--link reveal" href="https://tracker.thealtitudemindset.com" target="_blank" rel="noopener">
-          <div class="work-visual">
-            <svg width="108" height="90" viewBox="0 0 118 100" aria-hidden="true">
-              <g stroke="var(--line-strong)" fill="none" stroke-width="1">
-                <circle cx="59" cy="50" r="14"/><circle cx="59" cy="50" r="24"/>
-                <circle cx="59" cy="50" r="34"/><circle cx="59" cy="50" r="44"/>
-              </g>
-              <circle cx="59" cy="6" r="3.6" fill="var(--gold)"/>
-              <circle cx="93" cy="30" r="3.6" fill="#2F5E12"/>
-              <circle cx="93" cy="70" r="3.6" fill="#2F5E12"/>
-              <circle cx="59" cy="94" r="3.6" fill="#A33A22"/>
-              <circle cx="25" cy="70" r="3.6" fill="var(--line-strong)"/>
-              <circle cx="25" cy="30" r="3.6" fill="var(--gold)"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Course Tracker</h3>
-            <span class="work-status is-live">Live</span>
-          </div>
-          <p>A habit tracker shaped like a flight path: one spiral turn per week, one aircraft per day. Gold marks a flight day, green marks 80%+ complete. Installable PWA, offline-first, also wrapped as an Android app now in Play testing.</p>
-          <div class="work-tags"><span>HTML/CSS/JS</span><span>PWA</span><span>Android (TWA)</span></div>
-          <span class="work-link">View live ↗</span>
-        </a>
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="112" height="84" viewBox="0 0 120 92" aria-hidden="true">
-              <path d="M14 52 L14 40 L24 40 L30 26 L38 60 L46 34 L52 52 L60 52 L66 44 L72 52 L106 52" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="60" cy="30" r="17" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <path d="M52 30a8 8 0 0 1 16 0" fill="none" stroke="var(--navy-800)" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Kath — AI Memory Assistant</h3>
-            <span class="work-status is-dev">Built &amp; audited</span>
-          </div>
-          <p>An offline-first personal memory, voice, and productivity assistant — native on Android (Kotlin/Compose) and iOS (SwiftUI), taken through a 33-phase audit and hardened against its own findings. All 8 milestones shipped and tested on both platforms; no API keys ship in the app, and cloud AI stays strictly opt-in.</p>
-          <div class="work-tags"><span>Android</span><span>iOS</span><span>Offline-first</span></div>
-          <span class="work-link is-quiet">Demo available on request</span>
-        </div>
-
-        <a class="card card--link reveal" href="https://little-pilot-academy.netlify.app" target="_blank" rel="noopener">
-          <div class="work-visual">
-            <svg width="112" height="84" viewBox="0 0 120 92" aria-hidden="true">
-              <path d="M16 68 C 40 30, 70 60, 104 22" fill="none" stroke="var(--line-strong)" stroke-width="1" stroke-dasharray="3 4"/>
-              <path d="M96 18 L108 20 L100 30 Z" fill="var(--gold)"/>
-              <path d="M104 22 L112 16" stroke="var(--gold)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="16" cy="68" r="3" fill="var(--navy-800)"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Little Pilot Academy</h3>
-            <span class="work-status is-live">Live</span>
-          </div>
-          <p>An early-learning PWA built for Hazik's 4.5-year-old daughter Hani, so learning time doesn't depend on his flying schedule. React + Vite, installable, built to work well on a young child's tablet.</p>
-          <div class="work-tags"><span>React</span><span>PWA</span><span>Early learning</span></div>
-          <span class="work-link">View live ↗</span>
-        </a>
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="108" height="84" viewBox="0 0 120 92" aria-hidden="true">
-              <rect x="18" y="18" width="70" height="48" rx="5" fill="var(--surface)" stroke="var(--line-strong)" stroke-width="1"/>
-              <rect x="30" y="26" width="70" height="48" rx="5" fill="var(--navy-800)"/>
-              <line x1="40" y1="40" x2="76" y2="40" stroke="var(--gold)" stroke-width="1.6"/>
-              <line x1="40" y1="50" x2="66" y2="50" stroke="#8FA0BE" stroke-width="1.4"/>
-              <line x1="40" y1="60" x2="70" y2="60" stroke="#8FA0BE" stroke-width="1.4"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>The Altitude Mindset — Brand System</h3>
-            <span class="work-status is-active">Active</span>
-          </div>
-          <p>The navy-and-gold design language (Brand Kit v1.0) carried across this site, product UI, and social content — so this page, a habit tracker, and an Instagram carousel all read as the same voice.</p>
-          <div class="work-tags"><span>Brand identity</span><span>Design systems</span><span>Content</span></div>
-          <span class="work-link is-quiet">Ongoing engagement</span>
-        </div>
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="120" height="84" viewBox="0 0 128 92" aria-hidden="true">
-              <rect x="16" y="14" width="96" height="66" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="16" y1="32" x2="112" y2="32" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="28" y1="44" x2="70" y2="44" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="28" y1="56" x2="70" y2="56" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="28" y1="68" x2="60" y2="68" stroke="var(--line-strong)" stroke-width="1"/>
-              <path d="M92 60c0 8.3-6.7 15-15 15s-15-6.7-15-15c0-10 15-24 15-24s15 14 15 24z" fill="none" stroke="#2F5E12" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Farm Ledger</h3>
-            <span class="work-status is-dev">In development</span>
-          </div>
-          <p>A full farm management app in one place: income and expenses, inventory, and day-to-day operations, so a farm owner can see the health of the business without juggling spreadsheets.</p>
-          <div class="work-tags"><span>Web app</span><span>Finance &amp; ops</span><span>Inventory</span></div>
-          <span class="work-link is-quiet">In development</span>
-        </div>
-
-        <div class="card reveal">
-          <div class="work-visual">
-            <svg width="120" height="84" viewBox="0 0 128 92" aria-hidden="true">
-              <rect x="18" y="16" width="92" height="60" rx="6" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <line x1="18" y1="32" x2="110" y2="32" stroke="var(--line-strong)" stroke-width="1"/>
-              <rect x="28" y="42" width="14" height="14" rx="2" fill="var(--gold)" opacity="0.85"/>
-              <rect x="48" y="42" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <rect x="68" y="42" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <rect x="28" y="60" width="14" height="14" rx="2" fill="none" stroke="var(--line-strong)" stroke-width="1"/>
-              <path d="M92 62c-4.5 0-8 3.3-8 7.5S87.5 77 92 77s8-3.3 8-7.5S96.5 62 92 62z" fill="none" stroke="var(--gold-600)" stroke-width="1.6"/>
-              <path d="M92 55c2.5 3 4 5.2 4 7.2" fill="none" stroke="var(--gold-600)" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="work-top">
-            <h3>Hazik Carwash</h3>
-            <span class="work-status is-dev">In development</span>
-          </div>
-          <p>A booking app for a carwash business: customers pick a slot and pay online, while the owner runs the day from a dashboard that tracks bookings and revenue.</p>
-          <div class="work-tags"><span>Booking</span><span>Payments</span><span>Owner dashboard</span></div>
-          <span class="work-link is-quiet">In development</span>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <section class="section section--tight band-dark">
+  <!-- 2. Capability strip -->
+  <section class="pf-caps band-ink" aria-label="Capabilities">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Capabilities</p>
-        <h2>What's actually under the hood</h2>
-      </div>
-      <div class="grid grid--4 reveal">
-        <div>
-          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Frontend &amp; Apps</h3>
-          <ul class="creds">
-            <li><div><b>Installable, offline-first PWAs</b><span>Works without a connection</span></div></li>
-            <li><div><b>Native Android &amp; iOS</b><span>Kotlin/Compose, SwiftUI</span></div></li>
-            <li><div><b>Custom interactive UI</b><span>Data views built to spec</span></div></li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Backend &amp; Payments</h3>
-          <ul class="creds">
-            <li><div><b>Node.js &amp; Next.js services</b><span>Postgres, SQLite, or both</span></div></li>
-            <li><div><b>Server-verified pricing</b><span>Never trust the browser</span></div></li>
-            <li><div><b>Admin dashboards &amp; auth</b><span>With test coverage</span></div></li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Sites &amp; SEO</h3>
-          <ul class="creds">
-            <li><div><b>Fast static sites</b><span>Clean URLs, no cruft</span></div></li>
-            <li><div><b>Canonical &amp; sitemap hygiene</b><span>Indexed the right way</span></div></li>
-            <li><div><b>Netlify / GitHub Pages</b><span>Deploys that stick</span></div></li>
-          </ul>
-        </div>
-        <div>
-          <h3 style="color:var(--gold);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.9rem">Brand &amp; Content</h3>
-          <ul class="creds">
-            <li><div><b>Design systems &amp; brand kits</b><span>Consistent across touchpoints</span></div></li>
-            <li><div><b>Social &amp; carousel content</b><span>On-brand, on schedule</span></div></li>
-            <li><div><b>One voice everywhere</b><span>Site, product, and social</span></div></li>
-          </ul>
-        </div>
-      </div>
+      <ol>
+        <li><span class="v">DESIGN</span><span class="w">UI/UX</span></li>
+        <li><span class="v">BUILD</span><span class="w">Web &amp; mobile</span></li>
+        <li><span class="v">CONNECT</span><span class="w">APIs &amp; payments</span></li>
+        <li><span class="v">POWER</span><span class="w">AI &amp; automation</span></li>
+        <li><span class="v">TEST</span><span class="w">QA &amp; hardening</span></li>
+        <li><span class="v">DEPLOY</span><span class="w">To production</span></li>
+      </ol>
     </div>
   </section>
 
-  <section class="section band-paper">
-    <div class="wrap wrap-mid">
-      <div class="section-head reveal">
-        <p class="eyebrow">Approach</p>
-        <h2>How a project actually moves</h2>
-      </div>
-      <div class="approach-grid reveal">
-        <div class="approach-step">
-          <b>01</b>
-          <h3>Scope it in plain terms</h3>
-          <p>What the site or app needs to do, for whom, and what "done" looks like — written down before anything gets built.</p>
-        </div>
-        <div class="approach-step">
-          <b>02</b>
-          <h3>Build in working slices</h3>
-          <p>A real, clickable version early, then layered up — so you're reviewing a product, not a mockup, from the first week.</p>
-        </div>
-        <div class="approach-step">
-          <b>03</b>
-          <h3>Ship, then keep it honest</h3>
-          <p>Deployed, tested, and monitored — with backend guarantees like payments and data integrity treated as non-negotiable.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--tight band-paper">
+  <!-- 3. Facts (counts are computed from the project data) -->
+  <section class="section section--tight band-paper" aria-labelledby="facts-title">
     <div class="wrap">
-      <div class="finalcta reveal">
+      <h2 id="facts-title" class="sr-only">At a glance</h2>
+      <ul class="pf-facts">
+        <li><span class="n" data-count="total">9</span><span class="t">Products built or in progress</span></li>
+        <li><span class="n" data-count="live">5</span><span class="t">Live right now</span></li>
+        <li><span class="n">3</span><span class="t">Platforms built for: web, Android and iOS</span></li>
+        <li><span class="n">2</span><span class="t">Products taking live payments</span></li>
+      </ul>
+      <nav aria-label="On this page">
+        <ul class="pf-jump">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#services">What I can build</a></li>
+          <li><a href="#end-to-end">End to end</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#stack">Technology</a></li>
+          <li><a href="#start">Start a project</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 4. Products -->
+  <section class="section band-surface" id="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <div class="pf-work-head">
+        <div class="section-head">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">Products I’ve built</h2>
+          <p>Real products, real systems, real implementation. Open any project for the problem, the build and what’s still to come.</p>
+        </div>
+        <div class="pf-filters" id="project-filters" role="group" aria-label="Filter projects"></div>
+      </div>
+      <p class="sr-only" id="project-count" role="status" aria-live="polite"></p>
+      <ul class="pf-grid" id="project-grid">
+        <noscript>
+          <li class="pf-noscript">
+            SHIFTRESET · Payments backend for this site · U Wear HANI · Barb-e-Crew · Farm Ledger · Hazik Carwash · Kath · Course Tracker · Little Pilot Academy.
+            Turn on JavaScript to open the case studies, or email <a href="mailto:hazikdijoo@gmail.com">hazikdijoo@gmail.com</a>.
+          </li>
+        </noscript>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. What I can build -->
+  <section class="section band-paper" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2 id="services-title">What I can build for you</h2>
+        <p>Each card links to the closest thing I’ve already built, so you can judge the work, not the promise.</p>
+      </div>
+      <ul class="pf-services">
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h5M8 16h8"/></svg></span>
+          <h3>Web applications</h3>
+          <p>Portals, platforms and business applications with accounts, data and real workflows.</p>
+          <p class="pf-service__proof">Closest build: <a href="#project/shiftreset">SHIFTRESET</a></p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
+          <h3>Mobile applications</h3>
+          <p>Native iOS and Android apps, or installable web apps that behave like them.</p>
+          <p class="pf-service__proof">Closest build: <a href="#project/kath">Kath</a> (Kotlin + SwiftUI)</p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18.5" cy="17" r="2"/></svg></span>
+          <h3>SaaS-style products</h3>
+          <p>Sign-up, paid access and ongoing product use, with pricing enforced on the server.</p>
+          <p class="pf-service__proof">Closest builds: <a href="#project/shiftreset">SHIFTRESET</a> (paid programs), <a href="#project/farm-ledger">Farm Ledger</a> (trial and subscription)</p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg></span>
+          <h3>Business systems</h3>
+          <p>Billing, inventory, attendance, wages, vendors and the internal tools a business runs on.</p>
+          <p class="pf-service__proof">Closest builds: <a href="#project/uwear-hani">U Wear HANI</a>, <a href="#project/farm-ledger">Farm Ledger</a></p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="16" r="3"/><path d="M9.5 9.5l5 5"/></svg></span>
+          <h3>Marketplaces</h3>
+          <p>Customer and provider apps with bookings, dispatch, payments and status tracking.</p>
+          <p class="pf-service__proof">Closest builds: <a href="#project/hazik-carwash">Hazik Carwash</a>, <a href="#project/barb-e-crew">Barb-e-Crew</a></p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="3"/><path d="M10.5 12h3"/></svg></span>
+          <h3>AI-powered products</h3>
+          <p>Assistants and workflows that extract meaning from voice and text, private by default.</p>
+          <p class="pf-service__proof">Closest build: <a href="#project/kath">Kath</a></p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13a7 7 0 0 1 14 0"/><path d="M8.5 13a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="16.5" r="1.2"/><path d="M4 4l16 16"/></svg></span>
+          <h3>Offline-first applications</h3>
+          <p>Apps that keep working with weak or no signal and sync safely when the connection returns.</p>
+          <p class="pf-service__proof">Closest builds: <a href="#project/farm-ledger">Farm Ledger</a>, <a href="#project/course-tracker">Course Tracker</a></p>
+        </li>
+        <li class="pf-service reveal">
+          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
+          <h3>Admin dashboards</h3>
+          <p>Operations consoles for orders, stock, users, payments and reporting.</p>
+          <p class="pf-service__proof">Closest builds: <a href="#project/barb-e-crew">Barb-e-Crew</a>, <a href="#project/altitude-backend">this site’s backend</a></p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 6. End to end -->
+  <section class="section band-ink" id="end-to-end" aria-labelledby="e2e-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Full lifecycle</p>
+        <h2 id="e2e-title">One product. End to end.</h2>
+        <p style="color:var(--on-dark-muted)">Not just the screens. The same person takes a product from the first conversation to a working release and keeps improving it.</p>
+      </div>
+      <div class="pf-e2e reveal">
+        <section class="pf-phase" aria-labelledby="ph1">
+          <h3 id="ph1">Shape</h3>
+          <ol>
+            <li class="pf-stage-step"><b>Idea</b><span>Start from the problem, not a feature list.</span></li>
+            <li class="pf-stage-step"><b>Product strategy</b><span>Users, scope and what “done” means, written down first.</span></li>
+            <li class="pf-stage-step"><b>UI/UX</b><span>Flows, every state, and accessible design.</span></li>
+          </ol>
+        </section>
+        <section class="pf-phase" aria-labelledby="ph2">
+          <h3 id="ph2">Build</h3>
+          <ol>
+            <li class="pf-stage-step"><b>Frontend</b><span>React, Next.js, SwiftUI, Jetpack Compose.</span></li>
+            <li class="pf-stage-step"><b>Backend</b><span>Node.js, Express, Next.js server code.</span></li>
+            <li class="pf-stage-step"><b>Database</b><span>PostgreSQL, SQLite, Room, Core Data, IndexedDB.</span></li>
+          </ol>
+        </section>
+        <section class="pf-phase" aria-labelledby="ph3">
+          <h3 id="ph3">Connect</h3>
+          <ol>
+            <li class="pf-stage-step"><b>APIs &amp; integrations</b><span>Push notifications, cloud storage, Google Play Billing.</span></li>
+            <li class="pf-stage-step"><b>Payments</b><span>Razorpay, live on two products.</span></li>
+            <li class="pf-stage-step"><b>Authentication</b><span>Hashed sessions, JWT roles, OTP, PIN.</span></li>
+          </ol>
+        </section>
+        <section class="pf-phase" aria-labelledby="ph4">
+          <h3 id="ph4">Ship</h3>
+          <ol>
+            <li class="pf-stage-step"><b>Testing</b><span>Automated suites plus real walkthroughs, including a real payment and refund.</span></li>
+            <li class="pf-stage-step"><b>Deployment</b><span>Netlify, GitHub Pages, Render, Google Play testing.</span></li>
+            <li class="pf-stage-step"><b>Iteration</b><span>Audit, fix and write down what’s left.</span></li>
+          </ol>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Process -->
+  <section class="section band-paper" id="process" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Process</p>
+        <h2 id="process-title">How I build</h2>
+      </div>
+      <ol class="pf-process reveal">
+        <li><span class="n">01</span><h3>Discover</h3><p>Understand the problem, the people who’ll use the product and the business model behind it.</p></li>
+        <li><span class="n">02</span><h3>Define</h3><p>Turn the idea into a clear product structure: screens, data, roles and what’s in the first release.</p></li>
+        <li><span class="n">03</span><h3>Design</h3><p>Design the UI/UX and user flows, including loading, empty and error states, not just the happy path.</p></li>
+        <li><span class="n">04</span><h3>Build</h3><p>Develop the frontend, backend and integrations in working slices you can click through early.</p></li>
+        <li><span class="n">05</span><h3>Test</h3><p>Check functionality, responsiveness, security and usability, and say plainly what is and isn’t verified.</p></li>
+        <li><span class="n">06</span><h3>Launch</h3><p>Deploy, monitor, and keep improving the product once real people use it.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 8. Technology -->
+  <section class="section band-surface" id="stack" aria-labelledby="stack-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Technology</p>
+        <h2 id="stack-title">What the work actually runs on</h2>
+        <p>Only tools used in the projects above, grouped by job.</p>
+      </div>
+      <div class="pf-stack reveal">
+        <section><h3>Frontend</h3><ul><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Vite</li><li>HTML/CSS/JS</li></ul><p>Installable web apps with service workers.</p></section>
+        <section><h3>Mobile</h3><ul><li>Kotlin</li><li>Jetpack Compose</li><li>SwiftUI</li><li>React Native (Expo)</li><li>Capacitor</li></ul><p>Plus Android TWA and WKWebView wrappers.</p></section>
+        <section><h3>Backend</h3><ul><li>Node.js</li><li>Express</li><li>Next.js server</li><li>Netlify Functions</li></ul><p>REST APIs, webhooks, background jobs.</p></section>
+        <section><h3>Database</h3><ul><li>PostgreSQL</li><li>Prisma</li><li>Neon</li><li>SQLite</li><li>Room</li><li>Core Data</li><li>IndexedDB (Dexie)</li></ul></section>
+        <section><h3>Payments</h3><ul><li>Razorpay</li><li>Google Play Billing</li></ul><p>Server-side pricing, signed webhooks, refunds.</p></section>
+        <section><h3>AI</h3><ul><li>On-device speech recognition</li><li>Opt-in cloud AI extraction</li></ul><p>Private by default, with no keys shipped in apps.</p></section>
+        <section><h3>Deployment</h3><ul><li>Netlify</li><li>GitHub Pages</li><li>Render</li><li>Google Play</li><li>Xcode</li></ul></section>
+        <section><h3>Quality</h3><ul><li>node:test</li><li>XCTest</li><li>Robolectric</li><li>WCAG AA checks</li></ul><p>Tests run against real databases where it matters.</p></section>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Built for real-world use -->
+  <section class="section band-paper" aria-labelledby="proof-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why it holds up</p>
+        <h2 id="proof-title">Built for real-world use</h2>
+      </div>
+      <ul class="pf-proof reveal">
+        <li><b>Complete product thinking</b><span>SHIFTRESET launched with its assessment, programs, payments and policy pages in place.</span></li>
+        <li><b>Payments done properly</b><span>Prices set on the server, signatures checked, webhooks safe to repeat, and a real payment and refund tested end to end.</span></li>
+        <li><b>Works when the network doesn’t</b><span>Offline queues and on-device data in Farm Ledger, Kath and Course Tracker.</span></li>
+        <li><b>Admin systems included</b><span>Operations consoles in Barb-e-Crew, Farm Ledger and Hazik Carwash, and a dashboard behind this site.</span></li>
+        <li><b>Tested, not assumed</b><span>50 backend tests, 24 iOS tests, and full walkthroughs before anything is called done.</span></li>
+        <li><b>Honest about limits</b><span>Every case study says what isn’t built yet, and accessibility is checked, not guessed.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section class="section section--tight band-paper" aria-labelledby="cta-title">
+    <div class="wrap">
+      <div class="finalcta pf-cta">
         <div>
-          <p class="eyebrow">Ready when you are</p>
-          <h2>Have a site or app that needs building?</h2>
-          <p>Tell me what you're trying to ship — I'll tell you honestly what it takes.</p>
+          <p class="eyebrow">Your turn</p>
+          <h2 id="cta-title">Have an idea?</h2>
+          <p>You don’t need to have everything figured out. Bring the problem, idea or workflow. We can turn it into a clear product plan and build from there.</p>
         </div>
         <div class="finalcta__actions">
-          <a class="btn btn--gold" href="mailto:hazikdijoo@gmail.com">Email hazikdijoo@gmail.com</a>
+          <a class="btn btn--gold" href="#start" data-track="cta_start_project">Start a Project <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href="#work">View All Projects</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Project intake -->
+  <section class="section band-muted" id="start" aria-labelledby="start-title">
+    <div class="wrap">
+      <div class="pf-intake">
+        <div class="pf-intake__aside">
+          <p class="eyebrow">Start a project</p>
+          <h2 id="start-title">Tell me what you want to build</h2>
+          <p class="lead mt-2">A few details are enough to start. Rough answers are fine.</p>
+          <ol>
+            <li><b>You send the brief</b><span>What you want to build and the problem behind it.</span></li>
+            <li><b>I reply personally</b><span>By email, with questions and an honest view of what it takes.</span></li>
+            <li><b>We agree a plan</b><span>Scope, first release and timeline, before any build starts.</span></li>
+          </ol>
+          <p class="alt">Prefer email? Write to <a href="mailto:hazikdijoo@gmail.com" data-track="email_click">hazikdijoo@gmail.com</a>.</p>
+        </div>
+
+        <form class="form pf-form" id="project-form" action="https://formspree.io/f/meeyjedo" method="POST" novalidate
+              data-validate data-lead-summary
+              data-success="Thanks — your brief is in. I’ll reply by email."
+              data-track-submit="project_form_submit">
+          <fieldset>
+            <legend>About you</legend>
+            <div class="form__row">
+              <div class="field">
+                <label for="p-name">Name</label>
+                <input type="text" id="p-name" name="name" autocomplete="name" required maxlength="120" data-required-msg="Please tell me your name." />
+              </div>
+              <div class="field">
+                <label for="p-email">Email</label>
+                <input type="email" id="p-email" name="email" autocomplete="email" inputmode="email" required maxlength="200" placeholder="you@company.com" data-required-msg="Please add an email so I can reply." />
+              </div>
+            </div>
+            <div class="field">
+              <label for="p-company">Company or brand <span class="opt">(optional)</span></label>
+              <input type="text" id="p-company" name="company" autocomplete="organization" maxlength="120" data-lead-field="Company" />
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>The project</legend>
+            <div class="field">
+              <label for="p-what">What are you trying to build?</label>
+              <input type="text" id="p-what" name="project" required maxlength="200" placeholder="e.g. a booking app for my salon" data-lead-field="Building" data-required-msg="A one-line description is enough." />
+            </div>
+            <div class="field">
+              <label for="p-problem">What problem are you solving?</label>
+              <textarea id="p-problem" class="short" name="problem" required maxlength="1500" data-lead-field="Problem" data-required-msg="A sentence or two about the problem helps a lot."></textarea>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <label for="p-platform">Platform needed</label>
+                <select id="p-platform" name="platform" required data-lead-field="Platform" data-required-msg="Pick the closest option, or “Not sure yet”.">
+                  <option value="">Choose one</option>
+                  <option>Web app</option>
+                  <option>Mobile app (iOS / Android)</option>
+                  <option>Web and mobile</option>
+                  <option>Website</option>
+                  <option>Internal tool or dashboard</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="p-timeline">Timeline <span class="opt">(optional)</span></label>
+                <select id="p-timeline" name="timeline" data-lead-field="Timeline">
+                  <option value="">Choose one</option>
+                  <option>As soon as possible</option>
+                  <option>Within 1–3 months</option>
+                  <option>In 3–6 months</option>
+                  <option>Flexible or not sure</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="p-budget">Budget range <span class="opt">(optional)</span></label>
+              <select id="p-budget" name="budget" data-lead-field="Budget">
+                <option value="">Choose one</option>
+                <option>Under ₹50,000</option>
+                <option>₹50,000 – ₹1,50,000</option>
+                <option>₹1,50,000 – ₹5,00,000</option>
+                <option>Above ₹5,00,000</option>
+                <option>Not sure yet</option>
+              </select>
+              <p class="hint">It only helps me suggest a sensible first release.</p>
+            </div>
+            <div class="field">
+              <label for="p-details">Anything else? <span class="opt">(optional)</span></label>
+              <textarea id="p-details" class="short" name="details" maxlength="2000" placeholder="Links, examples you like, existing systems…" data-lead-field="Details"></textarea>
+            </div>
+          </fieldset>
+
+          <input type="hidden" name="interested_in" value="Something else" />
+          <input type="hidden" name="_subject" value="New project enquiry from the portfolio" />
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form__foot">
+            <button class="btn btn--primary" type="submit">Send project brief <span class="arr" aria-hidden="true">→</span></button>
+            <span class="note">Handled as described in the <a href="/privacy.html">privacy policy</a>.</span>
+          </div>
+          <p class="form__status mt-2" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
   </section>
 
 </main>
 
+<!-- Case study panel (filled from projects.js) -->
+<dialog class="case" id="case" aria-labelledby="case-title">
+  <div class="case__bar">
+    <span class="case__crumb" id="case-crumb">Case study</span>
+    <button class="case__close" type="button" aria-label="Close case study">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="case__scroll"><div id="case-body"></div></div>
+</dialog>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer__top">
       <div class="footer__brand">
         <b>Hazik <span>Fayaz</span></b>
-        <p>NLP &amp; Mindset Coach. Also designs and builds websites and apps.</p>
+        <p>The Altitude Mindset. I design, build and launch software products, and coach as an NLP &amp; Mindset Coach.</p>
         <p style="font-size:var(--fs-xs);margin-top:.6rem">Bengaluru, Karnataka · India</p>
-        <img src="/assets/img/nlp-badge-160.png" width="160" height="160" loading="lazy" alt="Certified NLP Practitioner and Coach badge — Auspicium and Transformation Academy" />
       </div>
       <div class="footer__col">
-        <h3>Coaching</h3>
+        <h3>Build</h3>
         <ul>
-          <li><a href="/coaching/">1-on-1 coaching</a></li>
-          <li><a href="/framework/">The Framework</a></li>
-          <li><a href="/coaching/#corporate">Corporate workshops</a></li>
-          <li><a href="/coaching/#speaking">Speaking &amp; training</a></li>
-          <li><a href="/cabin-crew-training/">Cabin crew training</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#services">What I can build</a></li>
+          <li><a href="#process">How I build</a></li>
+          <li><a href="#start">Start a project</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3>Explore</h3>
         <ul>
           <li><a href="/about/">About Hazik</a></li>
+          <li><a href="/coaching/">Coaching</a></li>
           <li><a href="/blog/">Blog</a></li>
-          <li><a href="/resources/">Free resources</a></li>
-          <li><a href="/tracker.html">Progress Tracker</a></li>
           <li><a href="/portfolio/">Portfolio</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h3>Follow</h3>
         <ul>
-          <li><a href="https://instagram.com/nlplifecoachhazik" target="_blank" rel="noopener" data-track="instagram_click">Instagram</a></li>
           <li><a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener" data-track="linkedin_click">LinkedIn</a></li>
-          <li><a href="https://www.youtube.com/@nlplifecoachhazik" target="_blank" rel="noopener" data-track="youtube_click">YouTube</a></li>
           <li><a href="https://x.com/hazikdijoo" target="_blank" rel="noopener" data-track="twitter_click">X (Twitter)</a></li>
+          <li><a href="https://instagram.com/nlplifecoachhazik" target="_blank" rel="noopener" data-track="instagram_click">Instagram</a></li>
+          <li><a href="https://www.youtube.com/@nlplifecoachhazik" target="_blank" rel="noopener" data-track="youtube_click">YouTube</a></li>
           <li><a href="mailto:hazikdijoo@gmail.com" data-track="email_click">Email</a></li>
         </ul>
       </div>

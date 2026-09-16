@@ -137,7 +137,7 @@
     };
     if (!isGuide) {
       payload.interest = get('interested_in');
-      payload.message = get('message');
+      payload.message = form.hasAttribute('data-lead-summary') ? summarise(form, fd) : get('message');
     }
     try {
       fetch(CONFIG.leadsEndpoint, {
@@ -150,14 +150,84 @@
     } catch (err) { /* never let this affect the form */ }
   }
 
+  /* The backend keeps one message per lead, so a multi-field form (the
+     portfolio's project intake) is flattened into "Label: value" lines. */
+  function summarise(form, fd) {
+    var lines = [];
+    form.querySelectorAll('[data-lead-field]').forEach(function (field) {
+      var v = fd.get(field.name);
+      v = v == null ? '' : String(v).trim();
+      if (v) lines.push(field.getAttribute('data-lead-field') + ': ' + v);
+    });
+    return lines.join('\n').slice(0, 3900);
+  }
+
+  /* Inline validation for forms marked data-validate (with novalidate):
+     the message sits under its field, and focus moves to the first problem. */
+  function fieldMessage(field) {
+    var v = field.validity;
+    if (v.valueMissing) return field.getAttribute('data-required-msg') || 'Please fill this in.';
+    if (v.typeMismatch && field.type === 'email') return 'Please enter an email address like name@example.com.';
+    if (v.tooLong) return 'Please keep this under ' + field.maxLength + ' characters.';
+    return field.validationMessage || '';
+  }
+  function showFieldError(field, msg) {
+    var id = field.id + '-error';
+    var box = document.getElementById(id);
+    if (!box) {
+      box = document.createElement('p');
+      box.id = id;
+      box.className = 'field__error';
+      field.parentNode.appendChild(box);
+    }
+    box.textContent = msg;
+    box.hidden = !msg;
+    var described = (field.getAttribute('aria-describedby') || '').split(' ').filter(function (x) { return x && x !== id; });
+    if (msg) { described.push(id); field.setAttribute('aria-invalid', 'true'); }
+    else field.removeAttribute('aria-invalid');
+    if (described.length) field.setAttribute('aria-describedby', described.join(' '));
+    else field.removeAttribute('aria-describedby');
+  }
+  function validate(form) {
+    var first = null;
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      if (!field.id || field.type === 'hidden' || field.closest('.hp')) return;
+      var msg = field.checkValidity() ? '' : fieldMessage(field);
+      showFieldError(field, msg);
+      if (msg && !first) first = field;
+    });
+    if (first) first.focus();
+    return !first;
+  }
+
   function wireForm(form) {
     if (!form) return;
     var btn = form.querySelector('[type="submit"]');
     var status = form.querySelector('.form__status');
     var successMsg = form.getAttribute('data-success') || 'Thanks — your message is on its way.';
+    var validates = form.hasAttribute('data-validate');
+
+    if (validates) {
+      // Clear a field's error as soon as it becomes valid
+      form.addEventListener('input', function (e) {
+        var f = e.target;
+        if (f.getAttribute('aria-invalid') === 'true' && f.checkValidity()) showFieldError(f, '');
+      });
+      form.addEventListener('change', function (e) {
+        var f = e.target;
+        if (f.getAttribute('aria-invalid') === 'true' && f.checkValidity()) showFieldError(f, '');
+      });
+    }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (validates && !validate(form)) {
+        if (status) {
+          status.textContent = 'A few details are missing. Check the highlighted fields.';
+          status.className = 'form__status is-error';
+        }
+        return;
+      }
       var label = btn ? btn.textContent : '';
       if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
       if (status) { status.textContent = ''; status.className = 'form__status'; }
@@ -200,6 +270,7 @@
 
   wireForm(document.getElementById('contact-form'));
   wireForm(document.getElementById('magnet-form'));
+  wireForm(document.getElementById('project-form'));
 
   /* -----------------------------------------------------------
      "Pay for a session" links ship hidden. They appear only when the
