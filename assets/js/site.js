@@ -24,8 +24,8 @@
     // Where "Pay for a session" links go, and where the page asks whether
     // payments are live. Switch both to https://api.thealtitudemindset.com
     // once that address resolves: Razorpay expects checkout on your own domain.
-    checkoutUrl: 'https://altitude-api.netlify.app/checkout',
-    paymentsStatusUrl: 'https://altitude-api.netlify.app/health'
+    checkoutUrl: 'https://api.thealtitudemindset.com/checkout',
+    paymentsStatusUrl: 'https://api.thealtitudemindset.com/health'
   };
 
   /* -----------------------------------------------------------
