@@ -387,6 +387,40 @@ a:hover { color: var(--navy-600); }
   border-radius: 50%; background: var(--gold-600);
 }
 
+/* --- 10b. Pattern picker (self-identification) --------------------------- */
+/* Client-side only: nothing here is ever stored, sent, or persisted.
+   Selecting a pattern just reveals a CTA — it is not a form. */
+.pattern-picker { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem 1rem; list-style: none; }
+@media (max-width: 700px) { .pattern-picker { grid-template-columns: 1fr; } }
+.pattern-pill {
+  display: flex; gap: 0.7rem; align-items: center; text-align: left;
+  font: inherit; font-size: 1rem; color: var(--ink-2);
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--r-md);
+  padding: 0.8rem 1rem; cursor: pointer; width: 100%;
+  transition: border-color .15s ease, background-color .15s ease, color .15s ease;
+}
+.pattern-pill:hover { border-color: var(--navy-600); }
+.pattern-pill__mark {
+  flex: none; width: 20px; height: 20px; border-radius: 50%;
+  border: 1.5px solid var(--line-strong); display: grid; place-items: center;
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.pattern-pill__mark svg { width: 11px; height: 11px; stroke: transparent; fill: none; stroke-width: 2.6; transition: stroke .15s ease; }
+.pattern-pill[aria-pressed="true"] {
+  border-color: var(--gold-600); background: var(--gold-100); color: var(--ink);
+}
+.pattern-pill[aria-pressed="true"] .pattern-pill__mark { border-color: var(--gold-600); background: var(--gold-600); }
+.pattern-pill[aria-pressed="true"] .pattern-pill__mark svg { stroke: var(--navy-900); }
+
+.pattern-picker__result {
+  margin-top: 1.5rem; padding: 1.25rem 1.4rem; border-radius: var(--r-md);
+  background: var(--gold-100); display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.9rem 1.5rem; justify-content: space-between;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.pattern-picker__result p { font-size: 0.95rem; color: #55503F; max-width: 46ch; }
+.pattern-picker__result[hidden] { display: none; }
+
 /* --- 11. Framework ------------------------------------------------------- */
 .framework { display: grid; gap: 1rem; counter-reset: step; }
 .step {

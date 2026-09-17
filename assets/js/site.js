@@ -273,6 +273,33 @@
   wireForm(document.getElementById('project-form'));
 
   /* -----------------------------------------------------------
+     Pattern picker — purely client-side self-identification.
+     Nothing selected here is ever stored, sent to a server, or
+     persisted across a reload. It only toggles a visual state and
+     reveals a CTA once at least one pattern is selected.
+     ----------------------------------------------------------- */
+  var patternPicker = document.getElementById('pattern-picker');
+  if (patternPicker) {
+    var patternResult = document.getElementById('pattern-picker-result');
+    var patternCount = document.getElementById('pattern-picker-count');
+    var patternHint = document.getElementById('pattern-picker-hint');
+    patternPicker.addEventListener('click', function (e) {
+      var pill = e.target.closest('.pattern-pill');
+      if (!pill) return;
+      var on = pill.getAttribute('aria-pressed') === 'true';
+      pill.setAttribute('aria-pressed', on ? 'false' : 'true');
+      var n = patternPicker.querySelectorAll('[aria-pressed="true"]').length;
+      if (patternResult) {
+        patternResult.hidden = n === 0;
+        if (n && patternCount) {
+          patternCount.textContent = n === 1 ? 'That’s one pattern.' : 'That’s ' + n + ' patterns.';
+        }
+      }
+      if (patternHint) patternHint.hidden = n > 0;
+    });
+  }
+
+  /* -----------------------------------------------------------
      "Pay for a session" links ship hidden. They appear only when the
      backend reports that live payments are switched on, so nobody
      lands on a checkout that says payments aren't open yet. If the

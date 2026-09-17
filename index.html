@@ -13,6 +13,8 @@
 <meta property="og:description" content="Break limiting beliefs, build confidence, and handle pressure. NLP and mindset coaching shaped by 10+ years of evaluating human performance in aviation." />
 <meta property="og:url" content="https://thealtitudemindset.com/" />
 <meta property="og:image" content="https://thealtitudemindset.com/assets/img/hazik-og.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="1803" />
 <meta property="og:image:alt" content="Hazik Fayaz, NLP and mindset coach based in Bengaluru" />
 <meta property="og:site_name" content="The Altitude Mindset" />
 <meta property="og:locale" content="en_IN" />
@@ -287,18 +289,22 @@
           <p class="mt-2"><strong>That’s the thing worth working on — not your willpower.</strong></p>
         </div>
         <div class="reveal">
-          <p style="font-size:var(--fs-sm);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem">Where it usually shows up</p>
-          <ul class="problems">
-            <li>Overthinking every decision</li>
-            <li>Self-doubt that arrives on cue</li>
-            <li>Fear of failing publicly</li>
-            <li>Reacting emotionally, then regretting it</li>
-            <li>Struggling to say what you mean</li>
-            <li>Confidence that won’t hold under pressure</li>
-            <li>The same argument, on repeat</li>
-            <li>Knowing exactly what to do — and not doing it</li>
-          </ul>
-          <p class="mt-3" style="font-size:var(--fs-sm)">If you recognised more than two of those, that isn’t a character flaw. It’s a pattern — and patterns can be worked with directly.</p>
+          <p style="font-size:var(--fs-sm);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem">Where does it show up for you?</p>
+          <div class="pattern-picker" id="pattern-picker" role="group" aria-label="Where the pattern shows up for you — select any that apply">
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Overthinking every decision</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Self-doubt that arrives on cue</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Fear of failing publicly</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Reacting emotionally, then regretting it</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Struggling to say what you mean</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Confidence that won’t hold under pressure</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>The same argument, on repeat</button>
+            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Knowing exactly what to do — and not doing it</button>
+          </div>
+          <p class="mt-3" style="font-size:var(--fs-sm)" id="pattern-picker-hint">Select any that sound familiar. Recognising more than two isn’t a character flaw — it’s a pattern, and patterns can be worked with directly.</p>
+          <div class="pattern-picker__result" id="pattern-picker-result" role="status" hidden>
+            <p><strong id="pattern-picker-count"></strong> This is exactly what coaching works with directly — not willpower, the pattern underneath it.</p>
+            <a class="btn btn--primary" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="pattern_picker_cta_click">See how coaching could help</a>
+          </div>
         </div>
       </div>
     </div>
