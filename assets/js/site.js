@@ -11,8 +11,10 @@
      Nothing here is invented; both fields ship empty on purpose.
      ----------------------------------------------------------- */
   var CONFIG = {
-    // Google Analytics 4, e.g. 'G-XXXXXXXXXX'. Empty = disabled.
-    ga4MeasurementId: '',
+    // Google Analytics 4. Live since 2026-09-18 (property created by Hazik).
+    // The gtag.js loader + config call live in every page's <head>; this ID
+    // only tells track() below that it's safe to call window.gtag.
+    ga4MeasurementId: 'G-VWQNFYT7CT',
     // Meta Pixel ID, e.g. '123456789012345'. Empty = disabled.
     metaPixelId: '',
     // Formspree endpoint currently in use for both forms.
