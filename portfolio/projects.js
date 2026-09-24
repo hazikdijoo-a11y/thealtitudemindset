@@ -15,6 +15,12 @@
 window.ALTITUDE_PROJECTS = [
   {
     slug: 'shiftreset',
+    featured: 1,
+    highlights: [
+      'A 24-question assessment across six life areas builds a personal Reset Profile',
+      'Six programs with 92 daily actions and progress tracking',
+      'Razorpay checkout; a refund removes access automatically'
+    ],
     name: 'SHIFTRESET',
     tagline: 'A personal-transformation platform with an assessment, daily programs and paid courses.',
     status: 'live',
@@ -22,7 +28,7 @@ window.ALTITUDE_PROJECTS = [
     year: 2026,
     categories: ['Web platform', 'Personal development'],
     filters: ['web'],
-    built: ['Accounts', 'Assessment & scoring', 'Daily programs', 'Razorpay payments', 'Refund handling'],
+    built: ['Accounts', 'Assessment & scoring', 'Daily programs', 'Razorpay payments', 'Refund handling', 'Android & iOS wrappers'],
     liveUrl: 'https://shiftreset.in',
     liveLabel: 'Visit shiftreset.in',
     image: { src: '/assets/img/work/shiftreset-card.webp', alt: 'SHIFTRESET home page: “Reset what’s holding you back.”' },
@@ -38,7 +44,7 @@ window.ALTITUDE_PROJECTS = [
       Database: 'PostgreSQL on Neon through Prisma 7, money stored in paise as integers',
       Authentication: 'Opaque session tokens in httpOnly cookies; only a SHA-256 hash is stored',
       Payments: 'Razorpay checkout for one-time program purchases. A signed webhook settles payments and removes access on refund.',
-      Deployment: 'Netlify, deployed from GitHub; database migrations run during the build'
+      Deployment: 'Netlify, deployed from GitHub; database migrations run during the build. An Android app (Trusted Web Activity) and an iOS app (native shell) are built around the site.'
     },
     features: [
       { title: 'Assessment & scoring', text: '24 questions, six areas, unit-tested scoring. The lowest-scoring area becomes the primary reset.' },
@@ -48,10 +54,16 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Honest guardrails', text: 'Clearly not a medical service, with scores presented as self-reflection, never as clinical measurement.' }
     ],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Neon', 'Razorpay', 'Netlify'],
-    notYet: 'Planned but not built yet: an AI coach, in-app coaching booking, journal and goals screens, an admin dashboard, notifications and mobile apps.'
+    notYet: 'Planned but not built yet: an AI coach, in-app coaching booking, journal and goals screens, an admin dashboard and notifications. The Android and iOS apps are built but not yet released on the stores.'
   },
   {
     slug: 'altitude-backend',
+    featured: 3,
+    highlights: [
+      'Prices are set on the server; the browser never sends an amount',
+      'Signed webhooks that are safe to repeat, so a retry never double-counts',
+      '50 automated tests running against a real Postgres database'
+    ],
     name: 'Altitude Mindset — Payments Backend',
     shortName: 'Payments Backend',
     tagline: 'The payments and enquiries backend behind this website.',
@@ -157,7 +169,7 @@ window.ALTITUDE_PROJECTS = [
     name: 'Farm Ledger',
     tagline: 'Attendance, wages, advances and farm accounts, built to keep working when the network doesn’t.',
     status: 'in-development',
-    statusNote: 'In development; Android package prepared',
+    statusNote: 'In development; hosted API currently paused',
     year: 2026,
     categories: ['Business system', 'Agriculture'],
     filters: ['web', 'mobile', 'business', 'offline'],
@@ -172,7 +184,7 @@ window.ALTITUDE_PROJECTS = [
       Authentication: 'Phone number and password, bcrypt, 12-hour JWTs, admin and farmer roles',
       Admin: 'Farmers, attendance, balances, advances, expenses, sales, stock, crop drying, job cards and reports',
       Integrations: 'Supabase Storage for profile photos; Google Play Billing for trial and subscription',
-      Deployment: 'API hosted on Render; Android package built from the web app'
+      Deployment: 'Web app on Vercel; Node.js API on Render, currently paused; Android package built from the web app'
     },
     features: [
       { title: 'Attendance calendar', text: 'Month-by-month attendance per farmer, with a calendar report.' },
@@ -182,7 +194,7 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Offline queue', text: 'Advances, expenses, sales and stock can be recorded offline; a banner shows what is still waiting to sync.' }
     ],
     tech: ['React', 'Vite', 'Dexie', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Supabase Storage', 'Google Play Billing'],
-    notYet: ''
+    notYet: 'The hosted API is paused for now, so the live web app can’t sync until it is switched back on.'
   },
   {
     slug: 'hazik-carwash',
@@ -249,6 +261,12 @@ window.ALTITUDE_PROJECTS = [
   },
   {
     slug: 'course-tracker',
+    featured: 2,
+    highlights: [
+      'Each day is an aircraft on a spiral and each turn is a week',
+      'Works offline, with no account and no server',
+      'Android app now in Google Play internal testing'
+    ],
     name: 'Course Tracker',
     tagline: 'A habit tracker drawn as a flight path, with one spiral turn per week.',
     status: 'live',
@@ -283,6 +301,12 @@ window.ALTITUDE_PROJECTS = [
   },
   {
     slug: 'little-pilot-academy',
+    featured: 4,
+    highlights: [
+      'Letters, words, numbers and reading, led by a guide character',
+      'No sign-up, with large controls made for a young child’s tablet',
+      'Installable, with an iOS app packaged'
+    ],
     name: 'Little Pilot Academy',
     tagline: 'A playful early-learning app for letters, words, numbers and reading.',
     status: 'live',

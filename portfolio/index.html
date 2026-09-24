@@ -115,292 +115,159 @@
 
 <main id="main">
 
-  <!-- 1. Hero -->
-  <section class="pf-hero band-ink" aria-labelledby="hero-title">
+  <!-- 1. Hero: the real products, not an illustration -->
+  <section class="pf-hero band-paper" aria-labelledby="hero-title">
     <div class="wrap">
       <div class="pf-hero__grid">
         <div>
           <p class="eyebrow">Products · Apps · Websites · Systems</p>
           <h1 id="hero-title">I design, build &amp; launch <em>real software products.</em></h1>
-          <p class="pf-hero__sub">From idea to production, I turn business problems into thoughtfully designed, fully working digital products: UI/UX, frontend, backend, payments, testing and deployment.</p>
-          <ul class="pf-hero__kinds" aria-label="What I build">
-            <li>Web apps</li> <li>Mobile apps</li> <li>Business systems</li> <li>Dashboards</li> <li>AI tools</li> <li>PWAs</li> <li>Offline-first apps</li>
-          </ul>
+          <p class="pf-hero__sub">Web apps, Android and iOS apps, and the backends behind them, built by one person from the first design to live payments.</p>
           <div class="btn-row">
-            <a class="btn btn--gold" href="#start" data-track="hero_start_project">Start a Project <span class="arr" aria-hidden="true">→</span></a>
-            <a class="btn btn--ghost" href="#work" data-track="hero_explore_work">Explore My Work <span class="arr arr--down" aria-hidden="true">↓</span></a>
+            <a class="btn btn--primary" href="#start" data-track="hero_start_project">Start a Project <span class="arr" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#work" data-track="hero_explore_work">See the work <span class="arr arr--down" aria-hidden="true">↓</span></a>
           </div>
+          <p class="pf-hero__live">
+            <span>See it running:</span>
+            <a href="https://shiftreset.in" target="_blank" rel="noopener" data-track="hero_live_shiftreset">SHIFTRESET<span class="sr-only"> (opens in a new tab)</span> ↗</a>
+            <a href="https://tracker.thealtitudemindset.com" target="_blank" rel="noopener" data-track="hero_live_tracker">Course Tracker<span class="sr-only"> (opens in a new tab)</span> ↗</a>
+            <a href="https://little-pilot-academy.netlify.app" target="_blank" rel="noopener" data-track="hero_live_lpa">Little Pilot Academy<span class="sr-only"> (opens in a new tab)</span> ↗</a>
+          </p>
         </div>
 
-        <!-- Fragments of real, shipped work (SHIFTRESET, this site's backend, Course Tracker) -->
-        <div class="pf-stage" aria-hidden="true">
-          <div class="pf-window">
-            <div class="pf-window__bar"><i></i><i></i><i></i><span>shiftreset.in — production</span></div>
-            <div class="pf-window__body">
-              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Assessment</b> <small>· 24 questions, 6 areas</small></span></span></div>
-              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Programs</b> <small>· 92 daily actions</small></span></span></div>
-              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Payments</b> <small>· Razorpay</small></span></span><span class="pf-pill">Live</span></div>
-              <div class="pf-row"><span class="pf-row__l"><span class="pf-tick">✓</span><span><b>Refund webhook</b> <small>· access removed</small></span></span><span class="pf-pill">Verified</span></div>
-            </div>
-          </div>
-          <pre class="pf-code"><span class="c">GET /health  # live API</span>
-{
-  <span class="k">"ok"</span>: <span class="s">true</span>,
-  <span class="k">"database"</span>: <span class="s">"ok"</span>,
-  <span class="k">"payments"</span>: <span class="s">"configured"</span>
-}</pre>
-          <div class="pf-phone"><img src="/assets/img/work/course-tracker-mobile.webp" alt="" width="360" height="720" fetchpriority="high" /></div>
+        <div class="pf-stage">
+          <figure class="pf-window">
+            <div class="pf-window__bar" aria-hidden="true"><i></i><i></i><i></i><span>shiftreset.in</span></div>
+            <img src="/assets/img/work/shiftreset-desktop.webp" width="1200" height="750" alt="SHIFTRESET home page: “Reset what’s holding you back.”" fetchpriority="high" />
+          </figure>
+          <div class="pf-phone"><img src="/assets/img/work/course-tracker-mobile.webp" width="360" height="720" alt="Course Tracker on a phone: a spiral of aircraft, one per day" /></div>
           <div class="pf-tests">
-            <span class="dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span><b>50 tests passed</b><small>payments backend</small></span>
+            <span class="dots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <span><b>50 tests passing</b><small>payments backend</small></span>
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- 2. Capability strip -->
-  <section class="pf-caps band-ink" aria-label="Capabilities">
-    <div class="wrap">
-      <ol>
-        <li><span class="v">DESIGN</span><span class="w">UI/UX</span></li>
-        <li><span class="v">BUILD</span><span class="w">Web &amp; mobile</span></li>
-        <li><span class="v">CONNECT</span><span class="w">APIs &amp; payments</span></li>
-        <li><span class="v">POWER</span><span class="w">AI &amp; automation</span></li>
-        <li><span class="v">TEST</span><span class="w">QA &amp; hardening</span></li>
-        <li><span class="v">DEPLOY</span><span class="w">To production</span></li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- 3. Facts (counts are computed from the project data) -->
-  <section class="section section--tight band-paper" aria-labelledby="facts-title">
-    <div class="wrap">
-      <h2 id="facts-title" class="sr-only">At a glance</h2>
-      <ul class="pf-facts">
-        <li><span class="n" data-count="total">9</span><span class="t">Products built or in progress</span></li>
-        <li><span class="n" data-count="live">5</span><span class="t">Live right now</span></li>
-        <li><span class="n">3</span><span class="t">Platforms built for: web, Android and iOS</span></li>
-        <li><span class="n">2</span><span class="t">Products taking live payments</span></li>
-      </ul>
-      <nav aria-label="On this page">
-        <ul class="pf-jump">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#services">What I can build</a></li>
-          <li><a href="#end-to-end">End to end</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#stack">Technology</a></li>
-          <li><a href="#start">Start a project</a></li>
+    <!-- Facts (counts are computed from the project data) -->
+    <div class="pf-factsband">
+      <div class="wrap">
+        <h2 class="sr-only">At a glance</h2>
+        <ul class="pf-facts">
+          <li><span class="n" data-count="total">9</span><span class="t">Products built or in progress</span></li>
+          <li><span class="n" data-count="live">5</span><span class="t">Live right now</span></li>
+          <li><span class="n">3</span><span class="t">Platforms: web, Android and iOS</span></li>
+          <li><span class="n">2</span><span class="t">Taking live payments</span></li>
         </ul>
-      </nav>
+      </div>
     </div>
   </section>
 
-  <!-- 4. Products -->
-  <section class="section band-surface" id="work" aria-labelledby="work-title">
+  <!-- 2. Work: live products get room; the rest is a compact ledger -->
+  <section class="section band-ink" id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <div class="pf-work-head">
-        <div class="section-head">
-          <p class="eyebrow">Selected work</p>
-          <h2 id="work-title">Products I’ve built</h2>
-          <p>Real products, real systems, real implementation. Open any project for the problem, the build and what’s still to come.</p>
-        </div>
-        <div class="pf-filters" id="project-filters" role="group" aria-label="Filter projects"></div>
+      <div class="section-head">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="work-title">Four products you can open today</h2>
+        <p>Each is live. Open it, or read the case study for the problem, the build and what’s still missing.</p>
       </div>
-      <p class="sr-only" id="project-count" role="status" aria-live="polite"></p>
-      <ul class="pf-grid" id="project-grid">
+      <ol class="pf-features" id="featured-list">
         <noscript>
           <li class="pf-noscript">
-            SHIFTRESET · Payments backend for this site · U Wear HANI · Barb-e-Crew · Farm Ledger · Hazik Carwash · Kath · Course Tracker · Little Pilot Academy.
+            SHIFTRESET · Course Tracker · Payments backend for this site · Little Pilot Academy.
             Turn on JavaScript to open the case studies, or email <a href="mailto:hazikdijoo@gmail.com">hazikdijoo@gmail.com</a>.
           </li>
         </noscript>
-      </ul>
+      </ol>
+
+      <div class="pf-more">
+        <h3 class="pf-more__title">Also built</h3>
+        <p class="pf-more__sub">Private systems, working builds and projects still in progress. Each case study says what isn’t finished.</p>
+        <ul class="pf-ledger" id="more-list"></ul>
+      </div>
     </div>
   </section>
 
-  <!-- 5. What I can build -->
-  <section class="section band-paper" id="services" aria-labelledby="services-title">
+  <!-- 3. What I can build -->
+  <section class="section band-ink-2" id="services" aria-labelledby="services-title">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Services</p>
-        <h2 id="services-title">What I can build for you</h2>
-        <p>Each card links to the closest thing I’ve already built, so you can judge the work, not the promise.</p>
-      </div>
-      <ul class="pf-services">
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 13h5M8 16h8"/></svg></span>
-          <h3>Web applications</h3>
-          <p>Portals, platforms and business applications with accounts, data and real workflows.</p>
-          <p class="pf-service__proof">Closest build: <a href="#project/shiftreset">SHIFTRESET</a></p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg></span>
-          <h3>Mobile applications</h3>
-          <p>Native iOS and Android apps, or installable web apps that behave like them.</p>
-          <p class="pf-service__proof">Closest build: <a href="#project/kath">Kath</a> (Kotlin + SwiftUI)</p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/><circle cx="18.5" cy="17" r="2"/></svg></span>
-          <h3>SaaS-style products</h3>
-          <p>Sign-up, paid access and ongoing product use, with pricing enforced on the server.</p>
-          <p class="pf-service__proof">Closest builds: <a href="#project/shiftreset">SHIFTRESET</a> (paid programs), <a href="#project/farm-ledger">Farm Ledger</a> (trial and subscription)</p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg></span>
-          <h3>Business systems</h3>
-          <p>Billing, inventory, attendance, wages, vendors and the internal tools a business runs on.</p>
-          <p class="pf-service__proof">Closest builds: <a href="#project/uwear-hani">U Wear HANI</a>, <a href="#project/farm-ledger">Farm Ledger</a></p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="16" r="3"/><path d="M9.5 9.5l5 5"/></svg></span>
-          <h3>Marketplaces</h3>
-          <p>Customer and provider apps with bookings, dispatch, payments and status tracking.</p>
-          <p class="pf-service__proof">Closest builds: <a href="#project/hazik-carwash">Hazik Carwash</a>, <a href="#project/barb-e-crew">Barb-e-Crew</a></p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="3"/><path d="M10.5 12h3"/></svg></span>
-          <h3>AI-powered products</h3>
-          <p>Assistants and workflows that extract meaning from voice and text, private by default.</p>
-          <p class="pf-service__proof">Closest build: <a href="#project/kath">Kath</a></p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 13a7 7 0 0 1 14 0"/><path d="M8.5 13a3.5 3.5 0 0 1 7 0"/><circle cx="12" cy="16.5" r="1.2"/><path d="M4 4l16 16"/></svg></span>
-          <h3>Offline-first applications</h3>
-          <p>Apps that keep working with weak or no signal and sync safely when the connection returns.</p>
-          <p class="pf-service__proof">Closest builds: <a href="#project/farm-ledger">Farm Ledger</a>, <a href="#project/course-tracker">Course Tracker</a></p>
-        </li>
-        <li class="pf-service reveal">
-          <span class="pf-service__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V4M4 20h16"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg></span>
-          <h3>Admin dashboards</h3>
-          <p>Operations consoles for orders, stock, users, payments and reporting.</p>
-          <p class="pf-service__proof">Closest builds: <a href="#project/barb-e-crew">Barb-e-Crew</a>, <a href="#project/altitude-backend">this site’s backend</a></p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 6. End to end -->
-  <section class="section band-ink" id="end-to-end" aria-labelledby="e2e-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Full lifecycle</p>
-        <h2 id="e2e-title">One product. End to end.</h2>
-        <p style="color:var(--on-dark-muted)">Not just the screens. The same person takes a product from the first conversation to a working release and keeps improving it.</p>
-      </div>
-      <div class="pf-e2e reveal">
-        <section class="pf-phase" aria-labelledby="ph1">
-          <h3 id="ph1">Shape</h3>
-          <ol>
-            <li class="pf-stage-step"><b>Idea</b><span>Start from the problem, not a feature list.</span></li>
-            <li class="pf-stage-step"><b>Product strategy</b><span>Users, scope and what “done” means, written down first.</span></li>
-            <li class="pf-stage-step"><b>UI/UX</b><span>Flows, every state, and accessible design.</span></li>
-          </ol>
-        </section>
-        <section class="pf-phase" aria-labelledby="ph2">
-          <h3 id="ph2">Build</h3>
-          <ol>
-            <li class="pf-stage-step"><b>Frontend</b><span>React, Next.js, SwiftUI, Jetpack Compose.</span></li>
-            <li class="pf-stage-step"><b>Backend</b><span>Node.js, Express, Next.js server code.</span></li>
-            <li class="pf-stage-step"><b>Database</b><span>PostgreSQL, SQLite, Room, Core Data, IndexedDB.</span></li>
-          </ol>
-        </section>
-        <section class="pf-phase" aria-labelledby="ph3">
-          <h3 id="ph3">Connect</h3>
-          <ol>
-            <li class="pf-stage-step"><b>APIs &amp; integrations</b><span>Push notifications, cloud storage, Google Play Billing.</span></li>
-            <li class="pf-stage-step"><b>Payments</b><span>Razorpay, live on two products.</span></li>
-            <li class="pf-stage-step"><b>Authentication</b><span>Hashed sessions, JWT roles, OTP, PIN.</span></li>
-          </ol>
-        </section>
-        <section class="pf-phase" aria-labelledby="ph4">
-          <h3 id="ph4">Ship</h3>
-          <ol>
-            <li class="pf-stage-step"><b>Testing</b><span>Automated suites plus real walkthroughs, including a real payment and refund.</span></li>
-            <li class="pf-stage-step"><b>Deployment</b><span>Netlify, GitHub Pages, Render, Google Play testing.</span></li>
-            <li class="pf-stage-step"><b>Iteration</b><span>Audit, fix and write down what’s left.</span></li>
-          </ol>
-        </section>
+      <div class="pf-offer-grid">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2 id="services-title">What I can build for you</h2>
+          <p>Each line points to the closest thing I’ve already built, so you can judge the work, not the promise.</p>
+        </div>
+        <ul class="pf-offer">
+          <li class="reveal">
+            <h3>Web platforms and SaaS</h3>
+            <p>Accounts, paid access and ongoing use, with prices enforced on the server.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/shiftreset">SHIFTRESET</a>, <a href="#project/farm-ledger">Farm Ledger</a></p>
+          </li>
+          <li class="reveal">
+            <h3>Android and iOS apps</h3>
+            <p>Native apps in Kotlin and SwiftUI, React Native apps, or installable web apps that behave like them.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/kath">Kath</a>, <a href="#project/hazik-carwash">Hazik Carwash</a>, <a href="#project/course-tracker">Course Tracker</a></p>
+          </li>
+          <li class="reveal">
+            <h3>Business systems and dashboards</h3>
+            <p>Billing, stock, attendance, wages and orders, with the admin console to run them.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/uwear-hani">U Wear HANI</a>, <a href="#project/barb-e-crew">Barb-e-Crew</a></p>
+          </li>
+          <li class="reveal">
+            <h3>Payments and billing</h3>
+            <p>Razorpay checkout, signed webhooks and refunds, with the price never taken from the browser.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/altitude-backend">Payments backend</a>, <a href="#project/shiftreset">SHIFTRESET</a></p>
+          </li>
+          <li class="reveal">
+            <h3>Offline-first apps</h3>
+            <p>Apps that keep working with weak or no signal and sync safely when it returns.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/farm-ledger">Farm Ledger</a>, <a href="#project/course-tracker">Course Tracker</a></p>
+          </li>
+          <li class="reveal">
+            <h3>AI features, private by default</h3>
+            <p>Voice and text turned into memories and reminders, on the device unless the person opts in.</p>
+            <p class="pf-offer__proof">Built: <a href="#project/kath">Kath</a></p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- 7. Process -->
+  <!-- 4. How a project runs -->
   <section class="section band-paper" id="process" aria-labelledby="process-title">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow">Process</p>
-        <h2 id="process-title">How I build</h2>
+        <p class="eyebrow">How a project runs</p>
+        <h2 id="process-title">One person, first idea to live release</h2>
       </div>
-      <ol class="pf-process reveal">
-        <li><span class="n">01</span><h3>Discover</h3><p>Understand the problem, the people who’ll use the product and the business model behind it.</p></li>
-        <li><span class="n">02</span><h3>Define</h3><p>Turn the idea into a clear product structure: screens, data, roles and what’s in the first release.</p></li>
-        <li><span class="n">03</span><h3>Design</h3><p>Design the UI/UX and user flows, including loading, empty and error states, not just the happy path.</p></li>
-        <li><span class="n">04</span><h3>Build</h3><p>Develop the frontend, backend and integrations in working slices you can click through early.</p></li>
-        <li><span class="n">05</span><h3>Test</h3><p>Check functionality, responsiveness, security and usability, and say plainly what is and isn’t verified.</p></li>
-        <li><span class="n">06</span><h3>Launch</h3><p>Deploy, monitor, and keep improving the product once real people use it.</p></li>
+      <ol class="pf-run reveal">
+        <li>
+          <h3>Shape</h3>
+          <p>Start from the problem. Users, scope and what “done” means are written down before anything is built, then designed with every state, not just the happy path.</p>
+        </li>
+        <li>
+          <h3>Build</h3>
+          <p>Frontend, backend and integrations in working slices you can click through early, not one big reveal at the end.</p>
+        </li>
+        <li>
+          <h3>Prove</h3>
+          <p>Automated tests plus real walkthroughs, including a real payment and refund. What isn’t verified is said plainly.</p>
+        </li>
+        <li>
+          <h3>Ship and improve</h3>
+          <p>Deploy, watch what real people do, fix it, and keep a written list of what’s still left.</p>
+        </li>
       </ol>
-    </div>
-  </section>
-
-  <!-- 8. Technology -->
-  <section class="section band-surface" id="stack" aria-labelledby="stack-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Technology</p>
-        <h2 id="stack-title">What the work actually runs on</h2>
-        <p>Only tools used in the projects above, grouped by job.</p>
-      </div>
-      <div class="pf-stack reveal">
-        <section><h3>Frontend</h3><ul><li>React</li><li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Vite</li><li>HTML/CSS/JS</li></ul><p>Installable web apps with service workers.</p></section>
-        <section><h3>Mobile</h3><ul><li>Kotlin</li><li>Jetpack Compose</li><li>SwiftUI</li><li>React Native (Expo)</li><li>Capacitor</li></ul><p>Plus Android TWA and WKWebView wrappers.</p></section>
-        <section><h3>Backend</h3><ul><li>Node.js</li><li>Express</li><li>Next.js server</li><li>Netlify Functions</li></ul><p>REST APIs, webhooks, background jobs.</p></section>
-        <section><h3>Database</h3><ul><li>PostgreSQL</li><li>Prisma</li><li>Neon</li><li>SQLite</li><li>Room</li><li>Core Data</li><li>IndexedDB (Dexie)</li></ul></section>
-        <section><h3>Payments</h3><ul><li>Razorpay</li><li>Google Play Billing</li></ul><p>Server-side pricing, signed webhooks, refunds.</p></section>
-        <section><h3>AI</h3><ul><li>On-device speech recognition</li><li>Opt-in cloud AI extraction</li></ul><p>Private by default, with no keys shipped in apps.</p></section>
-        <section><h3>Deployment</h3><ul><li>Netlify</li><li>GitHub Pages</li><li>Render</li><li>Google Play</li><li>Xcode</li></ul></section>
-        <section><h3>Quality</h3><ul><li>node:test</li><li>XCTest</li><li>Robolectric</li><li>WCAG AA checks</li></ul><p>Tests run against real databases where it matters.</p></section>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. Built for real-world use -->
-  <section class="section band-paper" aria-labelledby="proof-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Why it holds up</p>
-        <h2 id="proof-title">Built for real-world use</h2>
-      </div>
-      <ul class="pf-proof reveal">
-        <li><b>Complete product thinking</b><span>SHIFTRESET launched with its assessment, programs, payments and policy pages in place.</span></li>
-        <li><b>Payments done properly</b><span>Prices set on the server, signatures checked, webhooks safe to repeat, and a real payment and refund tested end to end.</span></li>
-        <li><b>Works when the network doesn’t</b><span>Offline queues and on-device data in Farm Ledger, Kath and Course Tracker.</span></li>
-        <li><b>Admin systems included</b><span>Operations consoles in Barb-e-Crew, Farm Ledger and Hazik Carwash, and a dashboard behind this site.</span></li>
-        <li><b>Tested, not assumed</b><span>50 backend tests, 24 iOS tests, and full walkthroughs before anything is called done.</span></li>
-        <li><b>Honest about limits</b><span>Every case study says what isn’t built yet, and accessibility is checked, not guessed.</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 10. CTA -->
-  <section class="section section--tight band-paper" aria-labelledby="cta-title">
-    <div class="wrap">
-      <div class="finalcta pf-cta">
-        <div>
-          <p class="eyebrow">Your turn</p>
-          <h2 id="cta-title">Have an idea?</h2>
-          <p>You don’t need to have everything figured out. Bring the problem, idea or workflow. We can turn it into a clear product plan and build from there.</p>
-        </div>
-        <div class="finalcta__actions">
-          <a class="btn btn--gold" href="#start" data-track="cta_start_project">Start a Project <span class="arr" aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="#work">View All Projects</a>
-        </div>
+      <div class="pf-runson reveal">
+        <h3>Runs on</h3>
+        <p>React · Next.js · TypeScript · Node.js · PostgreSQL · Prisma · Kotlin · SwiftUI · React Native · Razorpay · Netlify · Vercel</p>
+        <p class="pf-runson__note">Only tools used in the projects above.</p>
       </div>
     </div>
   </section>
 
   <!-- 11. Project intake -->
-  <section class="section band-muted" id="start" aria-labelledby="start-title">
+  <section class="section band-ink-2" id="start" aria-labelledby="start-title">
     <div class="wrap">
       <div class="pf-intake">
         <div class="pf-intake__aside">
@@ -528,7 +395,7 @@
         <ul>
           <li><a href="#work">Projects</a></li>
           <li><a href="#services">What I can build</a></li>
-          <li><a href="#process">How I build</a></li>
+          <li><a href="#process">How a project runs</a></li>
           <li><a href="#start">Start a project</a></li>
         </ul>
       </div>

@@ -1,42 +1,26 @@
 /* =============================================================
-   Portfolio page — project grid, filters, case-study panel.
-   Reads window.ALTITUDE_PROJECTS (projects.js). Vanilla JS.
-   Case studies are linkable: /portfolio/#project/<slug>
+   Portfolio page: featured products, "also built" ledger and the
+   case-study panel. Reads window.ALTITUDE_PROJECTS (projects.js).
+   Vanilla JS. Case studies are linkable: /portfolio/#project/<slug>
    ============================================================= */
 (function () {
   'use strict';
 
   var projects = window.ALTITUDE_PROJECTS || [];
-  var grid = document.getElementById('project-grid');
-  var filterBar = document.getElementById('project-filters');
-  var liveRegion = document.getElementById('project-count');
+  var featuredList = document.getElementById('featured-list');
+  var moreList = document.getElementById('more-list');
   var dialog = document.getElementById('case');
-  if (!grid || !projects.length) return;
+  if (!featuredList || !moreList || !projects.length) return;
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var STATUS = {
     'live': 'Live',
     'built': 'Built',
     'in-development': 'In development',
     'prototype': 'Prototype'
   };
-  var FILTERS = [
-    { key: 'all', label: 'All' },
-    { key: 'live', label: 'Live now' },
-    { key: 'web', label: 'Web apps' },
-    { key: 'mobile', label: 'Mobile' },
-    { key: 'business', label: 'Business systems' },
-    { key: 'offline', label: 'Offline-first' }
-  ];
+  var RANK = { 'live': 0, 'built': 1, 'in-development': 2, 'prototype': 3 };
 
-  function matches(p, key) {
-    if (key === 'all') return true;
-    if (key === 'live') return p.status === 'live';
-    return (p.filters || []).indexOf(key) !== -1;
-  }
-  function count(key) { return projects.filter(function (p) { return matches(p, key); }).length; }
-
-  /* Tiny element helper — text is always set as text, never as HTML. */
+  /* Tiny element helper: text is always set as text, never as HTML. */
   function el(tag, attrs, children) {
     var node = document.createElement(tag);
     Object.keys(attrs || {}).forEach(function (k) {
@@ -50,98 +34,75 @@
   function badge(status) {
     return el('span', { className: 'badge badge--' + status, text: STATUS[status] || status });
   }
-  function initials(name) {
-    return name.replace(/[^A-Za-z ]/g, ' ').split(/\s+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join('').toUpperCase();
-  }
-  function placeholder(p) {
-    return el('div', { className: 'pf-ph', 'aria-hidden': 'true' }, [
-      el('div', { className: 'pf-ph__ui' }),
-      el('div', { className: 'pf-ph__mono', text: initials(p.shortName || p.name) }),
-      el('span', { className: 'pf-ph__label', text: 'Screenshot coming' })
-    ]);
-  }
 
   /* ---------- Counts shown in the facts row ---------- */
   document.querySelectorAll('[data-count]').forEach(function (node) {
     var k = node.getAttribute('data-count');
-    node.textContent = k === 'total' ? projects.length : count(k);
+    node.textContent = k === 'live'
+      ? projects.filter(function (p) { return p.status === 'live'; }).length
+      : projects.length;
   });
 
-  /* ---------- Cards ---------- */
-  function card(p, index) {
-    var media = el('div', { className: 'pcard__media' + (p.image ? '' : ' is-ph') }, [
-      p.image
-        ? el('img', { src: p.image.src, alt: p.image.alt, width: '960', height: '600', loading: index < 3 ? 'eager' : 'lazy', decoding: 'async' })
-        : placeholder(p),
-      badge(p.status)
-    ]);
-    var chips = el('ul', { className: 'pcard__chips', 'aria-label': 'What was built' },
-      (p.built || []).slice(0, 4).map(function (b) { return el('li', { text: b }); }));
-    var open = el('a', { className: 'pcard__open', href: '#project/' + p.slug, 'data-track': 'case_study_open' }, [
-      'View case study', el('span', { className: 'arr', 'aria-hidden': 'true', text: ' →' })
-    ]);
-    open.setAttribute('aria-label', 'View case study: ' + p.name);
-    return el('li', {}, [
-      el('article', { className: 'pcard' }, [
-        media,
-        el('div', { className: 'pcard__body' }, [
-          el('div', { className: 'pcard__meta' }, [
-            el('span', { className: 'pcard__cat', text: (p.categories || []).join(' · ') })
-          ]),
-          el('h3', { text: p.name }),
-          el('p', { className: 'pcard__tag', text: p.tagline }),
-          chips,
-          el('div', { className: 'pcard__cta' }, [open, el('span', { className: 'pcard__year', text: String(p.year || '') })])
-        ])
-      ])
+  /* ---------- Featured products: room for real screenshots ---------- */
+  function shot(g, cls, eager) {
+    return el('figure', { className: cls }, [
+      el('img', { src: g.src, alt: g.alt, width: String(g.w), height: String(g.h), loading: eager ? 'eager' : 'lazy', decoding: 'async' })
     ]);
   }
 
-  var current = 'all';
-  function render(key, animate) {
-    current = key;
-    grid.textContent = '';
-    var shown = projects.filter(function (p) { return matches(p, key); });
-    shown.forEach(function (p, i) {
-      var item = card(p, i);
-      if (animate && !reduced) {
-        item.classList.add('is-entering');
-        item.style.animationDelay = (i * 45) + 'ms';
-      }
-      grid.appendChild(item);
-    });
-    if (!shown.length) grid.appendChild(el('li', { className: 'pf-empty', text: 'No projects in this group yet.' }));
-    if (liveRegion) {
-      var label = FILTERS.filter(function (f) { return f.key === key; })[0].label;
-      liveRegion.textContent = key === 'all'
-        ? 'Showing all ' + shown.length + ' projects.'
-        : 'Showing ' + shown.length + ' of ' + projects.length + ' projects: ' + label + '.';
+  function feature(p, index) {
+    var shots = p.gallery || [];
+    var desktop = shots.filter(function (g) { return g.kind === 'desktop'; })[0];
+    var mobile = shots.filter(function (g) { return g.kind === 'mobile'; })[0];
+
+    var media = el('div', { className: 'pf-feature__media' }, [
+      desktop ? shot(desktop, 'pf-shot', index === 0) : null,
+      mobile ? shot(mobile, 'pf-shot pf-shot--phone', false) : null
+    ]);
+
+    var actions = el('div', { className: 'pf-feature__actions' });
+    if (p.liveUrl) {
+      actions.appendChild(el('a', { className: 'btn btn--gold', href: p.liveUrl, target: '_blank', rel: 'noopener', 'data-track': 'feature_live' }, [
+        p.liveLabel || 'Open live',
+        el('span', { className: 'sr-only', text: ' (opens in a new tab)' }),
+        el('span', { 'aria-hidden': 'true', text: ' ↗' })
+      ]));
     }
+    actions.appendChild(el('a', { className: 'pf-textlink', href: '#project/' + p.slug, 'data-track': 'case_study_open', 'aria-label': 'Read the case study: ' + p.name }, [
+      'Read the case study', el('span', { className: 'arr', 'aria-hidden': 'true', text: '→' })
+    ]));
+
+    var copy = el('div', { className: 'pf-feature__copy' }, [
+      el('div', { className: 'pf-feature__meta' }, [badge(p.status), el('span', { text: (p.categories || []).join(' · ') })]),
+      el('h3', { text: p.name }),
+      el('p', { className: 'pf-feature__tag', text: p.tagline }),
+      el('ul', { className: 'pf-feature__points' }, (p.highlights || []).map(function (h) { return el('li', { text: h }); })),
+      el('ul', { className: 'pf-feature__tech', 'aria-label': 'Built with' }, (p.tech || []).slice(0, 6).map(function (t) { return el('li', { text: t }); })),
+      actions
+    ]);
+
+    return el('li', { className: 'pf-feature' }, [media, copy]);
   }
 
-  /* ---------- Filters (only groups that actually contain projects) ---------- */
-  if (filterBar) {
-    FILTERS.forEach(function (f) {
-      var n = count(f.key);
-      if (!n) return;
-      var b = el('button', { type: 'button', className: 'pf-filter', 'aria-pressed': f.key === 'all' ? 'true' : 'false', 'data-filter': f.key }, [
-        f.label, el('span', { className: 'c', text: String(n), 'aria-hidden': 'true' })
-      ]);
-      filterBar.appendChild(b);
-    });
-    filterBar.addEventListener('click', function (e) {
-      var b = e.target.closest('[data-filter]');
-      if (!b) return;
-      var key = b.getAttribute('data-filter');
-      if (key === current) return;
-      filterBar.querySelectorAll('[data-filter]').forEach(function (x) {
-        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
-      });
-      render(key, true);
-      if (window.AltitudeTrack) window.AltitudeTrack('portfolio_filter', { filter: key });
-    });
+  /* ---------- Everything else: a scannable ledger ---------- */
+  function ledgerRow(p) {
+    var link = el('a', { href: '#project/' + p.slug, 'data-track': 'case_study_open', 'aria-label': 'Case study: ' + p.name + ' (' + (STATUS[p.status] || p.status) + ')' }, [
+      el('span', { className: 'pf-ledger__name' }, [el('b', { text: p.name }), el('small', { text: (p.categories || []).join(' · ') })]),
+      el('span', { className: 'pf-ledger__tag', text: p.tagline }),
+      badge(p.status),
+      el('span', { className: 'arr', 'aria-hidden': 'true', text: '→' })
+    ]);
+    return el('li', {}, [link]);
   }
-  render('all', false);
+
+  var featured = projects.filter(function (p) { return p.featured; })
+    .sort(function (a, b) { return a.featured - b.featured; });
+  var rest = projects.filter(function (p) { return !p.featured; })
+    .sort(function (a, b) { return (RANK[a.status] || 0) - (RANK[b.status] || 0); });
+
+  featuredList.textContent = '';
+  featured.forEach(function (p, i) { featuredList.appendChild(feature(p, i)); });
+  rest.forEach(function (p) { moreList.appendChild(ledgerRow(p)); });
 
   /* ---------- Case study panel ---------- */
   var lastTrigger = null;
