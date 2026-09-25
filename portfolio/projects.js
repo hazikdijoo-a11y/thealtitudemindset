@@ -6,16 +6,20 @@
    every line here was checked against the project's own code, README
    or build notes. Leave a field out rather than guess.
 
-   status:   'live' | 'built' | 'in-development' | 'prototype'
-   filters:  any of 'web', 'mobile', 'business', 'offline'
-             ('live' is derived from status)
+   status:     'live' | 'built' | 'in-development' | 'prototype'
+   group:      'websites' | 'business' | 'products' (drives the work
+               filter and which service the case study's CTA offers)
+   featured:   1..n puts the project in the large rows, in that order
+   experience: one line on how the business or user actually uses it
+   decisions:  design decisions, each traceable to the build itself
    gallery:  real screenshots only. With none, the page shows a
              labelled placeholder and `previewNote` explains why.
    ============================================================= */
 window.ALTITUDE_PROJECTS = [
   {
     slug: 'shiftreset',
-    featured: 1,
+    group: 'products',
+    featured: 4,
     highlights: [
       'A 24-question assessment across six life areas builds a personal Reset Profile',
       'Six programs with 92 daily actions and progress tracking',
@@ -54,11 +58,18 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Honest guardrails', text: 'Clearly not a medical service, with scores presented as self-reflection, never as clinical measurement.' }
     ],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'PostgreSQL', 'Neon', 'Razorpay', 'Netlify'],
-    notYet: 'Planned but not built yet: an AI coach, in-app coaching booking, journal and goals screens, an admin dashboard and notifications. The Android and iOS apps are built but not yet released on the stores.'
+    notYet: 'Planned but not built yet: an AI coach, in-app coaching booking, journal and goals screens, an admin dashboard and notifications. The Android and iOS apps are built but not yet released on the stores.',
+    experience: 'A visitor takes the assessment, gets a Reset Profile, then enrols in a daily program and ticks off each day’s actions.',
+    decisions: [
+      'Scores are presented as self-reflection, never as a clinical measurement',
+      'Money is stored in paise as whole numbers, so amounts never pick up rounding errors',
+      'A refund removes access automatically, so nobody has to do it by hand'
+    ]
   },
   {
     slug: 'altitude-backend',
-    featured: 3,
+    group: 'business',
+    featured: 5,
     highlights: [
       'Prices are set on the server; the browser never sends an amount',
       'Signed webhooks that are safe to repeat, so a retry never double-counts',
@@ -101,10 +112,17 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Tested against a real database', text: '50 automated tests run against Postgres, and the suite refuses to run on anything but a test database.' }
     ],
     tech: ['Node.js', 'PostgreSQL', 'Neon', 'Razorpay', 'Netlify Functions', 'node:test'],
-    notYet: ''
+    notYet: '',
+    experience: 'A visitor picks a session on the checkout page and pays through Razorpay. Every enquiry from this site’s forms lands in one admin dashboard.',
+    decisions: [
+      'The price always comes from the server, never from the browser',
+      'Rate limits are kept in the database, because serverless instances share no memory',
+      'Enquiries are copied in the background, so a slow server never holds up the visitor'
+    ]
   },
   {
     slug: 'uwear-hani',
+    group: 'business',
     name: 'U Wear HANI',
     tagline: 'Billing, stock and vendor tracking for a boutique’s shop floor.',
     status: 'live',
@@ -132,10 +150,16 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Garment swing tags', text: 'Print-ready 75 × 150 mm tags, with an optional product photo compressed on the device first.' }
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Service Worker', 'Node.js', 'Swift', 'SwiftUI', 'WKWebView'],
-    notYet: 'The iOS app has been verified in the Simulator but not yet on a physical iPhone. Access from outside the shop WiFi was deliberately left out.'
+    notYet: 'The iOS app has been verified in the Simulator but not yet on a physical iPhone. Access from outside the shop WiFi was deliberately left out.',
+    experience: 'Staff bill customers, print receipts and swing tags, and update stock from any device on the shop WiFi.',
+    decisions: [
+      'Self-hosted on the shop’s own Mac, so there is no monthly cloud bill',
+      'A shared PIN instead of personal accounts, because the devices are shared on the shop floor'
+    ]
   },
   {
     slug: 'barb-e-crew',
+    group: 'business',
     name: 'Barb-e-Crew',
     tagline: 'B2B ordering and delivery for barbers and salons.',
     status: 'built',
@@ -162,10 +186,21 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Verified end to end', text: 'An order was placed as a customer, moved through fulfilment as an operator and completed as a delivery agent.' }
     ],
     tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Prisma', 'SQLite', 'JWT'],
-    notYet: 'Not built yet: a payment gateway, a real SMS provider (the OTP is simulated), maps and geocoding, real product photography, and automated tests.'
+    notYet: 'Not built yet: a payment gateway, a real SMS provider (the OTP is simulated), maps and geocoding, real product photography, and automated tests.',
+    decisions: [
+      'Reordering takes one tap, because salons buy the same supplies again and again',
+      'Stock and delivery times come from the centre that actually serves the salon'
+    ]
   },
   {
     slug: 'farm-ledger',
+    group: 'business',
+    featured: 3,
+    highlights: [
+      'Attendance, daily wages, advances and balances for every farmer',
+      'Advances, expenses, sales and stock can be recorded offline and sync later',
+      'Admin and farmer roles, with a phone-first layout'
+    ],
     name: 'Farm Ledger',
     tagline: 'Attendance, wages, advances and farm accounts, built to keep working when the network doesn’t.',
     status: 'in-development',
@@ -199,10 +234,17 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Offline queue', text: 'Advances, expenses, sales and stock can be recorded offline; a banner shows what is still waiting to sync.' }
     ],
     tech: ['React', 'Vite', 'Dexie', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Supabase Storage', 'Google Play Billing'],
-    notYet: 'Not on Google Play yet, and there is no public demo because sign-in is by phone number.'
+    notYet: 'Not on Google Play yet, and there is no public demo because sign-in is by phone number.',
+    experience: 'The admin marks attendance and records advances on a phone. Wages and balances are worked out from those records.',
+    decisions: [
+      'Offline-first, because the network on a farm is unreliable',
+      'Phone-style tab navigation, so it is used on a phone, not at a desk',
+      'A banner shows exactly what is still waiting to sync'
+    ]
   },
   {
     slug: 'hazik-carwash',
+    group: 'business',
     name: 'Hazik Carwash',
     tagline: 'An on-demand car-wash marketplace with a customer app, a washer app and an operations dashboard.',
     status: 'in-development',
@@ -236,6 +278,7 @@ window.ALTITUDE_PROJECTS = [
   },
   {
     slug: 'kath',
+    group: 'products',
     name: 'Kath',
     tagline: 'A voice and memory assistant for Android and iOS that works offline first.',
     status: 'built',
@@ -262,11 +305,16 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Audited', text: 'The Android app went through a 33-phase audit and a pass to fix what it found. Remaining gaps are written down, not hidden.' }
     ],
     tech: ['Kotlin', 'Jetpack Compose', 'Room', 'Swift', 'SwiftUI', 'Core Data', 'AVFoundation', 'Speech framework', 'XCTest', 'Robolectric'],
-    notYet: 'Known gaps: no live location reminders, external microphones not tested on real hardware, no UI tests, and on Android no encryption at rest beyond the phone’s own.'
+    notYet: 'Known gaps: no live location reminders, external microphones not tested on real hardware, no UI tests, and on Android no encryption at rest beyond the phone’s own.',
+    decisions: [
+      'Private by default: processing stays on the device unless the person opts in to cloud AI',
+      'No API keys ship inside the app'
+    ]
   },
   {
     slug: 'course-tracker',
-    featured: 2,
+    group: 'products',
+    featured: 6,
     highlights: [
       'Each day is an aircraft on a spiral and each turn is a week',
       'Works offline, with no account and no server',
@@ -303,11 +351,16 @@ window.ALTITUDE_PROJECTS = [
       { title: 'On Android', text: 'A full-screen Android app with no browser bar.' }
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'SVG', 'Service Worker', 'Trusted Web Activity', 'GitHub Pages'],
-    notYet: 'The Android app is in internal testing; the production release needs more closed testers.'
+    notYet: 'The Android app is in internal testing; the production release needs more closed testers.',
+    experience: 'Open it each day, tick your habits, and read the whole week at a glance on the spiral.',
+    decisions: [
+      'A spiral instead of a grid, so the same weekday always lines up',
+      'No account and no server, so the data stays on the device'
+    ]
   },
   {
     slug: 'little-pilot-academy',
-    featured: 4,
+    group: 'products',
     highlights: [
       'Letters, words, numbers and reading, led by a guide character',
       'No sign-up, with large controls made for a young child’s tablet',
@@ -342,11 +395,13 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Made for small hands', text: 'Large, friendly controls designed for a young child on a tablet.' }
     ],
     tech: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'vite-plugin-pwa', 'Capacitor'],
-    notYet: ''
+    notYet: '',
+    experience: 'A child picks letters, words, numbers or reading on a tablet, guided by a character called Lumi.'
   },
   {
     slug: 'deepika-brown-makeovers',
-    featured: 5,
+    group: 'websites',
+    featured: 2,
     highlights: [
       'A draggable before-and-after slider for the studio’s nail work',
       'A lookbook whose photos open full size',
@@ -382,11 +437,18 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Respects motion settings', text: 'Scroll animations switch off for visitors who ask their device for reduced motion.' }
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'WebP', 'GitHub Pages'],
-    notYet: 'Booking happens by phone, so there is no online booking form. There is no structured data or social share image yet, so search results and link previews are basic.'
+    notYet: 'Booking happens by phone, so there is no online booking form. There is no structured data or social share image yet, so search results and link previews are basic.',
+    experience: 'A visitor browses the lookbook and the before-and-after work, then calls the studio in one tap.',
+    decisions: [
+      'Call and directions sit in the header and the contact section, because bookings happen by phone',
+      'Photos are WebP and load only as they scroll into view, to keep the page light',
+      'Scroll animations switch off for visitors who ask for reduced motion'
+    ]
   },
   {
     slug: 'dijoo-afghan-cap-house',
-    featured: 6,
+    group: 'websites',
+    featured: 1,
     highlights: [
       'A leather panel where a lamp follows the cursor across the stitching',
       'Call and directions buttons, plus a call bar that appears on phones once the hero scrolls away',
@@ -422,6 +484,12 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Accessible basics', text: 'A skip link, visible keyboard focus, and reveal animations that switch off for reduced motion.' }
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'SVG', 'schema.org', 'GitHub Pages'],
-    notYet: 'No photographs of the shop or stock, no opening hours and no WhatsApp link yet, because those haven’t been provided. There is no social share image.'
+    notYet: 'No photographs of the shop or stock, no opening hours and no WhatsApp link yet, because those haven’t been provided. There is no social share image.',
+    experience: 'A visitor on a phone sees what the shop stocks, then taps to call or opens directions in Google Maps.',
+    decisions: [
+      'No prices or opening hours invented: the page asks visitors to call before a special trip',
+      'The artwork is drawn in SVG, so the site needed no photo shoot',
+      'On phones, a call bar appears once the hero buttons scroll away'
+    ]
   }
 ];

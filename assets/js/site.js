@@ -260,6 +260,15 @@
         }
         form.reset();
         track(form.getAttribute('data-track-submit') || 'form_submit', { form_id: form.id || '' });
+        // Forms with data-confirm="<id>" swap themselves for a confirmation
+        // panel that says what happens next (the portfolio intake).
+        var confirmBox = document.getElementById(form.getAttribute('data-confirm') || '');
+        if (confirmBox) {
+          form.hidden = true;
+          confirmBox.hidden = false;
+          var heading = confirmBox.querySelector('[tabindex="-1"]');
+          if (heading) heading.focus();
+        }
       }).catch(function () {
         if (btn) { btn.disabled = false; btn.textContent = label; }
         if (status) {

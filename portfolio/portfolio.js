@@ -19,6 +19,9 @@
     'prototype': 'Prototype'
   };
   var RANK = { 'live': 0, 'built': 1, 'in-development': 2, 'prototype': 3 };
+  var GROUP = { websites: 'Website', business: 'Business app', products: 'App & AI product' };
+  // Which enquiry option a case study's call to action preselects
+  var NEED_FOR_GROUP = { websites: 'launch', business: 'app', products: 'product' };
 
   /* Tiny element helper: text is always set as text, never as HTML. */
   function el(tag, attrs, children) {
@@ -34,14 +37,6 @@
   function badge(status) {
     return el('span', { className: 'badge badge--' + status, text: STATUS[status] || status });
   }
-
-  /* ---------- Counts shown in the facts row ---------- */
-  document.querySelectorAll('[data-count]').forEach(function (node) {
-    var k = node.getAttribute('data-count');
-    node.textContent = k === 'live'
-      ? projects.filter(function (p) { return p.status === 'live'; }).length
-      : projects.length;
-  });
 
   /* ---------- Featured products: room for real screenshots ---------- */
   function shot(g, cls, eager) {
@@ -73,15 +68,15 @@
     ]));
 
     var copy = el('div', { className: 'pf-feature__copy' }, [
-      el('div', { className: 'pf-feature__meta' }, [badge(p.status), el('span', { text: (p.categories || []).join(' · ') })]),
+      el('div', { className: 'pf-feature__meta' }, [badge(p.status), el('span', { text: GROUP[p.group] || (p.categories || [])[0] })]),
       el('h3', { text: p.name }),
       el('p', { className: 'pf-feature__tag', text: p.tagline }),
-      el('ul', { className: 'pf-feature__points' }, (p.highlights || []).map(function (h) { return el('li', { text: h }); })),
-      el('ul', { className: 'pf-feature__tech', 'aria-label': 'Built with' }, (p.tech || []).slice(0, 6).map(function (t) { return el('li', { text: t }); })),
+      el('p', { className: 'pf-feature__problem' }, [el('b', { text: 'The problem' }), p.problem]),
+      el('ul', { className: 'pf-feature__points', 'aria-label': 'What it does' }, (p.highlights || []).map(function (h) { return el('li', { text: h }); })),
       actions
     ]);
 
-    return el('li', { className: 'pf-feature' }, [media, copy]);
+    return el('li', { className: 'pf-feature', 'data-group': p.group || '' }, [media, copy]);
   }
 
   /* ---------- Everything else: a scannable ledger ---------- */
@@ -92,7 +87,7 @@
       badge(p.status),
       el('span', { className: 'arr', 'aria-hidden': 'true', text: '→' })
     ]);
-    return el('li', {}, [link]);
+    return el('li', { 'data-group': p.group || '' }, [link]);
   }
 
   var featured = projects.filter(function (p) { return p.featured; })
@@ -103,6 +98,49 @@
   featuredList.textContent = '';
   featured.forEach(function (p, i) { featuredList.appendChild(feature(p, i)); });
   rest.forEach(function (p) { moreList.appendChild(ledgerRow(p)); });
+
+  /* ---------- Filter by the kind of problem solved ---------- */
+  var filterBtns = document.querySelectorAll('[data-filter]');
+  var filterStatus = document.getElementById('filter-status');
+  var moreBlock = document.getElementById('more');
+  function applyFilter(key) {
+    var shown = 0;
+    [featuredList, moreList].forEach(function (list) {
+      Array.prototype.forEach.call(list.children, function (li) {
+        var on = key === 'all' || li.getAttribute('data-group') === key;
+        li.hidden = !on;
+        if (on) shown++;
+      });
+    });
+    if (moreBlock) moreBlock.hidden = !Array.prototype.some.call(moreList.children, function (li) { return !li.hidden; });
+    filterBtns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filter') === key)); });
+    if (filterStatus) filterStatus.textContent = shown + (shown === 1 ? ' project shown' : ' projects shown');
+  }
+  filterBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var key = b.getAttribute('data-filter');
+      applyFilter(key);
+      if (window.AltitudeTrack) window.AltitudeTrack('work_filter', { filter: key });
+    });
+  });
+
+  /* ---------- Buttons that preselect "What do you need?" ---------- */
+  var needSelect = document.getElementById('p-need');
+  function preselect(key) {
+    if (!needSelect || !key) return;
+    var opt = needSelect.querySelector('option[data-key="' + key + '"]');
+    if (!opt) return;
+    needSelect.value = opt.value;
+    // Clear a stale "required" error if one is showing
+    needSelect.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('[data-need]');
+    if (a) preselect(a.getAttribute('data-need'));
+  });
+  // Links from other pages (the checklist) arrive as /portfolio/?need=audit#start
+  var needParam = /[?&]need=([a-z]+)/.exec(location.search);
+  if (needParam) preselect(needParam[1]);
 
   /* ---------- Case study panel ---------- */
   var lastTrigger = null;
@@ -123,7 +161,6 @@
         p.liveLabel || 'View live', el('span', { className: 'sr-only', text: ' (opens in a new tab)' }), el('span', { 'aria-hidden': 'true', text: ' ↗' })
       ]));
     }
-    actions.appendChild(el('a', { className: 'btn btn--ghost', href: '#start', 'data-close': '' }, ['Start a similar project']));
 
     body.appendChild(el('header', { className: 'case__head' }, [
       el('div', { className: 'case__status' }, [badge(p.status), el('span', { text: p.statusNote || '' })]),
@@ -147,33 +184,44 @@
       body.appendChild(el('p', { className: 'case__noshot', text: p.previewNote || 'Screenshots to be added.' }));
     }
 
-    body.appendChild(el('div', { className: 'case__ps' }, [
-      el('div', {}, [el('h3', { text: 'The problem' }), el('p', { text: p.problem })]),
-      el('div', {}, [el('h3', { text: 'The solution' }), el('p', { text: p.solution })])
-    ]));
+    var story = [
+      el('div', {}, [el('h3', { text: '1 · The problem' }), el('p', { text: p.problem })]),
+      el('div', {}, [el('h3', { text: '2 · The approach' }), el('p', { text: p.solution })])
+    ];
+    if (p.experience) story.push(el('div', {}, [el('h3', { text: '3 · How it’s used' }), el('p', { text: p.experience })]));
+    body.appendChild(el('div', { className: 'case__ps' + (p.experience ? ' case__ps--3' : '') }, story));
 
-    var layers = p.layers || {};
-    var rows = LAYER_ORDER.filter(function (k) { return layers[k]; }).map(function (k) {
-      return el('div', {}, [el('dt', { text: k }), el('dd', { text: layers[k] })]);
-    });
-    if (rows.length) body.appendChild(section('What I built', el('dl', { className: 'case__layers' }, rows)));
+    if ((p.decisions || []).length) {
+      body.appendChild(section('Design decisions', el('ul', { className: 'case__decisions' }, p.decisions.map(function (d) { return el('li', { text: d }); }))));
+    }
 
     if ((p.features || []).length) {
       body.appendChild(section('Key features', el('ul', { className: 'case__features' }, p.features.map(function (f) {
         return el('li', {}, [el('b', { text: f.title }), el('span', { text: f.text })]);
       }))));
     }
-    if ((p.tech || []).length) {
-      body.appendChild(section('Technology', el('ul', { className: 'case__tech' }, p.tech.map(function (t) { return el('li', { text: t }); }))));
+
+    // Technology is for the curious, so it sits behind a disclosure
+    var layers = p.layers || {};
+    var rows = LAYER_ORDER.filter(function (k) { return layers[k]; }).map(function (k) {
+      return el('div', {}, [el('dt', { text: k }), el('dd', { text: layers[k] })]);
+    });
+    if (rows.length || (p.tech || []).length) {
+      body.appendChild(el('details', { className: 'case__techbox' }, [
+        el('summary', { text: 'Technology' }),
+        rows.length ? el('dl', { className: 'case__layers' }, rows) : null,
+        (p.tech || []).length ? el('ul', { className: 'case__tech' }, p.tech.map(function (t) { return el('li', { text: t }); })) : null
+      ]));
     }
-    body.appendChild(section('Status', el('p', { className: 'case__notyet' }, [
+
+    body.appendChild(section('Where it stands', el('p', { className: 'case__notyet' }, [
       el('b', { text: (STATUS[p.status] || p.status) + '. ' }),
       (p.statusNote ? p.statusNote + '. ' : '') + (p.notYet || '')
     ])));
 
     body.appendChild(el('div', { className: 'case__cta' }, [
-      el('div', {}, [el('h3', { text: 'Have something similar in mind?' }), el('p', { text: 'Tell me the problem and I’ll tell you honestly what it takes to build.' })]),
-      el('a', { className: 'btn btn--gold', href: '#start', 'data-close': '', 'data-track': 'case_study_start' }, ['Start a Project ', el('span', { className: 'arr', 'aria-hidden': 'true', text: '→' })])
+      el('div', {}, [el('h3', { text: 'Have a similar problem?' }), el('p', { text: 'Tell me about it and I’ll tell you honestly what it would take.' })]),
+      el('a', { className: 'btn btn--gold', href: '#start', 'data-close': '', 'data-need': NEED_FOR_GROUP[p.group] || 'unsure', 'data-track': 'case_study_start' }, ['Let’s discuss it ', el('span', { className: 'arr', 'aria-hidden': 'true', text: '→' })])
     ]));
   }
 
@@ -238,7 +286,7 @@
     var ld = {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      name: 'Software products designed and built by Hazik Fayaz',
+      name: 'Websites and software designed and built by Hazik Fayaz',
       itemListElement: projects.map(function (p, i) {
         var item = {
           '@type': 'SoftwareApplication',
