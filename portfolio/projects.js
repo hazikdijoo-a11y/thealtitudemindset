@@ -169,12 +169,17 @@ window.ALTITUDE_PROJECTS = [
     name: 'Farm Ledger',
     tagline: 'Attendance, wages, advances and farm accounts, built to keep working when the network doesn’t.',
     status: 'in-development',
-    statusNote: 'In development; hosted API currently paused',
+    statusNote: 'Web app running; Android package prepared',
     year: 2026,
     categories: ['Business system', 'Agriculture'],
     filters: ['web', 'mobile', 'business', 'offline'],
     built: ['Role-based sign-in', 'Offline sync queue', 'Attendance & wages', 'Advances & balances', 'Subscription billing'],
-    previewNote: 'Screenshots to be added.',
+    image: { src: '/assets/img/work/farm-ledger-card.webp?v=20260925', alt: 'Farm Ledger admin overview: farmer count, stock balance, sales, expenses and balance sheet' },
+    gallery: [
+      { src: '/assets/img/work/farm-ledger-desktop.webp?v=20260925', w: 1200, h: 750, kind: 'desktop', alt: 'Farm Ledger admin overview on desktop, with a side menu and summary tiles' },
+      { src: '/assets/img/work/farm-ledger-mobile.webp?v=20260925', w: 360, h: 720, kind: 'mobile', alt: 'Farm Ledger’s Mark Attendance screen on a phone, with Present and Absent buttons for each farmer' }
+    ],
+    previewNote: 'Shown with sample data: a made-up farm and farmers. The real farm’s records are private, and sign-in is by phone number, so there is no public demo.',
     problem: 'A farming operation has to track farmer attendance, daily wages, advances and farm expenses, and settle balances accurately, often where the mobile network is unreliable.',
     solution: 'A mobile-first web app for admins and farmers, backed by a Node.js API. Changes made offline are queued on the device and sync when the connection returns.',
     layers: {
@@ -184,7 +189,7 @@ window.ALTITUDE_PROJECTS = [
       Authentication: 'Phone number and password, bcrypt, 12-hour JWTs, admin and farmer roles',
       Admin: 'Farmers, attendance, balances, advances, expenses, sales, stock, crop drying, job cards and reports',
       Integrations: 'Supabase Storage for profile photos; Google Play Billing for trial and subscription',
-      Deployment: 'Web app on Vercel; Node.js API on Render, currently paused; Android package built from the web app'
+      Deployment: 'Web app on Vercel; Node.js API on Render; Android package built from the web app'
     },
     features: [
       { title: 'Attendance calendar', text: 'Month-by-month attendance per farmer, with a calendar report.' },
@@ -194,7 +199,7 @@ window.ALTITUDE_PROJECTS = [
       { title: 'Offline queue', text: 'Advances, expenses, sales and stock can be recorded offline; a banner shows what is still waiting to sync.' }
     ],
     tech: ['React', 'Vite', 'Dexie', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'Supabase Storage', 'Google Play Billing'],
-    notYet: 'The hosted API is paused for now, so the live web app can’t sync until it is switched back on.'
+    notYet: 'Not on Google Play yet, and there is no public demo because sign-in is by phone number.'
   },
   {
     slug: 'hazik-carwash',
