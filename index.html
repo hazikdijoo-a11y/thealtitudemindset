@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>NLP &amp; Mindset Coach in Bengaluru | Hazik Fayaz</title>
-<meta name="description" content="NLP and mindset coaching for ambitious professionals in Bengaluru and online across India. Break limiting beliefs, build confidence, handle pressure." />
+<meta name="description" content="Your mindset determines your altitude. NLP and mindset coaching in Bengaluru and online across India: break limiting beliefs, build confidence, handle pressure." />
 <link rel="canonical" href="https://thealtitudemindset.com/" />
 <meta name="theme-color" content="#0B1B33" />
 
@@ -26,9 +26,10 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1B33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23E8C468' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preload" as="image" href="/assets/img/hazik-portrait-840.jpg" imagesrcset="/assets/img/hazik-portrait-520.jpg 520w, /assets/img/hazik-portrait-840.jpg 840w" imagesizes="(max-width: 880px) 340px, 40vw" />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/site.css" />
+<link rel="stylesheet" href="/assets/css/flight.css" />
+<meta name="theme-color" content="#05080F" />
 <script>document.documentElement.classList.add("js");</script>
 
 <script type="application/ld+json">
@@ -187,15 +188,19 @@
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b0ded156e7e4a4b98bebcb9575b4f77"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/flight.js" defer></script>
 </head>
-<body>
+<body class="flight">
 <a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Climb progress: a hairline under the header that fills as the page climbs -->
+<div class="fx-climbbar" aria-hidden="true"><span></span></div>
 
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Primary">
       <a class="nav__logo" href="/" aria-label="The Altitude Mindset — home">
-        <img src="/assets/img/logo-altitude-mindset.svg" alt="The Altitude Mindset" width="560" height="120" />
+        <img src="/assets/img/logo-altitude-mindset-light.svg" alt="The Altitude Mindset" width="560" height="120" />
       </a>
       <ul class="nav__menu">
         <li><a href="/about/">About</a></li>
@@ -207,7 +212,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <div class="nav__cta">
-        <a class="btn btn--primary" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book a Free Call</a>
+        <a class="btn btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Start your journey</a>
       </div>
       <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer"><span></span></button>
     </nav>
@@ -221,512 +226,556 @@
         <li><a href="/cabin-crew-training/">Cabin Crew Training</a></li>
         <li><a href="/resources/">Resources</a></li>
         <li><a href="/blog/">Blog</a></li>
+        <li><a href="#altitude-check">Altitude Check</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a class="btn btn--primary btn--block" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book Your Free Discovery Call</a>
+      <a class="btn btn--primary btn--block" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Start your journey — free 30-min call</a>
     </div>
   </div>
 </header>
 
+<!-- Persistent altimeter: the through-line of the climb. Desktop only; also a section nav. -->
+<nav class="fx-rail" aria-label="Journey sections">
+  <div class="fx-rail__alt" aria-hidden="true"><span class="fx-rail__k">ALT</span><span class="fx-rail__v" id="fx-rail-alt">0</span><span class="fx-rail__u">FT</span></div>
+  <ol>
+    <li><a href="#ground" data-phase="ground"><i></i><span>Ground</span></a></li>
+    <li><a href="#taxi" data-phase="taxi"><i></i><span>Taxi</span></a></li>
+    <li><a href="#takeoff" data-phase="takeoff"><i></i><span>Takeoff</span></a></li>
+    <li><a href="#climb" data-phase="climb"><i></i><span>Climb</span></a></li>
+    <li><a href="#cruise" data-phase="cruise"><i></i><span>Cruise</span></a></li>
+    <li><a href="#turbulence" data-phase="turbulence"><i></i><span>Turbulence</span></a></li>
+    <li><a href="#flight-path" data-phase="navigation"><i></i><span>Navigation</span></a></li>
+    <li><a href="#destination" data-phase="destination"><i></i><span>Destination</span></a></li>
+  </ol>
+</nav>
+
 <main id="main">
 
-  <!-- ═══ 1. HERO ═══ -->
-  <section class="hero">
-    <div class="wrap">
-      <div class="hero__grid">
+  <!-- ═══ HERO — THE COCKPIT ═══ -->
+  <section class="fx-hero" id="cockpit" aria-labelledby="hero-title" data-alt="0">
+    <div class="fx-hero__sky" aria-hidden="true">
+      <div class="fx-light"></div>
+      <div class="fx-cloud fx-cloud--a"></div>
+      <div class="fx-cloud fx-cloud--b"></div>
+      <div class="fx-cloud fx-cloud--c"></div>
+      <svg class="fx-hud" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <defs>
+          <linearGradient id="fx-horizon" x1="0" x2="1">
+            <stop offset="0" stop-color="#E8C468" stop-opacity="0" />
+            <stop offset=".5" stop-color="#E8C468" stop-opacity=".85" />
+            <stop offset="1" stop-color="#E8C468" stop-opacity="0" />
+          </linearGradient>
+          <linearGradient id="fx-gridfade" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#8EC5E8" stop-opacity="0" />
+            <stop offset="1" stop-color="#8EC5E8" stop-opacity=".22" />
+          </linearGradient>
+        </defs>
+        <!-- navigation grid below the horizon, converging on a vanishing point -->
+        <g class="fx-grid" stroke="url(#fx-gridfade)" stroke-width="1" fill="none">
+          <path d="M720 600 L-400 900 M720 600 L-60 900 M720 600 L240 900 M720 600 L480 900 M720 600 L720 900 M720 600 L960 900 M720 600 L1200 900 M720 600 L1500 900 M720 600 L1840 900" />
+          <path d="M0 612 H1440 M0 628 H1440 M0 652 H1440 M0 688 H1440 M0 742 H1440 M0 820 H1440" />
+        </g>
+        <!-- horizon -->
+        <line class="fx-horizon" x1="0" y1="600" x2="1440" y2="600" stroke="url(#fx-horizon)" stroke-width="1.5" />
+        <!-- flight path -->
+        <path class="fx-path" pathLength="1" d="M700 900 C 880 840, 990 720, 1070 580 S 1250 230, 1440 130" fill="none" stroke="#E8C468" stroke-width="1.6" stroke-linecap="round" />
+        <path class="fx-path-dash" d="M700 900 C 880 840, 990 720, 1070 580 S 1250 230, 1440 130" fill="none" stroke="#E8C468" stroke-opacity=".35" stroke-width="1" stroke-dasharray="2 10" />
+        <g class="fx-waypoints" fill="#05080F" stroke="#E8C468" stroke-width="1.4">
+          <circle cx="900" cy="822" r="4" /><circle cx="1070" cy="580" r="4" /><circle cx="1250" cy="290" r="4" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="fx-hero__hud" aria-hidden="true">
+      <div class="fx-readout fx-readout--tl"><span>N 12°58′ · E 77°35′</span><span>BLR · VOBL</span></div>
+      <div class="fx-readout fx-readout--tr"><span>HDG 045°</span><span class="fx-status"><i></i>Pre-flight</span></div>
+      <div class="fx-tape">
+        <div class="fx-tape__ticks"></div>
+        <div class="fx-tape__box"><span class="k">ALT</span><span class="v" id="fx-hero-alt">00000</span><span class="u">FT</span></div>
+      </div>
+    </div>
+
+    <div class="wrap fx-hero__content">
+      <p class="fx-eyebrow fx-in" style="--d:1"><span class="fx-eyebrow__dash"></span>Hazik Fayaz · Certified NLP Practitioner &amp; Life Coach</p>
+      <h1 id="hero-title" class="fx-hero__title">
+        <span class="fx-line"><span class="fx-in" style="--d:2">Your mindset</span></span>
+        <span class="fx-line"><span class="fx-in" style="--d:3">determines your <em>altitude.</em></span></span>
+      </h1>
+      <p class="fx-hero__sub fx-in" style="--d:4">Break limiting beliefs. Build confidence. Strengthen relationships. <br />Change the way you think. Change the way you live.</p>
+      <div class="fx-hero__ctas fx-in" style="--d:5">
+        <a class="btn fx-btn fx-btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Start your journey <span aria-hidden="true">→</span></a>
+        <a class="btn fx-btn fx-btn--ghost" href="#ground" data-track="explore_cta_click">Explore Altitude Mindset</a>
+      </div>
+      <p class="fx-hero__note fx-in" style="--d:5">Starts with a free 30-minute discovery call · no pitch, no obligation</p>
+
+      <div class="fx-pilot fx-in" style="--d:6">
+        <img src="/assets/img/hazik-pilot-240.jpg" width="240" height="240" alt="Hazik Fayaz" />
         <div>
-          <p class="eyebrow">NLP &amp; Mindset Coach for Ambitious Professionals</p>
-          <h1>You’re not stuck.<br />You’re running an <em>outdated pattern</em>.</h1>
-          <p class="hero__sub">I help ambitious professionals break limiting beliefs, build confidence, and stay clear under pressure — using practical NLP, shaped by 10+ years evaluating how people actually perform when it counts.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book Your Free Discovery Call</a>
-            <a class="btn btn--ghost" href="/framework/" data-track="framework_cta_click">Explore the Framework</a>
-          </div>
-          <ul class="hero__proof">
-            <li><span class="n">10+</span><span class="t">Years in aviation</span></li>
-            <li><span class="n">Evaluator</span><span class="t">Line check &amp; human performance</span></li>
-            <li><span class="n">Certified</span><span class="t">NLP Practitioner &amp; Life Coach</span></li>
-          </ul>
-        </div>
-        <div class="hero__media">
-          <img class="hero__portrait"
-               src="/assets/img/hazik-portrait-840.jpg"
-               srcset="/assets/img/hazik-portrait-520.jpg 520w, /assets/img/hazik-portrait-840.jpg 840w"
-               sizes="(max-width: 880px) 340px, 40vw"
-               width="840" height="1050"
-               alt="Hazik Fayaz, NLP and mindset coach based in Bengaluru" fetchpriority="high" />
-          <div class="hero__badge">
-            <img src="/assets/img/nlp-badge-160.png" alt="" width="160" height="160" />
-            <div>
-              <b>Certified</b>
-              <span>NLP Practitioner</span>
-            </div>
-          </div>
+          <span class="fx-pilot__k">Your navigator</span>
+          <b>Hazik Fayaz</b>
+          <span>Certified NLP Practitioner &amp; Life Coach · 10+ years in commercial aviation</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ TRUST STRIP ═══ -->
-  <div class="band-dark trust">
-    <div class="wrap">
-      <ul>
-        <li class="label">Background</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>10+ years in commercial aviation</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Line Check Cabin Crew Evaluator</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Certified NLP Practitioner &amp; Life Coach</li>
-        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Practises under the ANLP Code of Ethics</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ═══ 2. PROBLEM RECOGNITION ═══ -->
-  <section class="section band-surface" id="problem">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">The real problem</p>
-        <h2>You know you’re capable of more.</h2>
-      </div>
-      <div class="grid grid--2" style="align-items:start;gap:clamp(1.5rem,4vw,3.5rem)">
-        <div class="reveal">
-          <p class="lead">It usually isn’t intelligence. It isn’t talent, and it isn’t effort — you have already proved you have all three.</p>
-          <p class="mt-2">What’s actually happening is quieter than that. Somewhere along the way your mind built a pattern: a belief about what you’re capable of, a reaction that fires before you can think, a way of speaking to yourself that made sense once and doesn’t any more.</p>
-          <p class="mt-2">The pattern runs automatically. It made sense in the situation that created it. It just hasn’t been updated since.</p>
-          <p class="mt-2"><strong>That’s the thing worth working on — not your willpower.</strong></p>
-        </div>
-        <div class="reveal">
-          <p style="font-size:var(--fs-sm);font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem">Where does it show up for you?</p>
-          <div class="pattern-picker" id="pattern-picker" role="group" aria-label="Where the pattern shows up for you — select any that apply">
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Overthinking every decision</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Self-doubt that arrives on cue</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Fear of failing publicly</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Reacting emotionally, then regretting it</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Struggling to say what you mean</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Confidence that won’t hold under pressure</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>The same argument, on repeat</button>
-            <button type="button" class="pattern-pill" aria-pressed="false"><span class="pattern-pill__mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Knowing exactly what to do — and not doing it</button>
-          </div>
-          <p class="mt-3" style="font-size:var(--fs-sm)" id="pattern-picker-hint">Select any that sound familiar. Recognising more than two isn’t a character flaw — it’s a pattern, and patterns can be worked with directly.</p>
-          <div class="pattern-picker__result" id="pattern-picker-result" role="status" hidden>
-            <p><strong id="pattern-picker-count"></strong> This is exactly what coaching works with directly — not willpower, the pattern underneath it.</p>
-            <a class="btn btn--primary" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="pattern_picker_cta_click">See how coaching could help</a>
-          </div>
-        </div>
+  <!-- ═══ 01 — GROUND ═══ -->
+  <section class="fx-sec fx-ground" id="ground" data-phase="ground" data-alt="0" aria-labelledby="ground-title">
+    <div class="fx-runway" aria-hidden="true"><div class="fx-runway__strip"><i></i></div><div class="fx-runway__lights"></div></div>
+    <div class="wrap fx-narrow">
+      <p class="fx-label reveal">01 · Ground</p>
+      <h2 id="ground-title" class="reveal">Where are you right now?</h2>
+      <p class="fx-lead reveal">Every transformation begins with awareness.</p>
+      <p class="reveal">Before any aircraft moves, the crew knows exactly where it stands: position, weather, fuel, what’s on board. Your mindset works the same way. You can’t plot a route to somewhere new until you’re honest about where you are.</p>
+      <div class="fx-actions reveal">
+        <a class="btn fx-btn fx-btn--ghost" href="#altitude-check" data-track="altitude_check_cta_click">Check your current altitude</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 3. THE ALTITUDE MINDSET FRAMEWORK ═══ -->
-  <section class="section band-dark" id="framework">
+  <!-- ═══ 02 — TAXI ═══ -->
+  <section class="fx-sec fx-taxi" id="taxi" data-phase="taxi" data-alt="0" aria-labelledby="taxi-title">
+    <svg class="fx-taxiway" viewBox="0 0 1200 420" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M1240 20 C 900 40, 760 120, 640 220 S 380 380, 120 400" />
+    </svg>
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">The method</p>
-        <h2>The Altitude Mindset Framework™</h2>
-        <p class="lead">Five stages that take you from noticing the pattern to living without it. Every coaching engagement follows this arc.</p>
+      <div class="fx-head">
+        <p class="fx-label reveal">02 · Taxi</p>
+        <h2 id="taxi-title" class="reveal">Understanding what’s holding you back.</h2>
+        <p class="fx-lead reveal">It’s rarely talent, intelligence or effort. It’s a pattern that made sense once, and hasn’t been updated since.</p>
       </div>
-      <div class="framework">
-        <article class="step reveal">
-          <div class="step__n" aria-hidden="true">01</div>
-          <div>
-            <h3><span>Recognize</span></h3>
-            <p>Name the pattern. We find the specific belief, trigger or behaviour that keeps producing the same result — the one running underneath the situation you thought was the problem.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step__n" aria-hidden="true">02</div>
-          <div>
-            <h3><span>Reframe</span></h3>
-            <p>Challenge the interpretation. Most limiting beliefs aren’t facts — they’re conclusions you drew once and never revisited. We take them apart and look at what else is true.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step__n" aria-hidden="true">03</div>
-          <div>
-            <h3><span>Reset</span></h3>
-            <p>Change your state deliberately. You learn to shift out of a reactive emotional state and back into control — the skill that decides how you perform when pressure arrives.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step__n" aria-hidden="true">04</div>
-          <div>
-            <h3><span>Rewire</span></h3>
-            <p>Build the new response. Using practical NLP techniques, we install thought patterns and behaviours that hold up in the moment, not just in theory.</p>
-          </div>
-        </article>
-        <article class="step reveal">
-          <div class="step__n" aria-hidden="true">05</div>
-          <div>
-            <h3><span>Rise</span></h3>
-            <p>Apply it in real life, consistently, until it stops being something you’re working on and becomes how you operate.</p>
-          </div>
-        </article>
+      <p class="fx-ask reveal" id="taxi-ask">Which of these are holding you on the taxiway? Select any that apply.</p>
+      <div class="pattern-picker fx-holds reveal" id="pattern-picker" role="group" aria-labelledby="taxi-ask">
+        <button type="button" class="pattern-pill fx-hold" aria-pressed="false"><span class="fx-hold__sign">A</span><span><b>Limiting beliefs</b><small>Old conclusions you still treat as facts</small></span></button>
+        <button type="button" class="pattern-pill fx-hold" aria-pressed="false"><span class="fx-hold__sign">B</span><span><b>Fear</b><small>Of failing, of being judged, of getting it wrong in public</small></span></button>
+        <button type="button" class="pattern-pill fx-hold" aria-pressed="false"><span class="fx-hold__sign">C</span><span><b>Self-doubt</b><small>The voice that arrives right on cue</small></span></button>
+        <button type="button" class="pattern-pill fx-hold" aria-pressed="false"><span class="fx-hold__sign">D</span><span><b>Overthinking</b><small>Thinking long past the point of being useful</small></span></button>
+        <button type="button" class="pattern-pill fx-hold" aria-pressed="false"><span class="fx-hold__sign">E</span><span><b>Emotional patterns</b><small>Reacting first, reviewing it all evening</small></span></button>
       </div>
-      <div class="btn-row mt-4">
-        <a class="btn btn--gold" href="/framework/">See how the framework works</a>
-        <a class="btn btn--ghost" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book a free discovery call</a>
+      <p class="fx-hint" id="pattern-picker-hint">Recognising more than one isn’t a character flaw. It’s a pattern, and patterns can be worked with directly.</p>
+      <div class="pattern-picker__result fx-result" id="pattern-picker-result" role="status" hidden>
+        <p><strong id="pattern-picker-count"></strong> This is exactly what coaching works with: not willpower, the pattern underneath it.</p>
+        <a class="btn fx-btn fx-btn--primary" href="#altitude-check" data-track="pattern_picker_cta_click">Check your altitude</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 4. WHAT I HELP YOU CHANGE ═══ -->
-  <section class="section band-paper" id="what-changes">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">What changes</p>
-        <h2>What you’ll actually walk away with.</h2>
-        <p>Not abstractions. These are the six areas most of my clients come in for.</p>
+  <!-- ═══ 03 — TAKEOFF (scroll-driven altitude) ═══ -->
+  <section class="fx-sec fx-takeoff" id="takeoff" data-phase="takeoff" data-alt="3000" aria-labelledby="takeoff-title">
+    <div class="wrap fx-takeoff__grid">
+      <div class="fx-takeoff__gauge" aria-hidden="true">
+        <span class="fx-takeoff__k">Altitude</span>
+        <span class="fx-takeoff__v"><span id="fx-takeoff-num">3,000</span><small>FT</small></span>
+        <span class="fx-takeoff__bar"><i id="fx-takeoff-bar"></i></span>
+        <span class="fx-takeoff__note">Progress in your thinking, not flight data.</span>
       </div>
-      <div class="grid grid--3">
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a6 6 0 0 0-4 10.5V17h8v-3.5A6 6 0 0 0 12 3z"/><path d="M9 21h6"/></svg></div>
-          <h3>Limiting beliefs</h3>
-          <p>You stop treating old conclusions as facts. The ceiling you assumed was real turns out to be something you can name, test and move.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg></div>
-          <h3>Confidence</h3>
-          <p>Confidence that doesn’t depend on the room going well — because it’s built on evidence and a repeatable internal state, not on mood.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div>
-          <h3>Emotional mastery</h3>
-          <p>You get the half-second back. Instead of reacting and reviewing it later, you notice the trigger, change state, and choose the response.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>Communication</h3>
-          <p>Say the thing you actually meant — clearly, without softening it into nothing or sharpening it into a fight. Rapport becomes a skill, not luck.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
-          <h3>Relationships</h3>
-          <p>The recurring argument stops recurring. You start seeing the pattern in the exchange instead of only the other person’s part in it.</p>
-        </article>
-        <article class="card reveal">
-          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-          <h3>Personal growth</h3>
-          <p>Greater self-awareness, better decisions, and more consistent action — the gap between knowing and doing gets noticeably narrower.</p>
-        </article>
-      </div>
-      <div class="btn-row mt-4">
-        <a class="btn btn--primary" href="/coaching/">See how coaching works</a>
+      <div>
+        <p class="fx-label reveal">03 · Takeoff</p>
+        <h2 id="takeoff-title" class="reveal">Make the decision to change.</h2>
+        <ol class="fx-stages">
+          <li class="fx-stage" data-ft="3000"><span class="fx-stage__ft">3,000 FT</span><h3>Awareness</h3><p>You’ve noticed the pattern. You can name it. That alone changes how much power it has.</p></li>
+          <li class="fx-stage" data-ft="5000"><span class="fx-stage__ft">5,000 FT</span><h3>Decision</h3><p>You decide the old pattern no longer gets to fly the plane.</p></li>
+          <li class="fx-stage" data-ft="10000"><span class="fx-stage__ft">10,000 FT</span><h3>Commitment</h3><p>You commit to the climb: one honest conversation, then one session at a time.</p></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 5. WHY HAZIK ═══ -->
-  <section class="section band-surface" id="why">
+  <!-- ═══ 04 — CLIMB: REWIRE YOUR MIND ═══ -->
+  <section class="fx-sec fx-climb" id="climb" data-phase="climb" data-alt="18000" aria-labelledby="climb-title">
     <div class="wrap">
-      <div class="grid grid--2" style="align-items:center;gap:clamp(1.75rem,5vw,4rem)">
-        <div class="reveal">
-          <p class="eyebrow">Why me</p>
-          <h2>What 10+ years in aviation taught me about people.</h2>
-          <p class="lead mt-2">Most coaches study human behaviour. I was assessed on reading it correctly.</p>
-          <p class="mt-2">As a Line Check Cabin Crew Evaluator, my job was to observe crew during live operations — how they communicated, how they made decisions, how they held up when a situation stopped going to plan. Not in a workshop. In the air, with real consequences.</p>
-          <p class="mt-2">Ten years of that teaches you something specific: <strong>how someone behaves under pressure is not a personality trait.</strong> It’s a pattern. And the same handful of patterns show up again and again — the confident person who freezes, the capable one who over-explains, the quiet one who was right and didn’t say so.</p>
-          <p class="mt-2">What I didn’t have then was a way to change them. NLP gave me that. The combination — years of watching real behaviour under real pressure, plus a practical toolkit for changing the pattern underneath it — is what makes this coaching different from advice.</p>
-          <p class="mt-3"><a class="link-arrow" href="/about/">Read the full story</a></p>
-        </div>
-        <div class="reveal">
-          <ul class="creds">
-            <li><div><b>Line Check Cabin Crew Evaluator</b><span>10+ years in commercial aviation</span></div></li>
-            <li><div><b>Certified NLP Practitioner &amp; Life Coach</b><span>Auspicium (UK) &amp; Transformation Academy (USA)</span></div></li>
-            <li><div><b>Aviation Training Faculty</b><span>Viinzs Airhostess Training Academy, Srinagar</span></div></li>
-            <li><div><b>Hospitality background</b><span>Taj Hotels · DLF Magnolias</span></div></li>
-            <li><div><b>Practises under the ANLP Code of Ethics</b><span>Confidentiality, informed consent and scope-of-practice standards</span></div></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ 6. CREDIBILITY ═══ -->
-  <section class="section section--tight band-paper" id="credentials">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Credentials</p>
-        <h2>The paperwork behind the practice.</h2>
-      </div>
-      <div class="proof-imgs reveal">
-        <figure class="proof-img">
-          <a href="/assets/img/certificate-hazik-900.jpg" target="_blank" rel="noopener">
-            <img src="/assets/img/certificate-hazik-900.jpg" width="900" height="675" loading="lazy" decoding="async" alt="Certificate: Hazik Fayaz, Certified NLP Practitioner and Life Coach, Auspicium UK and Transformation Academy USA" />
-          </a>
-          <figcaption>
-            <span>Certified NLP Practitioner &amp; Life Coach — Auspicium (UK) &amp; Transformation Academy (USA)</span>
-            <a href="/assets/img/certificate-hazik-900.jpg" target="_blank" rel="noopener">View full size ↗</a>
-          </figcaption>
-        </figure>
-        <figure class="proof-img">
-          <a href="/assets/img/award-spicejet-10years.jpg" target="_blank" rel="noopener">
-            <img src="/assets/img/award-spicejet-10years.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Award: Glittering Gold Club, ten years of service at SpiceJet, presented to Hazik Fayaz" />
-          </a>
-          <figcaption>
-            <span>Glittering Gold Club — 10 years of service, SpiceJet</span>
-            <a href="/assets/img/award-spicejet-10years.jpg" target="_blank" rel="noopener">View full size ↗</a>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ 7. CLIENT TRANSFORMATIONS ═══════════════════════════════════════
-       TESTIMONIAL SECTION — ready to switch on.
-
-       Nothing here is published yet because no real client testimonials
-       exist on the site to carry over, and inventing them is not an option.
-
-       TO ACTIVATE: delete this comment's opening and closing markers,
-       then replace the bracketed text with a real client's own words.
-       Duplicate the <article> block for each additional testimonial.
-       Only include a name, profession or photo where the client has
-       actually agreed to it — otherwise use "Coaching client, Bengaluru"
-       or similar, and delete the <img>.
-
-  <section class="section band-surface" id="transformations">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Client transformations</p>
-        <h2>What changes, in their words.</h2>
-      </div>
-      <div class="grid grid--3">
-        <article class="testimonial">
-          <dl>
-            <div><dt>Before</dt><dd>[What they struggled with, in their words.]</dd></div>
-            <div><dt>The shift</dt><dd>[What changed during coaching.]</dd></div>
-            <div><dt>After</dt><dd>[What is different now.]</dd></div>
+      <div class="fx-climb__grid">
+        <div>
+          <p class="fx-label reveal">04 · Climb</p>
+          <h2 id="climb-title" class="reveal">Rewire your mind.</h2>
+          <p class="fx-lead reveal">NLP stands for Neuro-Linguistic Programming. It sounds technical. It isn’t.</p>
+          <dl class="fx-nlp reveal">
+            <div><dt>Neuro</dt><dd>How your mind processes what you see, hear and feel.</dd></div>
+            <div><dt>Linguistic</dt><dd>The language and self-talk you use to make sense of it.</dd></div>
+            <div><dt>Programming</dt><dd>The patterns those two build over time: beliefs, reactions and habits you run without noticing.</dd></div>
           </dl>
-          <div class="testimonial__who">
-            <div><b>[First name]</b><span>[Profession, city]</span></div>
-          </div>
-        </article>
+          <p class="reveal">Coaching works with all three, so the patterns that aren’t serving you can change. What was installed can be uninstalled.</p>
+        </div>
+        <figure class="fx-neural reveal" aria-hidden="true">
+          <svg viewBox="0 0 520 420" focusable="false">
+            <g class="fx-neural__links" stroke="#8EC5E8" stroke-opacity=".28" stroke-width="1" fill="none">
+              <path d="M60 330 L150 250 L120 150 M150 250 L250 290 L230 190 L120 150 M230 190 L330 140 M250 290 L360 260 L330 140" />
+              <path d="M120 150 L200 90 L330 140 M360 260 L420 330" />
+            </g>
+            <path class="fx-neural__route" pathLength="1" d="M60 330 L150 250 L230 190 L330 140 L460 70" fill="none" stroke="#E8C468" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+            <g fill="#05080F" stroke="#8EC5E8" stroke-opacity=".6" stroke-width="1.2">
+              <circle cx="120" cy="150" r="5" /><circle cx="250" cy="290" r="5" /><circle cx="200" cy="90" r="5" /><circle cx="360" cy="260" r="5" /><circle cx="420" cy="330" r="5" />
+            </g>
+            <g fill="#E8C468">
+              <circle cx="60" cy="330" r="6" /><circle cx="150" cy="250" r="6" /><circle cx="230" cy="190" r="6" /><circle cx="330" cy="140" r="6" />
+            </g>
+            <path d="M460 70 l-16 4 6 6 -4 14 14 -10 z" fill="#E8C468" />
+          </svg>
+          <figcaption>Neural pathways become a flight route.</figcaption>
+        </figure>
+      </div>
+
+      <div class="fx-chain reveal" role="list" aria-label="How a belief changes, with an example">
+        <div class="fx-chain__step" role="listitem"><span class="fx-chain__k">Old belief</span><p>“If I speak up, I’ll get it wrong.”</p></div>
+        <div class="fx-chain__step" role="listitem"><span class="fx-chain__k">Reframe</span><p>Getting something wrong once is information, not identity.</p></div>
+        <div class="fx-chain__step" role="listitem"><span class="fx-chain__k">New belief</span><p>“My view is worth hearing, even when it isn’t perfect.”</p></div>
+        <div class="fx-chain__step fx-chain__step--on" role="listitem"><span class="fx-chain__k">New behaviour</span><p>You say the thing in the meeting.</p></div>
+      </div>
+      <p class="fx-small reveal">An illustrative example of the process, not a client story.</p>
+    </div>
+  </section>
+
+  <!-- ═══ 05 — CRUISE: YOUR MIND IS THE COCKPIT ═══ -->
+  <section class="fx-sec fx-cruise" id="cruise" data-phase="cruise" data-alt="35000" aria-labelledby="cruise-title">
+    <div class="wrap">
+      <div class="fx-head fx-head--center">
+        <p class="fx-label reveal">05 · Cruise</p>
+        <h2 id="cruise-title" class="reveal">Your mind is the cockpit.</h2>
+        <p class="fx-lead reveal">Six instruments decide where your life is heading. Select one to read it.</p>
+      </div>
+      <div class="fx-panel reveal">
+        <div class="fx-radar" aria-hidden="true"></div>
+        <div class="fx-instruments" role="group" aria-label="Instruments">
+          <button type="button" class="fx-inst is-on" aria-pressed="true" data-inst="0"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:28deg"/></svg><span>Beliefs</span></button>
+          <button type="button" class="fx-inst" aria-pressed="false" data-inst="1"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:-35deg"/></svg><span>Confidence</span></button>
+          <button type="button" class="fx-inst" aria-pressed="false" data-inst="2"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:62deg"/></svg><span>Emotions</span></button>
+          <button type="button" class="fx-inst" aria-pressed="false" data-inst="3"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:-8deg"/></svg><span>Relationships</span></button>
+          <button type="button" class="fx-inst" aria-pressed="false" data-inst="4"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:40deg"/></svg><span>Decisions</span></button>
+          <button type="button" class="fx-inst" aria-pressed="false" data-inst="5"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27"/><path class="fx-inst__arc" d="M12 44 A22 22 0 1 1 52 44"/><line class="fx-inst__needle" x1="32" y1="32" x2="32" y2="12" style="--a:-58deg"/></svg><span>Habits</span></button>
+        </div>
+        <div class="fx-readpanel" id="fx-readpanel" aria-live="polite">
+          <span class="fx-readpanel__k" id="fx-inst-k">Instrument · Beliefs</span>
+          <p class="fx-readpanel__t" id="fx-inst-t">The beliefs you carry influence the decisions you make.</p>
+          <p class="fx-readpanel__d" id="fx-inst-d">Most were true once. Coaching finds the ones that aren’t any more, and tests them against who you are now.</p>
+          <a class="btn fx-btn fx-btn--primary" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="recalibrate_cta_click">Recalibrate</a>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- ═══ 06 — TURBULENCE ═══ -->
+  <section class="fx-sec fx-turb" id="turbulence" data-phase="turbulence" data-alt="33000" aria-labelledby="turb-title">
+    <div class="fx-turb__sky" aria-hidden="true">
+      <div class="fx-storm fx-storm--a"></div><div class="fx-storm fx-storm--b"></div><div class="fx-storm fx-storm--c"></div>
+      <div class="fx-turb__frame"></div>
+    </div>
+    <div class="wrap fx-narrow fx-turb__content">
+      <p class="fx-label reveal">06 · Turbulence</p>
+      <h2 id="turb-title" class="reveal">Turbulence is not failure.</h2>
+      <p class="fx-lead reveal">Fear, uncertainty, setbacks and emotional challenges are part of the journey. Every crew flies through them.</p>
+      <p class="fx-turb__beat reveal">The goal isn’t to eliminate turbulence.</p>
+      <p class="fx-turb__beat fx-turb__beat--gold reveal">It’s to learn how to navigate it.</p>
+      <div class="fx-actions reveal">
+        <a class="btn fx-btn fx-btn--ghost" href="#flight-path" data-track="learn_to_navigate_click">Learn to navigate</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 07 — NAVIGATION: THE FLIGHT PATH ═══ -->
+  <section class="fx-sec fx-nav" id="flight-path" data-phase="navigation" data-alt="37000" aria-labelledby="path-title">
+    <div class="wrap">
+      <div class="fx-head">
+        <p class="fx-label reveal">07 · Navigation</p>
+        <h2 id="path-title" class="reveal">The flight path of change.</h2>
+        <p class="fx-lead reveal">Every result you get has a route behind it. Select a waypoint to see what happens there, and what coaching does about it.</p>
+      </div>
+      <div class="fx-route reveal">
+        <ol class="fx-route__list" role="group" aria-label="Waypoints">
+          <li><button type="button" class="fx-wp is-on" aria-pressed="true" data-wp="0"><i></i><span>Awareness</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="1"><i></i><span>Belief</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="2"><i></i><span>Thought</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="3"><i></i><span>Emotion</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="4"><i></i><span>Action</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="5"><i></i><span>Result</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="6"><i></i><span>Identity</span></button></li>
+          <li><button type="button" class="fx-wp" aria-pressed="false" data-wp="7"><i></i><span>Transformation</span></button></li>
+        </ol>
+        <div class="fx-wpdetail" aria-live="polite">
+          <p class="fx-wpdetail__k"><span id="fx-wp-n">WPT 01</span> · <span id="fx-wp-name">Awareness</span></p>
+          <dl>
+            <div><dt>What happens here</dt><dd id="fx-wp-a">You notice that something keeps repeating.</dd></div>
+            <div><dt>Common problem</dt><dd id="fx-wp-b">Blaming the situation and missing the pattern underneath it.</dd></div>
+            <div><dt>Coaching intervention</dt><dd id="fx-wp-c">Name the specific trigger and the belief sitting under the reaction.</dd></div>
+            <div><dt>Desired transformation</dt><dd id="fx-wp-d">You can see the pattern while it is happening, not only afterwards.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SELECT YOUR FLIGHT PATH (services) ═══ -->
+  <section class="fx-sec fx-flights" id="coaching" aria-labelledby="flights-title">
+    <div class="wrap">
+      <div class="fx-head">
+        <p class="fx-label reveal">Departures</p>
+        <h2 id="flights-title" class="reveal">Select your flight path.</h2>
+        <p class="fx-lead reveal">One-to-one NLP &amp; mindset coaching, pointed at what matters most to you right now.</p>
+      </div>
+      <div class="fx-boards">
+        <article class="fx-card reveal">
+          <header><span class="fx-card__no">Flight AM-101</span><span class="fx-card__st"><i></i>Ready for takeoff</span></header>
+          <h3>Mindset Reset</h3>
+          <p class="fx-card__dest"><span>Destination</span>Beliefs that fit who you are now</p>
+          <dl>
+            <div><dt>Problem</dt><dd>Limiting beliefs and mental patterns that keep producing the same result.</dd></div>
+            <div><dt>Outcome</dt><dd>You can name the pattern, test it, and replace it with one that works.</dd></div>
+            <div><dt>Est. journey</dt><dd>Shifts typically within ~4 sessions</dd></div>
+          </dl>
+          <a class="fx-card__cta" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="flight_am101_begin" aria-label="Begin Mindset Reset: book a free discovery call">Begin <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fx-card reveal">
+          <header><span class="fx-card__no">Flight AM-102</span><span class="fx-card__st"><i></i>Ready for takeoff</span></header>
+          <h3>Confidence Flight</h3>
+          <p class="fx-card__dest"><span>Destination</span>Confidence</p>
+          <dl>
+            <div><dt>Problem</dt><dd>Self-doubt, and confidence that doesn’t hold when the pressure arrives.</dd></div>
+            <div><dt>Outcome</dt><dd>Confidence built on evidence and a repeatable state, not on mood.</dd></div>
+            <div><dt>Est. journey</dt><dd>Shifts typically within ~4 sessions</dd></div>
+          </dl>
+          <a class="fx-card__cta" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="flight_am102_begin" aria-label="Begin Confidence Flight: book a free discovery call">Begin <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fx-card reveal">
+          <header><span class="fx-card__no">Flight AM-103</span><span class="fx-card__st"><i></i>Ready for takeoff</span></header>
+          <h3>Relationship Navigation</h3>
+          <p class="fx-card__dest"><span>Destination</span>Clearer connection</p>
+          <dl>
+            <div><dt>Problem</dt><dd>The same argument on repeat, and struggling to say what you actually mean.</dd></div>
+            <div><dt>Outcome</dt><dd>You see the pattern in the exchange, and communicate without softening it into nothing.</dd></div>
+            <div><dt>Est. journey</dt><dd>Shifts typically within ~4 sessions</dd></div>
+          </dl>
+          <a class="fx-card__cta" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="flight_am103_begin" aria-label="Begin Relationship Navigation: book a free discovery call">Begin <span aria-hidden="true">→</span></a>
+        </article>
+        <article class="fx-card reveal">
+          <header><span class="fx-card__no">Flight AM-104</span><span class="fx-card__st"><i></i>Ready for takeoff</span></header>
+          <h3>Life Direction</h3>
+          <p class="fx-card__dest"><span>Destination</span>Clarity</p>
+          <dl>
+            <div><dt>Problem</dt><dd>Overthinking decisions, and knowing what to do without doing it.</dd></div>
+            <div><dt>Outcome</dt><dd>Clear direction, better decisions, and action that matches intention.</dd></div>
+            <div><dt>Est. journey</dt><dd>Shifts typically within ~4 sessions</dd></div>
+          </dl>
+          <a class="fx-card__cta" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="flight_am104_begin" aria-label="Begin Life Direction: book a free discovery call">Begin <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+
+      <div class="fx-fare reveal">
+        <div class="fx-fare__row">
+          <div><span class="fx-fare__k">Boarding</span><b>₹0</b><span>Free 30-minute discovery call. No pitch, no obligation.</span></div>
+          <div><span class="fx-fare__k">Each session</span><b>₹3,500</b><span>Booked one at a time. Online, or in person in Bengaluru.</span></div>
+          <div><span class="fx-fare__k">Confidence Guarantee</span><b>Full refund</b><span>If a session gives you no value, or you cancel before it. <a href="/refund.html">Refund policy</a></span></div>
+        </div>
+        <div class="fx-fare__ctas">
+          <a class="btn fx-btn fx-btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book a discovery call</a>
+          <a class="fx-textlink" href="/coaching/">What happens in a session</a>
+          <a class="fx-textlink" href="https://api.thealtitudemindset.com/checkout?item=coaching_session" data-pay-link="coaching_session" data-track="pay_click" hidden>Already had your call? Pay for a session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ YOUR FLIGHT PLAN (process) ═══ -->
+  <section class="fx-sec fx-plan" id="flight-plan" aria-labelledby="plan-title">
+    <div class="wrap">
+      <div class="fx-head">
+        <p class="fx-label reveal">Flight plan</p>
+        <h2 id="plan-title" class="reveal">Your flight plan.</h2>
+        <p class="fx-lead reveal">Structured, not open-ended. You always know which leg of the journey you’re on.</p>
+      </div>
+      <div class="fx-legs" id="fx-legs">
+        <svg class="fx-legs__line" viewBox="0 0 1000 40" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path pathLength="1" d="M0 20 H1000" /></svg>
+        <ol>
+          <li class="reveal"><span class="fx-leg__n">01</span><h3>Discover</h3><p>Identify what’s holding you back.</p></li>
+          <li class="reveal"><span class="fx-leg__n">02</span><h3>Decode</h3><p>Understand your patterns.</p></li>
+          <li class="reveal"><span class="fx-leg__n">03</span><h3>Reframe</h3><p>Challenge limiting beliefs.</p></li>
+          <li class="reveal"><span class="fx-leg__n">04</span><h3>Rewire</h3><p>Create new mental patterns.</p></li>
+          <li class="reveal"><span class="fx-leg__n">05</span><h3>Rise</h3><p>Apply the transformation to real life.</p></li>
+        </ol>
+      </div>
+      <p class="fx-small reveal"><a class="fx-textlink" href="/framework/" data-track="framework_cta_click">See the full Altitude Mindset Framework™</a></p>
+    </div>
+  </section>
+
+  <!-- ═══ ABOUT: YOUR MINDSET NEEDS A NAVIGATOR ═══ -->
+  <section class="fx-sec fx-navigator" id="navigator" aria-labelledby="nav-title">
+    <div class="wrap fx-navigator__grid">
+      <figure class="fx-navigator__photo reveal">
+        <img src="/assets/img/hazik-portrait-840.jpg" srcset="/assets/img/hazik-portrait-520.jpg 520w, /assets/img/hazik-portrait-840.jpg 840w" sizes="(max-width: 900px) 80vw, 34vw" width="840" height="1262" loading="lazy" decoding="async" alt="Hazik Fayaz, NLP and mindset coach based in Bengaluru" />
+        <figcaption><b>Hazik Fayaz</b><span>Certified NLP Practitioner &amp; Life Coach</span></figcaption>
+      </figure>
+      <div>
+        <p class="fx-label reveal">Your navigator</p>
+        <h2 id="nav-title" class="reveal">Your mindset needs a navigator.</h2>
+        <ol class="fx-log">
+          <li class="reveal"><span class="fx-log__k">Experience</span><p>More than ten years in commercial aviation, watching how people communicate, decide and hold up when a situation stops going to plan. In the air, with real consequences. I’ve also trained aspiring cabin crew at Viinzs Airhostess Training Academy, Srinagar.</p></li>
+          <li class="reveal"><span class="fx-log__k">Insight</span><p>How someone behaves under pressure isn’t a personality trait. It’s a pattern, and the same handful of patterns show up again and again.</p></li>
+          <li class="reveal"><span class="fx-log__k">Method</span><p>NLP gave me a practical way to change them. I’m certified as an NLP Practitioner and Life Coach through Auspicium (UK) and Transformation Academy (USA), and I practise under the ANLP Code of Ethics.</p></li>
+          <li class="reveal"><span class="fx-log__k">Mission</span><p>Helping people overcome limiting beliefs, build confidence and strengthen relationships, through practical mindset coaching rather than motivation.</p></li>
+        </ol>
+        <div class="fx-docs reveal">
+          <a href="/assets/img/certificate-hazik-900.jpg" target="_blank" rel="noopener"><img src="/assets/img/certificate-hazik-900.jpg" width="900" height="675" loading="lazy" decoding="async" alt="Certificate: Hazik Fayaz, Certified NLP Practitioner and Life Coach, Auspicium UK and Transformation Academy USA" /><span>NLP Practitioner &amp; Life Coach certificate ↗</span></a>
+          <a href="/assets/img/award-spicejet-10years.jpg" target="_blank" rel="noopener"><img src="/assets/img/award-spicejet-10years.jpg" width="1000" height="750" loading="lazy" decoding="async" alt="Award: Glittering Gold Club, ten years of service at SpiceJet, presented to Hazik Fayaz" /><span>10 years of service award ↗</span></a>
+        </div>
+        <p class="fx-small reveal"><a class="fx-textlink" href="/about/">Read the full story</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FLIGHT LOG (testimonials) — READY TO SWITCH ON ═══════════════════
+       Not published: no real client testimonials exist yet, and inventing
+       them is not an option. TO ACTIVATE: remove this comment's markers and
+       replace the bracketed text with a client's own words, only with their
+       permission. Duplicate the <article> for each record.
+
+  <section class="fx-sec fx-flightlog" id="flight-log" aria-labelledby="log-title">
+    <div class="wrap">
+      <div class="fx-head"><p class="fx-label">Flight log</p><h2 id="log-title">Journey records.</h2></div>
+      <div class="fx-records">
+        <article class="fx-record">
+          <span class="fx-record__no">Flight log #001 · [Category]</span>
+          <dl>
+            <div><dt>Before</dt><dd>“[In their words]”</dd></div>
+            <div><dt>After</dt><dd>“[In their words]”</dd></div>
+          </dl>
+          <span class="fx-record__who">[First name, only with consent]</span>
+        </article>
+      </div>
+    </div>
+  </section>
   ═══════════════════════════════════════════════════════════════════════ -->
 
-  <!-- ═══ 8. THE OFFER ═══ -->
-  <section class="section band-surface" id="coaching">
+  <!-- ═══ ALTITUDE CHECK (lead generation) ═══ -->
+  <section class="fx-sec fx-check" id="altitude-check" aria-labelledby="check-title">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Working together</p>
-        <h2>1-on-1 NLP &amp; Mindset Coaching</h2>
-        <p class="lead">Start with a free call. Pay only when you decide to continue.</p>
+      <div class="fx-head fx-head--center">
+        <p class="fx-label reveal">Altitude check · 1 minute</p>
+        <h2 id="check-title" class="reveal">What’s your current altitude?</h2>
+        <p class="fx-lead reveal">An honest snapshot of where your mindset is flying today. Nothing you answer is stored or sent anywhere.</p>
       </div>
 
-      <div class="tiers reveal">
-        <div class="tier tier--free">
-          <span class="tier__tag">Start here · Free</span>
-          <div class="amount">₹0 <small>· 30 minutes</small></div>
-          <p class="mt-2" style="font-size:var(--fs-sm)">A discovery call. We talk about what’s actually going on, what pattern might sit underneath it, and whether coaching is the right fit for you.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No cost, no obligation</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>No pitch — just clarity on fit</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>If I’m not the right person, I’ll say so</li>
-          </ul>
-          <a class="btn btn--primary btn--block mt-3" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book Your Free Discovery Call</a>
+      <div class="fx-quiz reveal" id="fx-quiz">
+        <noscript><p class="fx-quiz__noscript">The altitude check needs JavaScript. You can still <a href="https://calendly.com/hazikdijoo/30min">book a free discovery call</a>.</p></noscript>
+        <div class="fx-quiz__intro" id="fx-quiz-intro">
+          <ul class="fx-quiz__cats" aria-label="What it covers"><li>Confidence</li><li>Limiting beliefs</li><li>Relationships</li><li>Direction</li><li>Emotional control</li><li>Self-belief</li></ul>
+          <button type="button" class="btn fx-btn fx-btn--primary fx-magnetic" id="fx-quiz-start" data-track="assessment_start_click">Begin the altitude check</button>
         </div>
-        <div class="tier tier--paid">
-          <span class="tier__tag">Then · Paid coaching</span>
-          <div class="amount">₹3,500 <small>· per session</small></div>
-          <p class="mt-2" style="font-size:var(--fs-sm)">A full coaching session working directly on your pattern using the Altitude Mindset Framework. Booked one at a time — no package to commit to upfront.</p>
-          <ul>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Online, or in person in Bengaluru</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Meaningful shifts typically within ~4 sessions</li>
-            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Reschedule freely around your availability</li>
-          </ul>
-          <a class="btn btn--ghost btn--block mt-3" href="/coaching/">What happens in a session</a>
-          <a class="link-arrow mt-2" href="https://api.thealtitudemindset.com/checkout?item=coaching_session" data-pay-link="coaching_session" data-track="pay_click" hidden>Already had your call? Pay for a session</a>
-        </div>
-      </div>
-
-      <p class="mt-3" style="font-size:var(--fs-sm);color:var(--ink-3)">To be completely clear: the 30-minute discovery call is free. Paid coaching sessions are ₹3,500 each and only begin once you decide to go ahead.</p>
-
-      <div class="guarantee mt-4 reveal">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
-        <div>
-          <h3>The Confidence Guarantee</h3>
-          <p>If you complete a paid session and genuinely feel you got no value from it, I’ll refund it in full. I’d rather you told me than quietly wrote it off. Cancel before a session and you get a full refund too. <a href="/refund.html">Read the refund policy</a>.</p>
+        <form class="fx-quiz__form" id="fx-quiz-form" hidden novalidate>
+          <div class="fx-quiz__progress" aria-hidden="true"><span id="fx-quiz-bar"></span></div>
+          <p class="fx-quiz__step" id="fx-quiz-step" aria-live="polite">Question 1 of 6</p>
+          <div id="fx-quiz-q"></div>
+          <div class="fx-quiz__nav">
+            <button type="button" class="fx-textbtn" id="fx-quiz-back">Back</button>
+            <button type="submit" class="btn fx-btn fx-btn--primary" id="fx-quiz-next" disabled>Next</button>
+          </div>
+        </form>
+        <div class="fx-quiz__result" id="fx-quiz-result" hidden tabindex="-1">
+          <span class="fx-quiz__rk">Your current altitude</span>
+          <p class="fx-quiz__alt"><span id="fx-quiz-alt">0</span><small>FT</small></p>
+          <p class="fx-quiz__band" id="fx-quiz-band"></p>
+          <p class="fx-quiz__msg" id="fx-quiz-msg"></p>
+          <p class="fx-quiz__low" id="fx-quiz-low"></p>
+          <div class="fx-actions">
+            <a class="btn fx-btn fx-btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="assessment_cta_click">Discover your next altitude</a>
+            <button type="button" class="fx-textbtn" id="fx-quiz-retake">Retake the check</button>
+          </div>
+          <p class="fx-small">A reflection based only on your six answers, not a psychological assessment or diagnosis.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 9. HOW COACHING WORKS ═══ -->
-  <section class="section band-paper" id="how-it-works">
+  <!-- ═══ FREE GUIDE (lead magnet — form id unchanged) ═══ -->
+  <section class="fx-sec fx-sec--tight" id="guide" aria-labelledby="guide-title">
     <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">The journey</p>
-        <h2>How coaching actually runs.</h2>
-        <p>Structured, not open-ended. You always know which stage you’re in.</p>
-      </div>
-      <ol class="process reveal">
-        <li>
-          <span class="n">01</span>
-          <h3>Discover</h3>
-          <p>We understand the challenge properly and identify the pattern underneath it.</p>
-        </li>
-        <li>
-          <span class="n">02</span>
-          <h3>Reframe</h3>
-          <p>We challenge the beliefs and interpretations holding the pattern in place.</p>
-        </li>
-        <li>
-          <span class="n">03</span>
-          <h3>Rewire</h3>
-          <p>Practical NLP and mindset tools build a different response.</p>
-        </li>
-        <li>
-          <span class="n">04</span>
-          <h3>Integrate</h3>
-          <p>You apply the new response to the real situations that used to catch you.</p>
-        </li>
-        <li>
-          <span class="n">05</span>
-          <h3>Elevate</h3>
-          <p>It becomes consistent — and you no longer need me for it.</p>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- ═══ 10. LEAD MAGNET ═══ -->
-  <section class="section section--tight band-paper" id="guide">
-    <div class="wrap">
-      <div class="magnet reveal">
+      <div class="fx-guide reveal">
         <div>
-          <p class="eyebrow">Free guide</p>
-          <h2>7 Patterns That Keep High Performers Stuck</h2>
-          <p class="mt-2" style="color:var(--on-dark-muted)">The seven patterns I see most often in capable, driven people — what each one looks like from the inside, why it formed, and the first question to ask yourself to start loosening it.</p>
-          <ul>
+          <p class="fx-label">Free guide · PDF</p>
+          <h2 id="guide-title">7 Patterns That Keep High Performers Stuck</h2>
+          <p>The seven patterns I see most often in capable, driven people: what each looks like from the inside, why it formed, and the first question to ask yourself to start loosening it.</p>
+          <ul class="fx-ticks">
             <li>Why competence and confidence come apart</li>
             <li>The difference between thinking and overthinking</li>
             <li>What your strongest reaction is protecting</li>
             <li>Why knowing what to do isn’t enough</li>
           </ul>
         </div>
+        <form class="form" id="magnet-form" action="https://formspree.io/f/meeyjedo" method="POST"
+              data-success="Here’s your guide — the download link is just below."
+              data-deliver="/assets/7-patterns-that-keep-high-performers-stuck.pdf"
+              data-track-submit="lead_magnet_submit">
+          <div class="field">
+            <label for="magnet-name">First name</label>
+            <input type="text" id="magnet-name" name="name" autocomplete="given-name" required />
+          </div>
+          <div class="field">
+            <label for="magnet-email">Email address</label>
+            <input type="email" id="magnet-email" name="email" autocomplete="email" placeholder="you@email.com" required />
+            <p class="hint">You’ll get the guide instantly.</p>
+          </div>
+          <input type="hidden" name="_subject" value="Lead magnet request — 7 Patterns guide" />
+          <input type="hidden" name="request_type" value="lead_magnet_7_patterns" />
+          <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn fx-btn fx-btn--primary btn--block" type="submit" data-track="lead_magnet_click">Get the free guide</button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WRITING (anchor #blog kept) ═══ -->
+  <section class="fx-sec" id="blog" aria-labelledby="blog-title">
+    <div class="wrap">
+      <div class="fx-head fx-head--row">
         <div>
-          <!-- No email platform is connected yet. This posts to the same
-               Formspree inbox as the contact form, tagged so you can spot
-               guide requests. Until you connect an email tool, you are
-               sending the guide manually — the copy below promises exactly
-               that and nothing more. -->
-          <form class="form" id="magnet-form" action="https://formspree.io/f/meeyjedo" method="POST"
-                data-success="Here’s your guide — the download link is just below."
-                data-deliver="/assets/7-patterns-that-keep-high-performers-stuck.pdf"
-                data-track-submit="lead_magnet_submit">
-            <div class="field">
-              <label for="magnet-name">First name</label>
-              <input type="text" id="magnet-name" name="name" autocomplete="given-name" required />
-            </div>
-            <div class="field">
-              <label for="magnet-email">Email address</label>
-              <input type="email" id="magnet-email" name="email" autocomplete="email" placeholder="you@email.com" required />
-              <p class="hint">You’ll get the guide instantly.</p>
-            </div>
-            <input type="hidden" name="_subject" value="Lead magnet request — 7 Patterns guide" />
-            <input type="hidden" name="request_type" value="lead_magnet_7_patterns" />
-            <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <button class="btn btn--gold btn--block" type="submit" data-track="lead_magnet_click">Get the Free Guide</button>
-            <p class="form__status" role="status" aria-live="polite"></p>
-          </form>
+          <p class="fx-label reveal">From Plane to a Pen</p>
+          <h2 id="blog-title" class="reveal">Aviation stories with a usable idea inside.</h2>
         </div>
+        <a class="fx-textlink reveal" href="/blog/">Read all articles</a>
+      </div>
+      <div class="fx-posts">
+        <a class="fx-post reveal" href="/blog-ai-best-friend-who-lifts-you.html">
+          <img src="/assets/img/blog/ai-best-friend-thumb.webp" alt="" loading="lazy" decoding="async" width="800" height="446" />
+          <span class="fx-post__tag">The Reframe</span>
+          <span class="fx-post__title">AI: The Best Friend Who Lifts You</span>
+        </a>
+        <a class="fx-post reveal" href="/blog-tea-spill.html">
+          <img src="/assets/img/blog/tea-spill-thumb.webp" alt="" loading="lazy" decoding="async" width="800" height="446" />
+          <span class="fx-post__tag">The Reframe</span>
+          <span class="fx-post__title">The Tea Spill: Why Pain Needs a Second Pair of Eyes</span>
+        </a>
+        <a class="fx-post reveal" href="/blog-every-rough-phase-made-me-stronger.html">
+          <img src="/assets/img/blog/every-rough-phase-thumb.webp" alt="" loading="lazy" decoding="async" width="800" height="446" />
+          <span class="fx-post__tag">My Story</span>
+          <span class="fx-post__title">Every Rough Phase Made Me Stronger: A Timeline of Coming Back</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 11. START HERE (social funnel) ═══ -->
-  <section class="section band-surface" id="start-here">
+  <!-- ═══ CABIN CREW (separate offering, kept downstream) ═══ -->
+  <section class="fx-sec fx-sec--tight" id="cabin-crew" aria-labelledby="crew-title">
     <div class="wrap">
-      <div class="grid grid--2" style="gap:clamp(1.75rem,5vw,4rem);align-items:start">
-        <div class="reveal">
-          <p class="eyebrow">New here?</p>
-          <h2>Came from Instagram? Start here.</h2>
-          <p class="lead mt-2">Five steps, in order. It takes about fifteen minutes to know whether this is for you.</p>
-          <div class="mt-3">
-            <p style="font-size:var(--fs-sm);color:var(--ink-3);margin-bottom:.75rem">Follow along</p>
-            <div class="social social--light">
-              <a href="https://instagram.com/thealtitudemindset_hazik" target="_blank" rel="noopener" aria-label="Instagram" data-track="instagram_click"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-              <a href="https://linkedin.com/in/hazikfayaz" target="_blank" rel="noopener" aria-label="LinkedIn" data-track="linkedin_click"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-              <a href="https://www.youtube.com/@nlplifecoachhazik" target="_blank" rel="noopener" aria-label="YouTube" data-track="youtube_click"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.5 6.4a2.8 2.8 0 0 0-1.9-2C18.9 4 12 4 12 4s-6.9 0-8.6.4a2.8 2.8 0 0 0-2 2C1 8.1 1 12 1 12s0 3.9.4 5.6a2.8 2.8 0 0 0 2 2C5.1 20 12 20 12 20s6.9 0 8.6-.4a2.8 2.8 0 0 0 1.9-2c.5-1.7.5-5.6.5-5.6s0-3.9-.5-5.6z"/><path d="M10 15l5-3-5-3z"/></svg></a>
-              <a href="https://x.com/hazikdijoo" target="_blank" rel="noopener" aria-label="X (Twitter)" data-track="twitter_click"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M4 20L20 4"/></svg></a>
-            </div>
-          </div>
-        </div>
-        <ol class="starthere reveal">
-          <li><a href="/about/"><span><b>My story</b><span>Why aviation, and why this work</span></span></a></li>
-          <li><a href="/coaching/"><span><b>My approach</b><span>What coaching with me is actually like</span></span></a></li>
-          <li><a href="/framework/"><span><b>The Altitude Mindset Framework™</b><span>The five stages, explained</span></span></a></li>
-          <li><a href="/blog/"><span><b>My best writing</b><span>Aviation stories with a usable idea inside</span></span></a></li>
-          <li><a href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click"><span><b>Book a free discovery call</b><span>30 minutes, no cost, no pitch</span></span></a></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ 12. BLOG (anchor #blog kept — existing posts link back to it) ═══ -->
-  <section class="section band-paper" id="blog">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Writing</p>
-        <h2>From Plane to a Pen</h2>
-        <p>Aviation stories with a usable idea inside — on confidence, pressure, communication and the patterns underneath behaviour.</p>
-      </div>
-      <div class="grid grid--3">
-        <a class="post reveal" href="/blog-ai-best-friend-who-lifts-you.html">
-          <div class="post__thumb"><img src="/assets/img/blog/ai-best-friend-thumb.webp" alt="AI: The Best Friend Who Lifts You" loading="lazy" width="800" height="446" /></div>
-          <div class="post__body">
-            <span class="post__tag">The Reframe</span>
-            <span class="post__title">AI: The Best Friend Who Lifts You</span>
-            <span class="post__excerpt">AI didn’t decide what I needed to write about. I did. Here’s what it actually gives you — and what it never touches.</span>
-          </div>
-        </a>
-        <a class="post reveal" href="/blog-tea-spill.html">
-          <div class="post__thumb"><img src="/assets/img/blog/tea-spill-thumb.webp" alt="The Tea Spill: Why Pain Needs a Second Pair of Eyes" loading="lazy" width="800" height="446" /></div>
-          <div class="post__body">
-            <span class="post__tag">The Reframe</span>
-            <span class="post__title">The Tea Spill: Why Pain Needs a Second Pair of Eyes</span>
-            <span class="post__excerpt">Pain narrows your vision. You reach for what’s nearest, not what actually helps.</span>
-          </div>
-        </a>
-        <a class="post reveal" href="/blog-every-rough-phase-made-me-stronger.html">
-          <div class="post__thumb"><img src="/assets/img/blog/every-rough-phase-thumb.webp" alt="Every Rough Phase Made Me Stronger: A Timeline of Coming Back" loading="lazy" width="800" height="446" /></div>
-          <div class="post__body">
-            <span class="post__tag">My Story</span>
-            <span class="post__title">Every Rough Phase Made Me Stronger: A Timeline of Coming Back</span>
-            <span class="post__excerpt">Every rough phase didn’t just knock me down. It handed me something I didn’t have before.</span>
-          </div>
-        </a>
-      </div>
-      <div class="btn-row mt-4">
-        <a class="btn btn--ghost" href="/blog/">Read all articles</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ 13. CABIN CREW TRAINING (secondary — deliberately downstream) ═══ -->
-  <section class="section section--tight band-surface" id="cabin-crew">
-    <div class="wrap">
-      <div class="card reveal" style="display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:center;background:var(--muted)">
+      <div class="fx-crew reveal">
         <div>
-          <p class="eyebrow">Separate offering</p>
-          <h2 style="font-family:var(--sans);font-weight:600;font-size:1.25rem;letter-spacing:-0.01em;line-height:1.3">Specialised Aviation &amp; Cabin Crew Training</h2>
-          <p class="mt-1">Preparing for airline interviews and cabin crew selection? That’s a different service, with its own page — grooming, communication, group discussion technique, and the mindset that holds up in an assessment room.</p>
+          <p class="fx-label">Separate offering</p>
+          <h2 id="crew-title">Specialised aviation &amp; cabin crew training</h2>
+          <p>Preparing for airline interviews and cabin crew selection? Grooming, communication, group discussion technique and the mindset that holds up in an assessment room, on its own page.</p>
         </div>
-        <a class="btn btn--ghost" href="/cabin-crew-training/" data-track="cabin_crew_click">Cabin crew training</a>
+        <div class="fx-crew__ctas">
+          <a class="btn fx-btn fx-btn--ghost" href="/cabin-crew-training/" data-track="cabin_crew_click">Cabin crew training</a>
+          <a class="fx-textlink" href="/cabin-crew-webinar/" data-track="webinar_link_click">₹99 Cabin Crew Career Roadmap webinar</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 14. FAQ ═══ -->
-  <section class="section band-paper" id="faq">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">Questions</p>
-        <h2>Before you book.</h2>
+  <!-- ═══ FAQ (FAQPage schema in <head> matches) ═══ -->
+  <section class="fx-sec" id="faq" aria-labelledby="faq-title">
+    <div class="wrap fx-faqwrap">
+      <div class="fx-head">
+        <p class="fx-label reveal">Pre-flight questions</p>
+        <h2 id="faq-title" class="reveal">Before you book.</h2>
       </div>
-      <div class="faq reveal">
+      <div class="faq fx-faq reveal">
         <details>
           <summary>What is NLP coaching?</summary>
           <div class="answer">
@@ -786,60 +835,52 @@
           <div class="answer"><p>I’m certified as an NLP Practitioner and Life Coach through Auspicium (UK) and Transformation Academy (USA), and I practise under the ANLP Code of Ethics.</p></div>
         </details>
       </div>
-    </div>
-  </section>
 
-  <!-- ═══ 15. SCOPE OF PRACTICE ═══ -->
-  <section class="section section--tight band-paper" id="scope">
-    <div class="wrap">
-      <div class="scope reveal">
+      <div class="fx-scope reveal" id="scope">
         <h3>Where coaching isn’t the right tool</h3>
-        <p class="mt-1" style="font-size:var(--fs-sm)">NLP coaching suits personal development and performance goals. It is not a substitute for licensed mental health care, and it does not treat clinical conditions. If any of the following apply, please seek support from a qualified mental health professional — instead of, or alongside, coaching.</p>
+        <p>NLP coaching suits personal development and performance goals. It is not a substitute for licensed mental health care, and it does not treat clinical conditions. If any of the following apply, please seek support from a qualified mental health professional, instead of or alongside coaching:</p>
         <ul>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Severe depression or suicidal thoughts</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Psychosis or delusions</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Active addiction requiring clinical treatment</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>PTSD or trauma requiring specialised therapy</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Domestic violence or abuse situations</li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>Any condition needing medical or licensed psychological care</li>
+          <li>Severe depression or suicidal thoughts</li>
+          <li>Psychosis or delusions</li>
+          <li>Active addiction requiring clinical treatment</li>
+          <li>PTSD or trauma requiring specialised therapy</li>
+          <li>Domestic violence or abuse situations</li>
+          <li>Any condition needing medical or licensed psychological care</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- ═══ 16. FINAL CTA ═══ -->
-  <section class="section section--tight band-paper">
-    <div class="wrap">
-      <div class="finalcta reveal">
-        <div>
-          <p class="eyebrow">Ready when you are</p>
-          <h2>Ready to change the pattern?</h2>
-          <p>You don’t have to keep operating from the same beliefs, reactions and patterns. Start with a conversation — it costs nothing and commits you to nothing.</p>
-        </div>
-        <div class="finalcta__actions">
-          <a class="btn btn--gold" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book Your Free Discovery Call</a>
-          <a class="btn btn--ghost" href="/framework/" data-track="framework_cta_click">Explore the Framework</a>
-        </div>
+  <!-- ═══ 08 — DESTINATION: NEW ALTITUDE ═══ -->
+  <section class="fx-sec fx-dest" id="destination" data-phase="destination" data-alt="41000" aria-labelledby="dest-title">
+    <div class="fx-dest__glow" aria-hidden="true"></div>
+    <div class="wrap fx-narrow fx-dest__content">
+      <p class="fx-label reveal">08 · Destination</p>
+      <h2 id="dest-title" class="reveal">Your next altitude starts with one conversation.</h2>
+      <p class="fx-lead reveal">A free 30-minute discovery call. No pitch, no obligation: just clarity on what’s holding you at this altitude, and whether coaching is the right way up.</p>
+      <div class="fx-actions fx-actions--center reveal">
+        <a class="btn fx-btn fx-btn--primary fx-btn--lg fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Book a discovery call</a>
+        <a class="btn fx-btn fx-btn--ghost" href="#altitude-check" data-track="altitude_check_cta_click">Take the free altitude check</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ CONTACT ═══ -->
-  <section class="section band-surface" id="contact">
+  <!-- ═══ CONTACT (form id unchanged; /#contact is linked sitewide) ═══ -->
+  <section class="fx-sec" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <div class="grid grid--2" style="gap:clamp(1.75rem,5vw,4rem);align-items:start">
+      <div class="fx-contact">
         <div class="reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Get in touch</h2>
-          <p class="lead mt-2">The fastest route is the discovery call. If you’d rather write first, this reaches me directly.</p>
-          <ul class="creds mt-3">
-            <li><div><b>Book a call</b><span><a href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Free 30-minute discovery call →</a></span></div></li>
-            <li><div><b>Email</b><span><a href="mailto:hazikdijoo@gmail.com" data-track="email_click">hazikdijoo@gmail.com</a></span></div></li>
-            <li><div><b>WhatsApp</b><span><a href="https://wa.me/919995803434" target="_blank" rel="noopener" data-track="whatsapp_click">Message on WhatsApp →</a></span></div></li>
-            <li><div><b>Based in</b><span>Bengaluru, Karnataka · working online across India</span></div></li>
+          <p class="fx-label">Contact</p>
+          <h2 id="contact-title">Radio in.</h2>
+          <p class="fx-lead">The fastest route is the discovery call. If you’d rather write first, this reaches me directly.</p>
+          <ul class="fx-channels">
+            <li><span>Book a call</span><a href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Free 30-minute discovery call →</a></li>
+            <li><span>Email</span><a href="mailto:hazikdijoo@gmail.com" data-track="email_click">hazikdijoo@gmail.com</a></li>
+            <li><span>WhatsApp</span><a href="https://wa.me/919995803434" target="_blank" rel="noopener" data-track="whatsapp_click">Message on WhatsApp →</a></li>
+            <li><span>Based in</span><p>Bengaluru, Karnataka · working online across India</p></li>
           </ul>
         </div>
-        <div class="card reveal">
+        <div class="fx-formcard reveal">
           <form class="form" id="contact-form" action="https://formspree.io/f/meeyjedo" method="POST"
                 data-success="Thanks — I’ll get back to you shortly."
                 data-track-submit="contact_form_submit">
@@ -871,7 +912,7 @@
             </div>
             <input type="hidden" name="_subject" value="New enquiry from thealtitudemindset.com" />
             <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
-            <button class="btn btn--primary btn--block" type="submit">Send message</button>
+            <button class="btn fx-btn fx-btn--primary btn--block" type="submit">Send message</button>
             <p class="form__status" role="status" aria-live="polite"></p>
           </form>
         </div>
