@@ -26,8 +26,10 @@
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230B1B33'/%3E%3Ctext x='50' y='68' font-family='Georgia,serif' font-size='58' fill='%23E8C468' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/css/site.css" />
+<link rel="stylesheet" href="/assets/css/flight-theme.css" />
+<meta name="theme-color" content="#05080F" />
 <script>document.documentElement.classList.add("js");</script>
 <script type="application/ld+json">
 {
@@ -49,16 +51,18 @@
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b0ded156e7e4a4b98bebcb9575b4f77"}'></script><!-- End Cloudflare Web Analytics -->
 <script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/flight.js" defer></script>
 <script src="/assets/js/hazi.js?v=2" defer></script>
 </head>
-<body>
+<body class="flight">
 <a class="skip-link" href="#main">Skip to content</a>
+<div class="fx-climbbar" aria-hidden="true"><span></span></div>
 
 <header class="site-header">
   <div class="wrap">
     <nav class="nav" aria-label="Primary">
       <a class="nav__logo" href="/" aria-label="The Altitude Mindset — home">
-        <img src="/assets/img/logo-altitude-mindset.svg" alt="The Altitude Mindset" width="560" height="120" />
+        <img src="/assets/img/logo-altitude-mindset-light.svg" alt="The Altitude Mindset" width="560" height="120" />
       </a>
       <ul class="nav__menu">
         <li><a href="/about/">About</a></li>

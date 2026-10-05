@@ -1,0 +1,88 @@
+/* ==========================================================================
+   The Altitude Mindset — "Flight" theme for lightweight pages
+   Blog posts, legal pages, contact, tracker and 404 carry their own small
+   inline stylesheets. This file loads after them (body.flight-lite) and
+   switches them to the same night palette, type and header as the rest of
+   the site, without touching their content.
+   ========================================================================== */
+body.flight-lite {
+  --fx-bg: #05080F; --fx-bg-2: #0A0F1A; --fx-surface: #0B111D;
+  --fx-line: rgba(220,230,242,.10); --fx-line-2: rgba(220,230,242,.20);
+  --fx-text: #E9EEF5; --fx-text-2: #C3CCD9; --fx-muted: #9AA6B8; --fx-gold: #E8C468;
+  --fx-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --fx-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  background: var(--fx-bg); color: var(--fx-text-2);
+  -webkit-font-smoothing: antialiased;
+}
+body.flight-lite ::selection { background: rgba(232,196,104,.3); color: #fff; }
+
+/* Header strip — same logo and primary action as the main header */
+.fx-strip {
+  position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 12px clamp(16px, 4vw, 40px); background: rgba(5,8,15,.86);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--fx-line);
+}
+.fx-strip__logo { display: flex; flex: none; }
+.fx-strip__logo img { height: 42px; width: auto; display: block; }
+.fx-strip__nav { display: flex; align-items: center; gap: 22px; }
+body.flight-lite .fx-strip__nav a:not(.fx-strip__cta) { color: var(--fx-muted); text-decoration: none; font-size: 14px; font-weight: 500; }
+body.flight-lite .fx-strip__nav a:not(.fx-strip__cta):hover { color: var(--fx-text); }
+body.flight-lite .fx-strip__nav .fx-strip__cta {
+  color: #0A0F1A; background: var(--fx-gold); padding: 10px 16px; border-radius: 10px; font-weight: 600; min-height: 42px;
+  display: inline-flex; align-items: center; box-shadow: 0 10px 30px -14px rgba(232,196,104,.7);
+}
+body.flight-lite .fx-strip__nav .fx-strip__cta:hover { background: #F1D37F; color: #0A0F1A; }
+@media (max-width: 560px) {
+  .fx-strip__nav a:not(.fx-strip__cta) { display: none; }
+  .fx-strip__logo img { height: 34px; }
+}
+
+/* Type */
+body.flight-lite h1 {
+  font-family: var(--fx-display); font-weight: 500; color: var(--fx-text);
+  letter-spacing: -0.03em; line-height: 1.12; font-size: clamp(30px, 5.4vw, 44px); text-wrap: balance;
+}
+body.flight-lite :is(h2, h3), body.flight-lite .post-body :is(h2, h3) { font-family: var(--fx-display); font-weight: 500; color: var(--fx-text); letter-spacing: -0.015em; }
+body.flight-lite :is(p, li, dd), body.flight-lite .post-body :is(p, li) { color: var(--fx-text-2); }
+body.flight-lite :is(strong, b), body.flight-lite .post-body strong { color: var(--fx-text); }
+body.flight-lite a { color: var(--fx-gold); }
+body.flight-lite a:focus-visible { outline: 2px solid var(--fx-gold); outline-offset: 3px; }
+body.flight-lite :is(.post-body hr, hr) { border-top-color: var(--fx-line); }
+
+body.flight-lite .post-tag {
+  background: transparent; color: var(--fx-gold); border: 1px solid rgba(232,196,104,.45);
+  font-family: var(--fx-mono); font-weight: 500; letter-spacing: .14em;
+}
+body.flight-lite :is(.breadcrumb, .breadcrumb a, .byline, .updated, .archive-label, .fallback-note, .intro, .details dt) { color: var(--fx-muted); }
+body.flight-lite .breadcrumb span { color: var(--fx-text-2); }
+body.flight-lite .breadcrumb a:hover { color: var(--fx-text); }
+body.flight-lite .byline { border-bottom-color: var(--fx-line); }
+body.flight-lite :is(.back-link, .next-link, a.back, .quiet-note a, .update a, .fallback-note a) { color: var(--fx-gold); }
+body.flight-lite .hero-banner { opacity: .92; }
+
+/* Panels that were white or cream */
+body.flight-lite :is(.contact-box, .details, .update) { background: var(--fx-surface); border-color: var(--fx-line); }
+body.flight-lite .notice-box { background: rgba(232,196,104,.08); border-left-color: var(--fx-gold); color: var(--fx-text-2); }
+body.flight-lite .update h2 { color: var(--fx-gold); }
+body.flight-lite .quiet-note { border-top-color: var(--fx-line); }
+body.flight-lite .quiet-note p { color: var(--fx-muted); }
+body.flight-lite .cta-box {
+  background: radial-gradient(80% 120% at 100% 0%, rgba(232,196,104,.08), transparent 60%), var(--fx-bg-2);
+  border: 1px solid var(--fx-line);
+}
+body.flight-lite .cta-box p { color: var(--fx-text-2); }
+body.flight-lite .cta-box a { color: #0A0F1A; background: var(--fx-gold); border-radius: 10px; }
+
+/* Tracker embed */
+body.flight-lite .tracker-frame-wrap { background: var(--fx-surface); border-color: var(--fx-line); box-shadow: none; }
+
+/* 404 */
+body.flight-lite .code { font-family: var(--fx-mono); font-weight: 500; letter-spacing: -0.04em; }
+body.flight-lite .btn-primary { color: #0A0F1A; border-radius: 10px; }
+body.flight-lite .btn-secondary { color: var(--fx-text); border-color: var(--fx-line-2); border-radius: 10px; }
+
+@media print {
+  body.flight-lite { background: #fff; color: #000; }
+  .fx-strip { display: none; }
+  body.flight-lite :is(h1, h2, h3, p, li, dd, strong) { color: #000; }
+}
