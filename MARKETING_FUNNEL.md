@@ -123,14 +123,15 @@ The guide is built to help you *see* a pattern. Seeing it is necessary, but
 it's not the same as changing it — that takes something more structured,
 which is why every coaching engagement I run follows the same five stages:
 
-**Recognize** → name the specific belief, trigger or behaviour underneath
-the situation you thought was the problem.
+**Discover** → identify what's really holding you back: the specific trigger
+or behaviour underneath the situation you thought was the problem.
+**Decode** → understand the pattern: the belief underneath it, where it came
+from, and what it has been protecting.
 **Reframe** → most limiting beliefs are conclusions you drew once, never
 facts. Take them apart and look at what else is true.
-**Reset** → learn to shift out of a reactive state deliberately, on demand.
-**Rewire** → build the new response using practical NLP, so it holds up in
-the moment, not just in theory.
-**Rise** → apply it consistently until it's just how you operate.
+**Rewire** → learn to change your state on purpose and build the new response
+using practical NLP, so it holds up in the moment, not just in theory.
+**Rise** → apply it to real life until it's just how you operate.
 
 [The full framework is here](https://thealtitudemindset.com/framework/) if
 you want to see how each stage actually works in a session.
