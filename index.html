@@ -27,6 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/assets/img/hazik-portrait-840.jpg" imagesrcset="/assets/img/hazik-portrait-520.jpg 520w, /assets/img/hazik-portrait-840.jpg 840w" imagesizes="(max-width: 900px) 220px, 340px" />
 <link rel="stylesheet" href="/assets/css/site.css" />
 <link rel="stylesheet" href="/assets/css/flight-theme.css" />
 <link rel="stylesheet" href="/assets/css/flight.css" />
@@ -297,26 +298,34 @@
     </div>
 
     <div class="wrap fx-hero__content">
-      <p class="fx-eyebrow fx-in" style="--d:1"><span class="fx-eyebrow__dash"></span>Hazik Fayaz · Certified NLP Practitioner &amp; Life Coach</p>
-      <h1 id="hero-title" class="fx-hero__title">
-        <span class="fx-line"><span class="fx-in" style="--d:2">Your mindset</span></span>
-        <span class="fx-line"><span class="fx-in" style="--d:3">determines your <em>altitude.</em></span></span>
-      </h1>
-      <p class="fx-hero__sub fx-in" style="--d:4">Break limiting beliefs. Build confidence. Strengthen relationships. <br />Change the way you think. Change the way you live.</p>
-      <div class="fx-hero__ctas fx-in" style="--d:5">
-        <a class="btn fx-btn fx-btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Start your journey <span aria-hidden="true">→</span></a>
-        <a class="btn fx-btn fx-btn--ghost" href="#ground" data-track="explore_cta_click">Explore Altitude Mindset</a>
-      </div>
-      <p class="fx-hero__note fx-in" style="--d:5">Starts with a free 30-minute discovery call · no pitch, no obligation</p>
-
-      <div class="fx-pilot fx-in" style="--d:6">
-        <img src="/assets/img/hazik-pilot-240.jpg" width="240" height="240" alt="Hazik Fayaz" />
-        <div>
-          <span class="fx-pilot__k">Your navigator</span>
-          <b>Hazik Fayaz</b>
-          <span>Certified NLP Practitioner &amp; Life Coach · 10+ years in commercial aviation</span>
+      <div class="fx-hero__copy">
+        <p class="fx-eyebrow fx-in" style="--d:1"><span class="fx-eyebrow__dash"></span>Hazik Fayaz · Certified NLP Practitioner &amp; Life Coach</p>
+        <h1 id="hero-title" class="fx-hero__title">
+          <span class="fx-line"><span class="fx-in" style="--d:2">Your mindset</span></span>
+          <span class="fx-line"><span class="fx-in" style="--d:3">determines your <em>altitude.</em></span></span>
+        </h1>
+        <p class="fx-hero__sub fx-in" style="--d:4">Break limiting beliefs. Build confidence. Strengthen relationships. <br />Change the way you think. Change the way you live.</p>
+        <div class="fx-hero__ctas fx-in" style="--d:5">
+          <a class="btn fx-btn fx-btn--primary fx-magnetic" href="https://calendly.com/hazikdijoo/30min" target="_blank" rel="noopener" data-track="discovery_call_click">Start your journey <span aria-hidden="true">→</span></a>
+          <a class="btn fx-btn fx-btn--ghost" href="#ground" data-track="explore_cta_click">Explore Altitude Mindset</a>
         </div>
+        <p class="fx-hero__note fx-in" style="--d:5">Starts with a free 30-minute discovery call · no pitch, no obligation</p>
       </div>
+
+      <!-- Hero image: Hazik through an aircraft cabin window; the shade lifts
+           as part of the entrance sequence (static and open without JS or
+           with reduced motion). -->
+      <figure class="fx-window fx-in" style="--d:2">
+        <div class="fx-window__bezel">
+          <div class="fx-window__recess">
+            <div class="fx-window__glass">
+              <img src="/assets/img/hazik-portrait-840.jpg" srcset="/assets/img/hazik-portrait-520.jpg 520w, /assets/img/hazik-portrait-840.jpg 840w" sizes="(max-width: 900px) 220px, 340px" width="840" height="1262" fetchpriority="high" decoding="async" alt="Hazik Fayaz, NLP and mindset coach" />
+              <div class="fx-window__shade" aria-hidden="true"><span></span></div>
+            </div>
+          </div>
+        </div>
+        <figcaption><span>Your navigator</span><b>Hazik Fayaz</b><small class="fx-window__cert">Certified NLP Practitioner &amp; Life Coach</small><small>10+ years in commercial aviation</small></figcaption>
+      </figure>
     </div>
   </section>
 
