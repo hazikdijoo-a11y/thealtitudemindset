@@ -86,3 +86,14 @@ body.flight-lite .btn-secondary { color: var(--fx-text); border-color: var(--fx-
   .fx-strip { display: none; }
   body.flight-lite :is(h1, h2, h3, p, li, dd, strong) { color: #000; }
 }
+
+/* Author bio at the end of every post */
+body.flight-lite .author-bio {
+  display: flex; gap: 16px; align-items: flex-start; margin-top: 48px; padding: 20px;
+  border: 1px solid var(--fx-line); border-radius: 14px; background: var(--fx-surface);
+}
+body.flight-lite .author-bio img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; border: 1px solid rgba(232,196,104,.45); }
+body.flight-lite .author-bio p { font-size: 14px; line-height: 1.65; color: var(--fx-text-2); margin: 0; }
+body.flight-lite .author-bio .author-bio__name { font-family: var(--fx-display); font-size: 16px; font-weight: 500; color: var(--fx-text); margin-bottom: 4px; }
+body.flight-lite .next-link { font-size: 14px; text-decoration: none; }
+body.flight-lite .next-link:hover { text-decoration: underline; }
