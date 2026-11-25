@@ -1,0 +1,12 @@
+# GitHub Pages (Jekyll) settings. The site itself is plain HTML; this file only
+# keeps internal working documents from being published at public URLs.
+# They remain in the repository, which is public on GitHub.
+exclude:
+  - ANALYTICS.md
+  - AUDIT.md
+  - DEPLOY.md
+  - FINAL_AUDIT.md
+  - IMPLEMENTATION_PLAN.md
+  - MARKETING_FUNNEL.md
+  - README.md
+  - assets/guide-source.html
